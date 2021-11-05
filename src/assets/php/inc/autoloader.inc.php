@@ -6,9 +6,9 @@ Per attivare l'autoloading delle classi specifiche richieste aggiungere la segue
     include 'includes/autoloader.inc.php';
 */
 
-spl_autoload_register('myAutoLoader');
+spl_autoload_register('AutoLoader');
 
-function myAutoLoader($className){
+function AutoLoader($className){
     $path = "classes/";
     $extension = ".class.php";
 
