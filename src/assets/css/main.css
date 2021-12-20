@@ -31,7 +31,7 @@
 
 .primary-box{
 
-    width: 20%;
+    width: 33%;
     height: 10em;
 
     padding: 20px;
@@ -41,6 +41,8 @@
     color: white;
     max-width: 200px;
 }
+
+
 
 header {
     background-color: var(--bg);
@@ -63,13 +65,20 @@ header a#accedi,
 header li {
     color: var(--fg);
     text-decoration: none;
-    font-size: 0.5em;
+    font-size: 1em;
     list-style: none;
 }
+
+/*Menu*/
 
 #menu li a {
     text-decoration: none;
     color: var(--fg);
+}
+
+#menu li{
+    float: left;
+    margin-left: 10em;
 }
 
 #breadcrumb {
