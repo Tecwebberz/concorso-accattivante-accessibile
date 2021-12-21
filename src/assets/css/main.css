@@ -20,6 +20,10 @@
     margin: auto;
 }
 
+body {
+    background-color: var(--alt-bg);
+}
+
 /*Link*/
 a:link {
     color: var(--primary)
@@ -41,16 +45,20 @@ a:visited {
 .primary-box{
 
     width: 33%;
-    height: 10em;
+    height: 25em;
 
-    padding: 20px;
+    padding: auto;
     margin: 20px;
     border-radius: 20px;
-    background-color: var(--primary);
-    color: white;
+    background-color: white;
+    color: black;
     max-width: 400px;
+    text-align: center;
 }
 
+li.primary-box {
+    list-style-type: none;
+}
 
 /*Header*/
 header {
