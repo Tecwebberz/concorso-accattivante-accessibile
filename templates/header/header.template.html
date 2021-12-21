@@ -1,0 +1,57 @@
+<body>
+
+    <header>
+        <h1>Uni-help <abbr title="at" xml:lang="en">@</abbr>
+            <abbr title="Università degli studi di Padova">UniPD
+            </abbr>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="">Recensioni corsi</a></li>
+                <li><a href="">Aule studio</a></li>
+                <li><a href=""><abbr xml:lang="en" title="Frequently Asked Question">F.A.Q.</abbr></a></li>
+                %_USERLOGIN_ACTION_%
+            </ul>
+        </nav>
+    </header>
+
+</body>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;1,900&display=swap');
+    * {
+        /*colori principali*/
+        --bg: #9b0014;
+        --fg: #ffffff;
+        --alt-bg: #454953;
+        --visited: green;
+        margin: 0;
+        padding: 0;
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    header h1 {
+        text-align: center;
+        padding: 10px 0 10px 0;
+        background-color: var(--bg);
+        color: var(--fg);
+        font-size: 5em;
+    }
+    
+    header h1 abbr {
+        text-decoration: none;
+    }
+    
+    header nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-flow: wrap;
+        list-style-type: none;
+        background-color: var(--alt-bg);
+    }
+    
+    header nav ul li {
+        color: var(--fg);
+    }
+</style>
