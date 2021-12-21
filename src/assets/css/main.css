@@ -97,7 +97,7 @@ nav ul li {
     float: left;
     list-style-type: none;
     padding: 10px 5px;
-    width: 100%;
+    
 }
 
 nav ul li a {
@@ -135,6 +135,7 @@ nav ul li a.active {
     
     nav ul li {
         float: none;
+        width: 100%;
     }
     nav ul li a{
         text-align: left;
