@@ -6,6 +6,7 @@
 *{
     /*colori principali*/
     --primary: #9b0014;
+    --primary-alt: #60000C;
     --primary-c: white; 
     --fg: #ffffff;
     --alt-bg: #454953;
@@ -67,19 +68,22 @@ header {
     /* padding: 20px 10px; */
     background-color: var(--primary);
     /* float: left; */
-    display: flex;
+    /* display: flex; */
 
 }
 
 .logo {
     color: var(--primary-c);
     font-size: 25px;
-    font-weight: bold;
+    font-weight: 900;
+    padding: 10px;
 }
 
 /* NAV */
 nav {
-    float: right;
+    /* float: right; */
+    background-color: var(--primary-alt);
+
 }
 
 nav ul li {
@@ -89,8 +93,20 @@ nav ul li {
 }
 
 nav ul li a {
-
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 5px 7px;
+    background-color: var(--primary-c);
+    color: black;
 }
+ 
+/* nav ul li a:hover {
+}
+  
+nav ul li a.active {
+} */
+
 
 @media screen and (max-width:1200px) {
     .primary-box{
