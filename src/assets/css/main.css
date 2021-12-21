@@ -17,9 +17,6 @@
 }
 
 /*Base*/
-.center{
-    margin: auto;
-}
 
 body {
     background-color: var(--alt-bg);
@@ -70,6 +67,7 @@ header {
     /* padding: 20px 10px; */
     background-color: var(--primary);
     /* float: left; */
+    display: flex;
 
 }
 
@@ -79,21 +77,15 @@ header {
     font-weight: bold;
 }
 
-.header-right {
-    float: right;
-}
-
 /* NAV */
 nav {
-
-}
-
-nav ul {
     float: right;
 }
 
 nav ul li {
-
+    float: left;
+    list-style-type: none;
+    padding: 10px;
 }
 
 nav ul li a {
