@@ -2,13 +2,13 @@
 
 class DatabaseLayer {
 
-    private $url;
-    private $user;
-    private $pass;
-    private $database;
+    private string $url;
+    private string $user;
+    private string $pass;
+    private string $database;
 
-    private $maybe_connection;
-    private $is_persisting;
+    private ?mysqli $maybe_connection;
+    private bool $is_persisting;
 
     public function __construct(string $url, string $user,
                                 string $pass, string $database) {
@@ -17,10 +17,11 @@ class DatabaseLayer {
         $this->pass = $pass;
         $this->database = $database;
         $this->is_persisting = false;
+        $this->maybe_connection = null;
     }
 
     private function connection(): mysqli {
-        if (!$this->maybe_connection) {
+        if ($this->maybe_connection === null) {
             $this->maybe_connection = new mysqli(
                 $this->url,
                 $this->user,
@@ -56,7 +57,7 @@ class DatabaseLayer {
         $stmt = $this->connection()->prepare($statement);
         if (!$stmt) {
             throw new Exception("Cannot create statement for
-                query: '{$statement}'");
+                query: '{$statement}' error: '{$this->connection()->error}");
         }
 
         $format = "";
@@ -66,7 +67,9 @@ class DatabaseLayer {
             $values[] = $valtype[1];
         }
 
-        $stmt->bind_param($format, ...$values);
+        if ($format !== "") {
+            $stmt->bind_param($format, ...$values);
+        }
         $stmt->execute();
 
         $result = $stmt->get_result();

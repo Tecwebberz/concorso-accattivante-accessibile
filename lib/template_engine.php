@@ -2,7 +2,7 @@
 
 class TemplateEngine {
 
-    private $base_path;
+    private string $base_path;
 
     public function __construct(string $base_path = "templates") {
         $this->base_path = $base_path;
@@ -22,11 +22,11 @@ class TemplateEngine {
 
 class Template {
 
-    static $PATT_BEGIN = "%_";
-    static $PATT_END = "_%";
+    static string $PATT_BEGIN = "%_";
+    static string $PATT_END = "_%";
 
-    private $template_name;
-    private $state;
+    private string $template_name;
+    private string $state;
 
     public function __construct(string $template_name, string $state) {
         $this->template_name = $template_name;
