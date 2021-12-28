@@ -6,7 +6,7 @@
     /*colori principali*/
     --primary: #9b0014;
     --primary-alt: #60000C;
-    --primary-c: white; 
+    --primary-c: #ffffff; 
     --fg: #ffffff;
     --alt-bg: #454953;
 
@@ -64,13 +64,7 @@ li.primary-box {
 /*Header*/
 header {
     overflow: hidden;
-    /* flex-wrap: wrap; */
-    /* justify-content: space-between; */
-    /* align-items: center; */
-    /* padding: 20px 10px; */
     background-color: var(--primary);
-    /* float: left; */
-    /* display: flex; */
 }
 
 header abbr{
@@ -87,7 +81,6 @@ header abbr{
 
 /* NAV */
 nav {
-    /* float: right; */
     background-color: var(--primary-alt);
 }
 
@@ -120,6 +113,66 @@ nav ul li a.active {
     color: black;
 }
 
+/** CARDS **/
+
+.cards {
+    margin: 5% auto ;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+    gap: 20px;
+    list-style: none;
+}
+
+.card img {
+    width: 100%;
+    display: block;
+}
+
+.card h2 {
+    padding: 15px;
+    background-color: var(--primary);
+    color: var(--fg);
+}
+
+.card .content {
+    line-height: 1.5;
+    font-size: 0.9em;
+    padding: 15px;
+    background: var(--primary-c);
+}
+
+.card .extra {
+    padding: 15px;
+    display: flex;
+    flex: 2 1 1;
+    justify-content: space-between;
+    background-color: var(--primary);
+    font-size: 0.8em;
+    align-items: center;
+}
+
+.card .extra a {
+    background-color: var(--bg);
+    padding: 5px;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.card .extra a:hover {
+    color: var(--hover-one);
+}
+
+.card .extra a.active {
+    border-radius: 4px;
+    padding: 5px 7px;
+    background-color: var(--primary-c);
+    color: black;
+}
+
+.card .extra p {
+    color: #fff;
+}
 
 @media screen and (max-width:1200px) {
     .primary-box{
@@ -130,6 +183,10 @@ nav ul li a.active {
 @media screen and (max-width:600px) {
     .primary-box{
         width: 90%;
+    }
+
+    .logo {
+        text-align: center;
     }
 
     header a {
