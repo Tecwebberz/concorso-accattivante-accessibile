@@ -180,6 +180,15 @@ nav ul li a.active {
     }
 }
 
+/*Article*/
+.article{
+    max-width: 1200px;
+    background-color: white;
+    margin: 15px auto;
+    padding: 15px;
+    border-radius: 4px;
+}
+
 @media screen and (max-width:600px) {
     .primary-box{
         width: 90%;
