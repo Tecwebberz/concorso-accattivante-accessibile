@@ -1,11 +1,13 @@
 <?php
-$root = "..";
+
+session_start();
 
 require_once($root . "/lib/databaselayer.php");
 require_once($root . "/lib/orm/services/userservice.php");
 require_once($root . "/lib/orm/services/courseservice.php");
 require_once($root . "/lib/orm/data/userdto.php");
 require_once($root . "/lib/orm/data/coursedto.php");
+require_once($root . "/lib/template_engine.php");
 
 $db = new DatabaseLayer(
     "127.0.0.1",
@@ -19,7 +21,64 @@ $user_service = new UserService($db, function(string $in) {
 });
 
 $course_service = new CourseService($db);
-var_dump($course_service->get_all_courses());
+
+$template_engine = new TemplateEngine($root . "/templates");
+
+function build_header(): string {
+    global $template_engine;
+    $header_template =
+        $template_engine->load_template("header/header.template.html");
+    $action = " ";
+    if (isset($_SESSION["logged_user"])
+        && $_SESSION["logged_user"] !== null) {
+        $action = $template_engine->load_template("header/loggedin.template.html")
+                                  ->build();
+    } else {
+        $action =  $template_engine->load_template("header/nonloggedin.template.html")
+                                  ->build();
+    }
+    
+    $header_template->insert("USERLOGIN_ACTION", $action);
+    return $header_template->build();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//var_dump($course_service->get_all_courses());
 /*$user = new UserDTO();
 $user->username = "mario@lol.it";
 $user->name = "alessio";

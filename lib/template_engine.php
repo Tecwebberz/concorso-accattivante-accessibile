@@ -11,7 +11,7 @@ class TemplateEngine {
     public function load_template(string $name): Template {
         $template_content = "";
         try {
-            $template_content = readfile("{$this->base_path}/{$name}");
+            $template_content = file_get_contents("{$this->base_path}/{$name}");
         } catch (Exception $ex) {
             throw new Exception("Could not open template: \"{$name}\"
                 in base {$this->base_path}");
@@ -39,12 +39,12 @@ class Template {
         $patt_end = self::$PATT_END;
 
         $n_changes = 0;
-        $this->state = str_replace("{$patt_begin}{$id}{$patt_end}",
-                                   $value, $this->state, $n_changes);
-        if ($n_changes < 1) {
+        $patt = "{$patt_begin}{$id}{$patt_end}";
+        $this->state = str_replace($patt, $value, $this->state, $n_changes);
+        if ($n_changes !== 1) {
             throw new Exception("Error while replacing \"{$id}\" in
                                 template \"{$this->template_name}\":
-                                0 maches");
+                                {$n_changes} maches");
         }
     }
 
