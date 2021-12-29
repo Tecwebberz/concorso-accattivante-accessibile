@@ -28,6 +28,9 @@ body {
 h2{
     font-weight: 400;
 }
+h3{
+    font-weight: 400;
+}
 
 /*Link*/
 a:link {
@@ -210,6 +213,27 @@ nav ul li a.active {
 .photo_holder>img{
     width: 20%;
     margin: 2px;
+}
+
+.mini_title{
+    border-bottom: solid rgb(214, 214, 214) 0.5px;
+    margin-bottom: 1em;
+    padding-bottom: 5px;
+}
+.mini_title > ul{
+    font-size: 0.8em;
+    display: flex;
+    justify-content:start;
+}
+
+.mini_title >ul >li{
+    margin: 0 1em;
+    color: #222222;
+}
+
+.mini_title > ul > li:first-of-type{
+    list-style-type:none;
+    margin-left: 0;
 }
 
 @media screen and (max-width:1200px) {
