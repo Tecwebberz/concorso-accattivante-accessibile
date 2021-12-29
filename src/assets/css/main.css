@@ -178,12 +178,6 @@ nav ul li a.active {
     color: #fff;
 }
 
-@media screen and (max-width:1200px) {
-    .primary-box{
-        width: 40%;
-    }
-}
-
 /*Article*/
 .article{
     max-width: 1200px;
@@ -193,8 +187,35 @@ nav ul li a.active {
     border-radius: 4px;
 }
 
-.review_counter{
+.status{
     font-size: 0.8em;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.photo_holder{
+    width: 100%;
+    margin: 20px auto;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    border-radius: 15px;
+    overflow: hidden;
+    height: auto;
+}
+.photo_holder>img:first-child{
+    width: 50%;
+}
+.photo_holder>img{
+    width: 20%;
+    margin: 2px;
+}
+
+@media screen and (max-width:1200px) {
+    .primary-box{
+        width: 40%;
+    }
 }
 
 @media screen and (max-width:600px) {
