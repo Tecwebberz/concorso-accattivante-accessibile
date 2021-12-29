@@ -25,6 +25,10 @@ body {
     background-color: var(--alt-bg);
 }
 
+h2{
+    font-weight: 400;
+}
+
 /*Link*/
 a:link {
     color: var(--primary)
@@ -187,6 +191,10 @@ nav ul li a.active {
     margin: 15px auto;
     padding: 15px;
     border-radius: 4px;
+}
+
+.review_counter{
+    font-size: 0.8em;
 }
 
 @media screen and (max-width:600px) {
