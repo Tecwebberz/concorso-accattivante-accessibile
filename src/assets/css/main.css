@@ -202,16 +202,16 @@ nav ul li a.active {
     align-items: center;
 }
 .status .open{
-    height: 1em;
-    width: 1em;
+    height: 0.8em;
+    width: 0.8em;
     margin: 5px;
     background-color: seagreen;
     border-radius: 50%;
     display: inline-block;
 }
 .status .closed{
-    height: 1em;
-    width: 1em;
+    height: 0.8em;
+    width: 0.8em;
     margin: 5px;
     background-color: red;
     border-radius: 50%;
