@@ -197,6 +197,19 @@ nav ul li a.active {
     margin: 20px;
 }
 
+.status > div{
+    display: flex;
+    align-items: center;
+}
+.status .open{
+    height: 1em;
+    width: 1em;
+    margin: 5px;
+    background-color: seagreen;
+    border-radius: 50%;
+    display: inline-block;
+}
+
 .photo_holder{
     width: 100%;
     margin: 20px auto;
