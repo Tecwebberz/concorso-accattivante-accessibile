@@ -28,6 +28,9 @@ body {
 h2{
     font-weight: 400;
 }
+h3{
+    font-weight: 400;
+}
 
 /*Link*/
 a:link {
@@ -194,6 +197,27 @@ nav ul li a.active {
     margin: 20px;
 }
 
+.status > div{
+    display: flex;
+    align-items: center;
+}
+.status .open{
+    height: 0.8em;
+    width: 0.8em;
+    margin: 5px;
+    background-color: seagreen;
+    border-radius: 50%;
+    display: inline-block;
+}
+.status .closed{
+    height: 0.8em;
+    width: 0.8em;
+    margin: 5px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+}
+
 .photo_holder{
     width: 100%;
     margin: 20px auto;
@@ -219,6 +243,27 @@ nav ul li a.active {
     height: 100%;
     object-fit: cover;
     display: block; 
+}
+
+.mini_title{
+    border-bottom: solid rgb(214, 214, 214) 0.5px;
+    margin-bottom: 1em;
+    padding-bottom: 5px;
+}
+.mini_title > ul{
+    font-size: 0.8em;
+    display: flex;
+    justify-content:start;
+}
+
+.mini_title >ul >li{
+    margin: 0 1em;
+    color: #222222;
+}
+
+.mini_title > ul > li:first-of-type{
+    list-style-type:none;
+    margin-left: 0;
 }
 
 @media screen and (max-width:1024px) {
