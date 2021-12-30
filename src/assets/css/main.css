@@ -17,6 +17,10 @@
         /*accent*/
     --primary-accent-bg: #9b0014;
     --primary-accent-text: white;
+    --primary-accent-link: #d1d1d1;
+    --primary-accent-hover: white;
+    --primary-accent-active: white;
+    --primary-accent-visited: #d1d1d1;
 
 
     /*alternative palette*/
@@ -44,6 +48,12 @@ body {
 }
 
     /*Link*/
+
+a{
+    text-decoration: none;
+    font-weight: 400;
+}
+
 a:link {color: var(--primary-link)}
 
 a:active, a:hover{color: var(--primary-active);}
@@ -52,15 +62,18 @@ a:visited {color: var(--primary-visited);}
 
 abbr{
     text-decoration: none;
+    font-weight: inherit;
 }
 
-/*Flex components*/
+/*Reusables*/
+    /*Flex components*/
 .flex-container {
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     flex-flow: wrap;
+    align-content: center;
 }
 
 .primary-box{
@@ -81,10 +94,56 @@ li.primary-box {
     list-style-type: none;
 }
 
+    /*Photo gallery*/
+.photo-gallery{
+    width: 100%;
+    margin: 20px auto;
+    border-radius: 15px;
+    overflow: hidden;
+    height: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1);
+    grid-gap: 1px; 
+
+}
+.photo-gallery>img:first-child{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.photo-gallery>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; 
+}
+
+    /*Dots*/
+.green-dot{
+    height: 0.8em;
+    width: 0.8em;
+    margin: 5px;
+    background-color: seagreen;
+    border-radius: 50%;
+    display: inline-block;
+}
+.red-dot{
+    height: 0.8em;
+    width: 0.8em;
+    margin: 5px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+}
+
 /*Header*/
 header {
-    overflow: hidden;
     background-color: var(--primary-accent-bg);
+    min-height: 5em;
 }
 
 header .logo, header .logo * {
@@ -96,40 +155,34 @@ header .logo, header .logo * {
 }
 
 /* NAV */
-nav {
-    background-color: var(--primary-alt);
-}
 
-nav ul{
-    display: flex;
-    flex-direction: row;
-    flex-flow: wrap;
+nav{
+    margin: auto 0;
 }
 
 nav ul li {
-    float: left;
     list-style-type: none;
     padding: 10px 5px;
-    
 }
 
-nav ul li a {
-    text-align: center;
-    text-decoration: none;
+nav ul li a:link {
+    color: var(--primary-accent-link);
 }
- 
-nav ul li a:hover {
-    color: var(--hover-one);
+
+nav ul li a:visited {
+    color: var(--primary-accent-visited);
+}
+
+nav ul li a:hover,a:active {
+    color: var(--primary-accent-active);
 }
   
 nav ul li a.active {
-    border-radius: 4px;
-    padding: 5px 7px;
-    background-color: var(--primary-c);
-    color: black;
+    color: var(--primary-accent-text);
+    font-weight: 800;
 }
 
-/*Article*/
+/*Section*/
 section{
     max-width: 1200px;
     background-color: var(--primary-bg);
@@ -149,52 +202,9 @@ section{
     display: flex;
     align-items: center;
 }
-.status .open{
-    height: 0.8em;
-    width: 0.8em;
-    margin: 5px;
-    background-color: seagreen;
-    border-radius: 50%;
-    display: inline-block;
-}
-.status .closed{
-    height: 0.8em;
-    width: 0.8em;
-    margin: 5px;
-    background-color: red;
-    border-radius: 50%;
-    display: inline-block;
-}
-
-.photo_holder{
-    width: 100%;
-    margin: 20px auto;
-    border-radius: 15px;
-    overflow: hidden;
-    height: auto;
-
-    display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(1);
-    grid-gap: 1px; 
-
-}
-.photo_holder>img:first-child{
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 3;
-}
-.photo_holder>img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block; 
-}
 
 .mini_title{
-    border-bottom: solid rgb(214, 214, 214) 0.5px;
+    border-bottom: solid #d6d6d6 0.5px;
     margin-bottom: 1em;
     padding-bottom: 5px;
 }
@@ -217,6 +227,9 @@ section{
 section > .article_body{
     display: flex;
     flex-flow: wrap;
+    border-bottom: solid #d6d6d6 0.5px;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
 }
 
 section > .article_body> p{
@@ -342,7 +355,8 @@ footer .flex-container{
 
 @media screen and (max-width:1200px) {
     section{
-        margin: auto 10px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 }
 
@@ -399,7 +413,7 @@ footer .flex-container{
         border-bottom-left-radius: 5px;
     }
 
-    .photo_holder{
+    .photo-gallery{
         grid-template-columns: repeat(2, 1fr);
     }
 }
