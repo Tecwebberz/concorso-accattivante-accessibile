@@ -257,10 +257,26 @@ nav ul li a.active {
     margin-left: 0;
 }
 
+.article > .article_body{
+    display: flex;
+    flex-flow: wrap;
+}
+
+.article > .article_body> p{
+    width: 50%;
+    margin: 10px auto;
+}
+.article > .article_body> iframe{
+    width: 50%;
+    height: 20em;
+    border: none;
+    margin: 10px auto;
+}
+
 @media screen and (max-width:1200px) {
     .primary-box{
         width: 40%;
-    }
+    }    
 }
 
 @media screen and (max-width:600px) {
@@ -285,4 +301,11 @@ nav ul li a.active {
     nav ul li a{
         text-align: left;
     }
+
+    .article > .article_body> p{
+        width: 90%;
+     }
+     .article > .article_body> iframe{
+         width: 90%;
+     }
 }
