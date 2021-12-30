@@ -323,9 +323,6 @@ nav ul li a.active {
     .primary-box{
         width: 40%;
     }
-    .photo_holder{
-        grid-template-columns: repeat(3, 1fr);
-    }
 }
 
 @media screen and (max-width:600px) {
