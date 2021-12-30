@@ -286,3 +286,59 @@ nav ul li a.active {
         text-align: left;
     }
 }
+
+/* FAQ */
+.faq-container {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px auto;
+    justify-content: center;
+}
+
+.faq-title {
+    flex: 20%;
+    margin-top: 20px;
+    background-color: var(--primary-alt);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.faq-content {
+    flex: 80%;
+    margin-top: 20px;
+    background-color: var(--primary-c);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+}
+ 
+.faq-content p {
+    margin: 5px 5px;
+}
+
+.faq-title h2 {
+    padding-top: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: var(--primary-c);
+}
+
+@media screen and (max-width: 600px) {
+    .faq-title {
+        flex: 100%;
+        margin-top: 5px;
+        text-align: center;
+        border-top-right-radius: 5px;
+        border-bottom-left-radius: 0px;
+    }
+
+    .faq-content {
+        flex: 100%;
+        margin-top: 0px;
+        margin-bottom: 5px;
+        text-align: center;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 5px;
+    }
+}
