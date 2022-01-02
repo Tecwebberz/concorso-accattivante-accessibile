@@ -22,8 +22,8 @@ class TemplateEngine {
 
 class Template {
 
-    static string $PATT_BEGIN = "<component ";
-    static string $PATT_END = "/>";
+    private const PATT_BEGIN = '<component>';
+    private const PATT_END = '</component>';
 
     private string $template_name;
     private string $state;
@@ -35,8 +35,8 @@ class Template {
 
     public function insert(string $id, string $value): void {
         // Thanks PHP :)
-        $patt_begin = self::$PATT_BEGIN;
-        $patt_end = self::$PATT_END;
+        $patt_begin = self::PATT_BEGIN;
+        $patt_end = self::PATT_END;
 
         $n_changes = 0;
         $patt = "{$patt_begin}{$id}{$patt_end}";
@@ -56,12 +56,12 @@ class Template {
 
     public function build(): string {
         // Thanks PHP :)
-        $patt_begin = self::$PATT_BEGIN;
-        $patt_end = self::$PATT_END;
+        $patt_begin = self::PATT_BEGIN;
+        $patt_end = self::PATT_END;
 
         $matches = array();
-        preg_match_all("{$patt_begin}([a-zA-Z0-9]+){$patt_end}",
-                    $this->state, $matches);
+        $patt = "#{$patt_begin}([a-zA-Z0-9]+){$patt_end}#";
+        preg_match_all($patt, $this->state, $matches);
 
         if (!empty($matches[1])) {
             $non_replaced = implode(", ", $matches[1]);
