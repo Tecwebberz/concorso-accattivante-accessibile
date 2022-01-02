@@ -14,11 +14,12 @@ class StudyRoomService {
     }
 
     public function replace(StudyRoomDTO $room) {
-        $res = $this->db->query(
+        $this->db->query(
             "REPLACE INTO {$this->table_name}
                 (id_aula, name, description,
-                 address, seats, reservation_required)
-             VALUES (?, ?, ?, ?, ?, ?)",
+                 address, seats, reservation_required,
+                 position)
+             VALUES (?, ?, ?, ?, ?, ?, POINT(?,?))",
             array(
                 array("i", $room->id),
                 array("s", $room->name),
@@ -26,6 +27,8 @@ class StudyRoomService {
                 array("s", $room->address),
                 array("i", $room->seats),
                 array("i", $room->reservation_required),
+                array("d", $room->latitude),
+                array("d", $room->longitude),
             )
         );
         return StudyRoomServiceError::OK;
@@ -33,7 +36,8 @@ class StudyRoomService {
 
     public function get_all_studyrooms(): array {
         $res = $this->db->query(
-            "SELECT * FROM {$this->table_name}"
+            "SELECT *, ST_X(position) as lat, ST_Y(position) as lon
+             FROM {$this->table_name}"
         );
         
         $ret = array();
@@ -47,12 +51,14 @@ class StudyRoomService {
 
     private static function parse_studyroom(array $row) : StudyRoomDTO {
         $room = new StudyRoomDTO();
-        $room->id = $row["id_corso"];
+        $room->id = $row["id_aula"];
         $room->name = $row["name"];
         $room->description = $row["description"];
         $room->address = $row["address"];
         $room->seats = $row["seats"];
         $room->reservation_required = $row["reservation_required"];
+        $room->latitude = $row["lat"];
+        $room->longitude = $row["lon"];
         return $room;
     }
 }

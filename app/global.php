@@ -44,41 +44,20 @@ function build_header(): string {
     return $header_template->build();
 }
 
+/*
+$jappe = new StudyRoomDTO();
+$jappe->name = "Pollaio/Acquario";
+$jappe->description = "Aula studio gestita dagli studenti. Si trova all'interno del Paolotti. Divisa in due zona, Pollaio e Acquario, in quest'ultima è possibile creare dei piccoli gruppi e parlare (rispettando gli altri presenti). Dotata di prese di corrente e copertura WiFi (eduroam), con aria condizionata e alcune lavagne in Acquario.";
+$jappe->address = "Edificio Paolotti, Via Belzoni 7";
+$jappe->seats = 100;
+$jappe->reservation_required = true;
+$jappe->latitude = 45.40850924340277;
+$jappe->longitude = 11.886588142174805;
 
+$db->persist();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+$studyroom_service->replace($jappe);
+*/
 
 //var_dump($course_service->get_all_courses());
 /*$user = new UserDTO();
