@@ -38,7 +38,7 @@ function build_header(): string {
                                   ->build();
     }
     
-    $header_template->insert("USERLOGIN_ACTION", $action);
+    $header_template->insert("userlogin_action", $action);
     return $header_template->build();
 }
 

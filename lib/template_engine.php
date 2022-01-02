@@ -22,8 +22,8 @@ class TemplateEngine {
 
 class Template {
 
-    static string $PATT_BEGIN = "%_";
-    static string $PATT_END = "_%";
+    static string $PATT_BEGIN = "<component ";
+    static string $PATT_END = "/>";
 
     private string $template_name;
     private string $state;
