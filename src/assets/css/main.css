@@ -302,6 +302,10 @@ nav ul li a.active {
     background-color: var(--primary-alt);
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
+    padding-top: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: var(--primary-c);
 }
 
 .faq-content {
@@ -315,13 +319,6 @@ nav ul li a.active {
  
 .faq-content p {
     margin: 5px 5px;
-}
-
-.faq-title h2 {
-    padding-top: 10px;
-    text-align: center;
-    font-weight: bold;
-    color: var(--primary-c);
 }
 
 @media screen and (max-width:1024px) {
