@@ -10,14 +10,14 @@
 
 <body>
     
-    <header>
-        <h1 class="logo">Uni-help <abbr title="at" lang="en">@</abbr>
+    <header class="flex-container">
+        <h1 class="logo">Uni-help <abbr title="at" xml:lang="en">@</abbr>
             <abbr title="Università degli studi di Padova">UniPD
             </abbr>
         </h1>
         
         <nav>
-            <ul>
+            <ul class="flex-container">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="">Recensioni corsi</a></li>
                 <li><a class="active">Aule studio</a></li>
@@ -27,20 +27,20 @@
         </nav>
     </header>
     
-    <div class="article">
+    <section id="aula">
         <h2>Lab Wifi</h2>
 
         <!--Questo paragrafo va ovviamente calcolato-->
         <div class="status">
             <p>4.86 - 140 Recensioni</p>
             <div>
-                <span class="closed"></span>
+                <span class="red-dot"></span>
                 <p>Stato: aperta</p>
             </div>
             
         </div>
         
-        <div class="photo_holder">
+        <div class="photo-gallery">
             <img src="assets/img/jappelli.jpg" alt="">
             <img src="assets/img/asta.jpg" alt="">
             <img src="assets/img/jappelli.jpg" alt="">
@@ -65,7 +65,7 @@
         </div>
 
         %_RECENSIONI_%
-    </div>
+    </section>
 
 </body>
 
