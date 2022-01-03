@@ -9,23 +9,8 @@
 </head>
 
 <body>
-    
-    <header class="flex-container">
-        <h1 class="logo">Uni-help <abbr title="at" xml:lang="en">@</abbr>
-            <abbr title="Università degli studi di Padova">UniPD
-            </abbr>
-        </h1>
-        
-        <nav>
-            <ul class="flex-container">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="">Recensioni corsi</a></li>
-                <li><a class="active">Aule studio</a></li>
-                <li><a href=""><abbr lang="en" title="Frequently Asked Question">F.A.Q.</abbr></a></li>
-                %_USERLOGIN_ACTION_%
-            </ul>
-        </nav>
-    </header>
+
+    <component>header</component>
     
     <section id="aula">
         <h2>Lab Wifi</h2>
@@ -59,12 +44,11 @@
 
         <div class="article_body">
             <p>Conosciuta anche <em>Lab Wifi</em>, situata all'interno del Lab104 del <abbr title="Dipartimento di Fisica e Astronomia">DFA</abbr>. Al piano terra entrando da Via Belzoni, al secondo entrando da Via Paolotti. Dotata di <span lang="en">WiFi (eduroam)</span> e prese di corrente.</p>
-
-            
+                        
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d556.5807703149047!2d11.887443426040228!3d45.4078870357534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477eda58145a58ef%3A0x439dcc854ca53f73!2sUniversit%C3%A0%20degli%20Studi%20di%20Padova%20-%20Sede%20Paolotti!5e0!3m2!1sit!2sit!4v1640877143714!5m2!1sit!2sit" loading="lazy"></iframe>
         </div>
 
-        %_RECENSIONI_%
+        <component>recensioni</component>>
     </section>
 
 </body>
