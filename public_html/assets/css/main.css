@@ -48,7 +48,6 @@ body {
 }
 
     /*Link*/
-
 a{
     text-decoration: none;
     font-weight: 400;
@@ -70,7 +69,6 @@ abbr{
 .flex-container {
     width: 100%;
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
     flex-flow: wrap;
     align-content: center;
@@ -94,10 +92,12 @@ li.primary-box {
     list-style-type: none;
 }
 
+/*Credo sia da togliere*/
 li.primary-box img {
     height: 75%;
     width: 80%;
 }
+/*-------*/
 
 /*Header*/
 header {
