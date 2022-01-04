@@ -46,7 +46,7 @@ function build_header(): string {
         $id = "action{$i}";
         $element = "";
         if ($i === $page_index) {
-            $element = "<li class=\"active\">{$action[1]}</li>";
+            $element = "<li> <a class=\"active\">{$action[1]}</a></li>";
         } else {
             $element = "<li><a href=\"{$action[0]}\">{$action[1]}</a></li>";
         }
