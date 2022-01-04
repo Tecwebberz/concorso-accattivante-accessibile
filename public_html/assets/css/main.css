@@ -436,6 +436,20 @@ footer .flex-container{
     color: #222222;
 }
 
+/* Form */
+form > ul {
+    list-style-type: none;
+    display: grid;
+    grid-gap : 20px;
+    grid-template-columns : repeat(2, 1fr);
+    /* grid-template-rows    : repeat(3, 1fr); */
+    justify-content: center;
+}
+
+form > ul > li > input {
+    border-radius: 5px;
+}
+
 @media screen and (max-width:1200px) {
     section{
         margin-left: 10px;
@@ -446,6 +460,10 @@ footer .flex-container{
 @media screen and (max-width:1024px) {
     .primary-box{
         width: 40%;
+    }
+    
+    form > ul {
+        grid-template-columns: repeat(1, auto);
     }
 }
 

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="it">
+<head>
+    <link rel="stylesheet" href="../public_html/assets/css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="getYear.js" defer></script>
+    <title>Uni-Help - Login</title>
+</head>
+
+<body>
+    <header class="flex-container">
+        <h1 class="logo">Uni-help <abbr title="at" lang="en">@</abbr>
+            <abbr title="Università degli studi di Padova">UniPD
+            </abbr>
+        </h1>
+        
+        <nav>
+            <ul class="flex-container">
+                <li><a class="active">Home</a></li>
+                <li><a href="recensioni.html">Recensioni corsi</a></li>
+                <li><a href="aule.html">Aule studio</a></li>
+                <li><a href="faq.html"><abbr lang="en" title="Frequently Asked Question">F.A.Q.</abbr></a></li>
+                %_USERLOGIN_ACTION_%
+            </ul>
+        </nav>
+    </header>
+
+<section>
+    <h2 class="mini_title"><span lang="en">Login</span></h2>
+    <form name="registerform" id="registerform" action="" method="post">
+        <ul>
+            <li>
+                <label for="username"><span lang="en">Username</span>:</label>
+                <input type="text" id="username" name="username" size="25" maxlength="50">
+            </li>
+            <li>
+                <label for="password"><span lang="en">Password</span>:</label>
+                <input type="password" id="password" name="password" size="25" maxlength="50">
+            </li>
+            <li>
+                <input class="btn btn-primary" type="button" onclick="login()" value="Login!">
+            </li>
+            <li>
+                <a href="registrati.html">Non hai un <span lang="en">account</span>?</a>
+            </li>
+        </ul>
+    </form>
+</section>
+
+</html>
