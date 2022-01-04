@@ -425,6 +425,7 @@ footer .flex-container{
     margin-bottom: 1em;
     padding-bottom: 5px;
 }
+
 .mini_title > ul{
     font-size: 0.8em;
     display: flex;
@@ -436,7 +437,7 @@ footer .flex-container{
     color: #222222;
 }
 
-/* Form */
+/*Form*/
 form > ul {
     list-style-type: none;
     display: grid;
