@@ -59,10 +59,9 @@ class Template {
         $patt_begin = self::PATT_BEGIN;
         $patt_end = self::PATT_END;
 
+        $patt = "~{$patt_begin}([a-zA-Z0-9_-]+){$patt_end}~";
         $matches = array();
-        $patt = "#{$patt_begin}([a-zA-Z0-9]+){$patt_end}#";
         preg_match_all($patt, $this->state, $matches);
-
         if (!empty($matches[1])) {
             $non_replaced = implode(", ", $matches[1]);
             throw new Exception("Cannot build template

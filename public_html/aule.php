@@ -1,6 +1,7 @@
 <?php
 
 $root = ".";
+$page_index = 2;
 require_once($root . "/app/global.php");
 
 $rooms = $studyroom_service->get_all_studyrooms();
