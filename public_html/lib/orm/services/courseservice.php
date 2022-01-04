@@ -45,7 +45,7 @@ class CourseService {
         
         $ret = array();
         while ($row = $res->fetch_assoc()) {
-            $ret[] = self::parse_course($row);
+            $ret[] = parse_course($row);
         }
 
         $res->close();
@@ -59,22 +59,13 @@ class CourseService {
         
         $ret = array();
         while ($row = $res->fetch_assoc()) {
-            $ret[] = self::parse_course($row);
+            $ret[] = parse_course($row);
         }
 
         $res->close();
         return $ret;
     }
 
-    private static function parse_course(array $row) : CourseDTO {
-        $course = new CourseDTO();
-        $course->id = $row["id_corso"];
-        $course->name = $row["nome"];
-        $course->emal_prof = $row["email_responsabile"];
-        $course->active = $row["attivo"];
-        $course->activation_year = $row["anno_attivazione"];
-        return $course;
-    }
 }
 
 ?>

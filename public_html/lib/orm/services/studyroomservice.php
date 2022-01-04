@@ -1,7 +1,8 @@
 <?php
 
 abstract class StudyRoomServiceError {
-    const OK = 1;
+    const OK   = 1;
+    const FAIL = 2;
 }
 
 class StudyRoomService {
@@ -18,8 +19,8 @@ class StudyRoomService {
             "REPLACE INTO {$this->table_name}
                 (id_aula, name, description,
                  address, seats, reservation_required,
-                 position)
-             VALUES (?, ?, ?, ?, ?, ?, POINT(?,?))",
+                 position, haswifi, shordesc, mainimage)
+             VALUES (?, ?, ?, ?, ?, ?, POINT(?,?), ?, ?, ?)",
             array(
                 array("i", $room->id),
                 array("s", $room->name),
@@ -29,6 +30,9 @@ class StudyRoomService {
                 array("i", $room->reservation_required),
                 array("d", $room->latitude),
                 array("d", $room->longitude),
+                array("b", $room->wifi),
+                array("s", $room->short_description),
+                array("i", $room->main_image->id),
             )
         );
         return StudyRoomServiceError::OK;
@@ -37,30 +41,38 @@ class StudyRoomService {
     public function get_all_studyrooms(): array {
         $res = $this->db->query(
             "SELECT *, ST_X(position) as lat, ST_Y(position) as lon
-             FROM {$this->table_name}"
+             FROM {$this->table_name}
+                LEFT JOIN image as MM ON mainimage = MM.id"
         );
         
         $ret = array();
         while ($row = $res->fetch_assoc()) {
-            $ret[] = self::parse_studyroom($row);
+            $ret[] = parse_studyroom($row);
         }
 
         $res->close();
         return $ret;
     }
 
-    private static function parse_studyroom(array $row) : StudyRoomDTO {
-        $room = new StudyRoomDTO();
-        $room->id = $row["id_aula"];
-        $room->name = $row["name"];
-        $room->description = $row["description"];
-        $room->address = $row["address"];
-        $room->seats = $row["seats"];
-        $room->reservation_required = $row["reservation_required"];
-        $room->latitude = $row["lat"];
-        $room->longitude = $row["lon"];
+    public function get_room_by_id(int $id) {
+        $res = $this->db->query(
+            "SELECT *, ST_X(position) as lat, ST_Y(position) as lon
+             FROM {$this->table_name}
+                LEFT JOIN image as MM ON mainimage = MM.id
+             WHERE id_aula = {$id}"
+        );
+
+        if (!$res || $res->num_rows !== 1) {
+            return StudyRoomServiceError::FAIL;
+        }
+
+        $data = $res->fetch_assoc();
+        $room = parse_studyroom($data);
+
+        $res->close();
         return $room;
     }
+
 }
 
 ?>

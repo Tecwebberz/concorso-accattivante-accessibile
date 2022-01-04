@@ -9,6 +9,7 @@ require_once($root . "/lib/orm/services/studyroomservice.php");
 require_once($root . "/lib/orm/data/userdto.php");
 require_once($root . "/lib/orm/data/coursedto.php");
 require_once($root . "/lib/orm/data/studyroomdto.php");
+require_once($root . "/lib/orm/data/imagedto.php");
 require_once($root . "/lib/template_engine.php");
 
 $db = new DatabaseLayer(
@@ -33,6 +34,20 @@ $actions = array(
     array("faq.php", "<abbr lang=\"en\"
             title=\"Frequently Asked Question\">F.A.Q.</abbr>"),
 );
+
+function build_image(ImageDTO $img): string {
+    global $root;
+    global $template_engine;
+
+    $img_template =
+        $template_engine->load_template("image.template.html");
+    
+    $img_template->insert_all(array(
+        "src" => "{$root}/assets/img/{$img->path}",
+        "alt" => $img->alt
+    ));
+    return $img_template->build();
+}
 
 function build_header(): string {
     global $template_engine;

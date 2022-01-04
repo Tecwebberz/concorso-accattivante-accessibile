@@ -4,8 +4,7 @@
 <head>
     <link rel="stylesheet" href="assets/css/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="../src/assets/script/sort_aule.js"></script>  
-    <title>Aula studio - UniHelp</title>
+    <title><component>name_tit</component> - UniHelp</title>
 </head>
 
 <body>
@@ -13,20 +12,19 @@
     <component>header</component>
     
     <section id="aula">
-        <h2>Lab Wifi</h2>
+        <h2><component>name</component></h2>
 
         <!--Questo paragrafo va ovviamente calcolato-->
         <div class="status">
-            <p>4.86 - 140 Recensioni</p>
+            <p>4.86 su 5 - 140 Recensioni</p>
             <div>
                 <span class="red-dot"></span>
                 <p>Stato: aperta</p>
             </div>
-            
         </div>
         
         <div class="photo-gallery">
-            <img src="assets/img/jappelli.jpg" alt="">
+            <component>main_image</component>
             <img src="assets/img/asta.jpg" alt="">
             <img src="assets/img/jappelli.jpg" alt="">
             <img src="assets/img/asta.jpg" alt="">
@@ -34,18 +32,16 @@
         </div>
 
         <div class="mini_title">
-            <h3>Aula studio parlabile del Paolotti</h3>
+            <h3><component>short_desc</component></h3>
             <ul>
-                <li>40 posti disponibili</li>
-                <li>wi-fi</li>
-                <li>registrazione richiesta</li>
+                <li><component>seats</component> posti disponibili</li>
+                <li><component>wifi</component></li>
+                <li><component>registration</component></li>
             </ul>
         </div>
 
         <div class="article_body">
-            <p>Conosciuta anche <em>Lab Wifi</em>, situata all'interno del Lab104 del <abbr title="Dipartimento di Fisica e Astronomia">DFA</abbr>. Al piano terra entrando da Via Belzoni, al secondo entrando da Via Paolotti. Dotata di <span lang="en">WiFi (eduroam)</span> e prese di corrente.</p>
-                        
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d556.5807703149047!2d11.887443426040228!3d45.4078870357534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477eda58145a58ef%3A0x439dcc854ca53f73!2sUniversit%C3%A0%20degli%20Studi%20di%20Padova%20-%20Sede%20Paolotti!5e0!3m2!1sit!2sit!4v1640877143714!5m2!1sit!2sit" loading="lazy"></iframe>
+            <component>description</component>
         </div>
 
         <component>recensioni</component>>

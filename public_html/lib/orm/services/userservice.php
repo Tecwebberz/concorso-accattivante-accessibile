@@ -61,13 +61,7 @@ class UserService {
             return UserServiceError::AUTH_FAILED;
         }
         $data = $res->fetch_assoc();
-
-        $user = new UserDTO();
-        $user->username = $data["username"];
-        $user->name = $data["nome"];
-        $user->surname = $data["cognome"];
-        $user->year_of_registration = $data["anno_iscrizione"];
-
+        $user = parse_user($data);
         $res->close();
         return $user;
     }
