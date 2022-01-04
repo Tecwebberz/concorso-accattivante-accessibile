@@ -172,7 +172,7 @@ header {
 .photo-gallery{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(1);
+    /*grid-template-rows: repeat(1);*/
     grid-gap: 1px; 
     width: 100%;
     margin: 20px auto;
@@ -255,7 +255,7 @@ nav ul li a.active {
 section{
     max-width: 1200px;
     background-color: var(--primary-bg);
-    margin: 15px auto;
+    margin: 15px auto 0 auto;
     padding: 15px;
     border-radius: 4px 4px 0px 0px;
 }
@@ -420,32 +420,6 @@ footer .flex-container{
     display: inline-block;
 }
 
-.photo_holder{
-    width: 100%;
-    margin: 20px auto;
-    border-radius: 15px;
-    overflow: hidden;
-    height: auto;
-
-    display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-    /* grid-template-rows: repeat(1); Non valido */
-    grid-gap: 1px; 
-
-}
-.photo_holder>img:first-child{
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 3;
-}
-.photo_holder>img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block; 
-}
 
 .mini_title{
     border-bottom: solid #d6d6d6 0.5px;
