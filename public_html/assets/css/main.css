@@ -9,10 +9,10 @@
         /*main*/
     --primary-bg: white;
     --primary-text: black;
-    --primary-link: #424242;
-    --primary-hover: #757575;
-    --primary-active: #757575;
-    --primary-visited: #ffa2a2;
+    --primary-link: #B80018;
+    --primary-hover: #F3654D;
+    --primary-active: #F3654D;
+    --primary-visited: #e67946;
 
         /*accent*/
     --primary-accent-bg: #9b0014;
@@ -64,7 +64,71 @@ abbr{
     font-weight: inherit;
 }
 
+span{
+    font-weight: inherit;
+}
+
+dt{
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+
+    border-bottom: solid #d6d6d6 0.5px;
+
+    text-align: left;
+    font-weight: bold;   
+    font-size: 20px; 
+}
+dl li{
+    list-style: circle;
+}
+
+dd {
+    padding: 15px;
+    padding-right: 0px;
+}
+dd p{
+    margin: 1em 0px;
+}
+dd dt{
+    font-size: 16px;
+    border: solid black 0.1em;
+    border-bottom: solid #d6d6d6 0.5px ;
+    border-radius: 5px 5px 0 0;
+    padding: 15px;
+}
+dd dd{
+    border: solid black 0.1em;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    margin-bottom: 5px;
+}
+dd ul{
+    padding: 0em 2em;
+}
+
 /*Reusables*/
+
+    /*Buttons*/
+.btn{
+    display: block;
+    width: fit-content;
+    padding: 5px 7px;
+    border-radius: 3px;
+}
+
+.btn-primary{
+    background-color: var(--primary-link);
+    color: var(--primary-accent-text);
+}
+.btn-primary:hover{
+    background-color: var(--primary-hover);
+}
+
+a.btn-primary{
+    background-color: var(--primary-accent-bg);
+    color: var(--primary-accent-text);
+}
+
     /*Flex components*/
 .flex-container {
     width: 100%;
@@ -193,7 +257,7 @@ section{
     background-color: var(--primary-bg);
     margin: 15px auto;
     padding: 15px;
-    border-radius: 4px;
+    border-radius: 4px 4px 0px 0px;
 }
 
 .status{
@@ -384,7 +448,7 @@ footer .flex-container{
 }
 
 .mini_title{
-    border-bottom: solid rgb(214, 214, 214) 0.5px;
+    border-bottom: solid #d6d6d6 0.5px;
     margin-bottom: 1em;
     padding-bottom: 5px;
 }
@@ -397,48 +461,6 @@ footer .flex-container{
 .mini_title >ul >li{
     margin: 0 1em;
     color: #222222;
-}
-
-
-/* FAQ */
-.faq-container {
-    width: 90%;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 5px auto;
-    justify-content: center;
-}
-
-.faq-title {
-    flex: 20%;
-    margin-top: 20px;
-    background-color: var(--primary-alt);
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    padding-top: 10px;
-    text-align: center;
-    font-weight: bold;
-    color: var(--primary-c);
-}
-
-.faq-content {
-    flex: 80%;
-    margin-top: 20px;
-    background-color: var(--primary-c);
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-
-}
- 
-.faq-content p {
-    margin: 5px 5px;
-}
-
-.faq-title h2 {
-    padding-top: 10px;
-    text-align: center;
-    font-weight: bold;
-    color: var(--primary-c);
 }
 
 @media screen and (max-width:1200px) {
@@ -482,23 +504,6 @@ footer .flex-container{
      }
     .article > .article_body> iframe{
         width: 90%;
-    }
-    
-    .faq-title {
-        flex: 100%;
-        margin-top: 5px;
-        text-align: center;
-        border-top-right-radius: 5px;
-        border-bottom-left-radius: 0px;
-    }
-
-    .faq-content {
-        flex: 100%;
-        margin-top: 0px;
-        margin-bottom: 5px;
-        text-align: center;
-        border-top-right-radius: 0px;
-        border-bottom-left-radius: 5px;
     }
 
     .photo-gallery{
