@@ -112,8 +112,10 @@ dd ul{
 .btn{
     display: block;
     width: fit-content;
-    padding: 5px 7px;
+    padding: 7px 15px;
     border-radius: 3px;
+    margin: 4px 2px;
+    cursor: pointer;
 }
 
 .btn-primary{
@@ -128,6 +130,11 @@ a.btn-primary{
     background-color: var(--primary-accent-bg);
     color: var(--primary-accent-text);
 }
+
+input[type=button], input[type=submit], input[type=reset] {
+    border: none;
+    text-decoration: none;
+  }
 
     /*Flex components*/
 .flex-container {
@@ -420,36 +427,46 @@ footer .flex-container{
     display: inline-block;
 }
 
-.mini_title{
+/*Form*/
+
+form{
+    background-color: var(--primary-bg);
+    padding: 10px;
+    border-radius: 5px;
+    margin: auto;
+}
+
+form.small{
+    max-width: 300px;
+}
+
+form h2{
     border-bottom: solid #d6d6d6 0.5px;
     margin-bottom: 1em;
     padding-bottom: 5px;
+    text-align: left;
 }
 
-.mini_title > ul{
-    font-size: 0.8em;
-    display: flex;
-    justify-content:start;
+input,select{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
-.mini_title >ul >li{
-    margin: 0 1em;
-    color: #222222;
-}
+input[type=submit] {
+    width: 100%;
+    padding: 14px 20px;
+    margin: 8px 0;
+    font-size: 17px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
 
-/*Form*/
-form > ul {
-    list-style-type: none;
-    display: grid;
-    grid-gap : 20px;
-    grid-template-columns : repeat(2, 1fr);
-    /* grid-template-rows    : repeat(3, 1fr); */
-    justify-content: center;
-}
-
-form > ul > li > input {
-    border-radius: 5px;
-}
 
 @media screen and (max-width:1200px) {
     section{

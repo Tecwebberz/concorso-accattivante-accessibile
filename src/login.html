@@ -26,26 +26,19 @@
         </nav>
     </header>
 
-<section>
-    <h2 class="mini_title"><span lang="en">Login</span></h2>
-    <form name="registerform" id="registerform" action="" method="post">
-        <ul>
-            <li>
-                <label for="username"><span lang="en">Username</span>:</label>
-                <input type="text" id="username" name="username" size="25" maxlength="50">
-            </li>
-            <li>
-                <label for="password"><span lang="en">Password</span>:</label>
-                <input type="password" id="password" name="password" size="25" maxlength="50">
-            </li>
-            <li>
-                <input class="btn btn-primary" type="button" onclick="login()" value="Login!">
-            </li>
-            <li>
-                <a href="registrati.html">Non hai un <span lang="en">account</span>?</a>
-            </li>
-        </ul>
-    </form>
-</section>
+    <div class="flex-container">
 
+        <form class="small" name="login" id="login-form" action="" method="post">
+            <h2><span lang="en">Login</span></h2>
+            <label for="username" lang="en">Username</label>
+            <input type="text" id="inputEmail" name="username"placeholder="Username" required="true">
+            
+            <label for="password" lang="en">Password</label>
+            <input type="password" id="inputPassword" name="password" placeholder="Password" maxlength="50">
+            
+            <input class="btn btn-primary" type="submit" onclick="login()" value="Login!">
+            <a href="registrati.html">Non hai un <span lang="en">account</span>?</a>
+        </form>
+    </div>
+</body>
 </html>
