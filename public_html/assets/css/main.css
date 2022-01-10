@@ -490,6 +490,12 @@ input[type=submit] {
         margin-left: 10px;
         margin-right: 10px;
     }
+
+    form.solid{
+        position: static;
+        top: 0;
+        transform: translateY(0);
+    }
 }
 
 @media screen and (max-width:1024px) {
