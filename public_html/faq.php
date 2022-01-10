@@ -1,6 +1,6 @@
 <?php
 $root = ".";
-$page_index = 4;
+$page_index = 3;
 require_once($root . "/app/global.php");
 
 $faq_template = $template_engine->load_template("faq.template.html");
