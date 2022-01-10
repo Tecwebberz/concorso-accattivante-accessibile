@@ -53,6 +53,14 @@ function safe_input(string $in): string {
     return $in;
 }
 
+function make_error(string $message): string {
+    global $template_engine;
+    $error_template =
+        $template_engine->load_template("error.template.html");
+    $error_template->insert("error", $message);
+    return $error_template->build();
+}
+
 function build_header(): string {
     global $template_engine;
     global $page_index;

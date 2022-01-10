@@ -10,14 +10,13 @@
 
     <component>header</component>
     <div class="flex-container">
-        <form class="small solid" name="login" id="login-form" action="login_engine.php" method="post">
+        <form class="small solid" name="login" id="login-form" action="app/login_engine.php" method="post">
             <h2><span lang="en">Login</span></h2>
             <label for="username" lang="en">Username</label>
-            <input type="text" id="inputEmail" name="username"placeholder="Username" required="true">
-            
+            <input type="text" id="inputEmail" name="username" placeholder="Inserisci l'username" required>
             <label for="password" lang="en">Password</label>
-            <input type="password" id="inputPassword" name="password" placeholder="Password" maxlength="50">
-            
+            <input type="password" id="inputPassword" name="password" placeholder="Inserisci la password" required>
+            <component>maybe_error</component> 
             <input class="btn btn-primary" type="submit" onclick="login()" value="Login!">
             <a href="registrati.html">Non hai un <span lang="en">account</span>?</a>
         </form>
