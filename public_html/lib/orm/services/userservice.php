@@ -15,7 +15,7 @@ class UserService {
                                 callable $hash_function) {
         $this->db = $db;
         $this->hash_function = $hash_function;
-        $this->table_name = "Utente";
+        $this->table_name = "User";
     }
 
     public function register(UserDTO $user, string $password): int {
