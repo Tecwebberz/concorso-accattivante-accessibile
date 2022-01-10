@@ -510,6 +510,9 @@ section.corsi > ol > li > ul {
         margin-right: 10px;
     }
 
+}
+
+@media screen and (max-height:600px){
     form.solid{
         position: static;
         top: 0;
