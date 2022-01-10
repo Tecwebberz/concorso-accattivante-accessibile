@@ -24,7 +24,7 @@
 
 
     /*alternative palette*/
-    --alt-bg: #454953;
+    --alt-bg: #bdbdbd;
 
     --primary-alt: #60000C;
     --primary-c: #ffffff; 
@@ -429,11 +429,18 @@ footer .flex-container{
 
 /*Form*/
 
-form{
-    background-color: var(--primary-bg);
+form{ 
     padding: 10px;
     border-radius: 5px;
     margin: auto;
+}
+
+form.solid{
+    background-color: var(--primary-bg);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 30px;
 }
 
 form.small{
