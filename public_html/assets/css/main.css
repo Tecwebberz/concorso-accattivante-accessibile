@@ -482,7 +482,9 @@ input[type=submit] {
     }
 
     form.solid{
-        position: relative;
+        position: static;
+        top: 0;
+        transform: translateY(0);
     }
 }
 
