@@ -474,17 +474,21 @@ input[type=submit] {
     cursor: pointer;
   }
 
+  form > .login-error {
+    margin-top: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    color: red;
+    border: solid #fcbdbd;
+    border-radius: 4px;
+    background-color: #fcbdbd;
+}
 
 @media screen and (max-width:1200px) {
     section{
         margin-left: 10px;
         margin-right: 10px;
-    }
-
-    form.solid{
-        position: static;
-        top: 0;
-        transform: translateY(0);
     }
 }
 
