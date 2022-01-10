@@ -13,6 +13,8 @@
     --primary-hover: #F3654D;
     --primary-active: #F3654D;
     --primary-visited: #e67946;
+    --primary-error-bg: #F8D7DA;
+    --primary-error-text: #8E4349;
 
         /*accent*/
     --primary-accent-bg: #9b0014;
@@ -21,11 +23,11 @@
     --primary-accent-hover: white;
     --primary-accent-active: white;
     --primary-accent-visited: #d1d1d1;
-
-
+    
+    
     /*alternative palette*/
     --alt-bg: #bdbdbd;
-
+    
     --primary-alt: #60000C;
     --primary-c: #ffffff; 
     
@@ -474,15 +476,15 @@ input[type=submit] {
     cursor: pointer;
   }
 
-  form > .login-error {
+form > .error {
     margin-top: 15px;
     padding-top: 5px;
     padding-bottom: 5px;
     text-align: center;
-    color: red;
-    border: solid #fcbdbd;
+    color: var(--primary-error-text);
+    border: solid var(--primary-error-bg);
     border-radius: 4px;
-    background-color: #fcbdbd;
+    background-color: var(--primary-error-bg);
 }
 
 /* Corsi */
