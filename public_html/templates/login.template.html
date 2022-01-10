@@ -1,13 +1,28 @@
-<div class="flex-container">
-    <form class="small solid" name="login" id="login-form" action="" method="post">
-        <h2><span lang="en">Login</span></h2>
-        <label for="username" lang="en">Username</label>
-        <input type="text" id="inputEmail" name="username"placeholder="Username" required="true">
-        
-        <label for="password" lang="en">Password</label>
-        <input type="password" id="inputPassword" name="password" placeholder="Password" maxlength="50">
-        
-        <input class="btn btn-primary" type="submit" onclick="login()" value="Login!">
-        <a href="registrati.html">Non hai un <span lang="en">account</span>?</a>
-    </form>
-</div>
+<!DOCTYPE html>
+
+<html lang="it">
+<head>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Uni-Help</title>
+</head>
+<body>
+
+    <component>header</component>
+    <div class="flex-container">
+        <form class="small solid" name="login" id="login-form" action="login_engine.php" method="post">
+            <h2><span lang="en">Login</span></h2>
+            <label for="username" lang="en">Username</label>
+            <input type="text" id="inputEmail" name="username"placeholder="Username" required="true">
+            
+            <label for="password" lang="en">Password</label>
+            <input type="password" id="inputPassword" name="password" placeholder="Password" maxlength="50">
+            
+            <input class="btn btn-primary" type="submit" onclick="login()" value="Login!">
+            <a href="registrati.html">Non hai un <span lang="en">account</span>?</a>
+        </form>
+    </div>
+
+</body>
+
+</html>
