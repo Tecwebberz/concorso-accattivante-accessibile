@@ -33,27 +33,27 @@
         <ul>
             <li>
                 <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" size="25" maxlength="50">
+                <input type="text" id="name" name="name" size="25" maxlength="50" pattern="[A-Za-z]" required>
             </li>
             <li>
                 <label for="surname">Cognome:</label>
-                <input type="text" id="surname" name="surname" size="25" maxlength="50">
+                <input type="text" id="surname" name="surname" size="25" maxlength="50" pattern="[A-Za-z]" required>
             </li>
             <li>
                 <label for="username"><span lang="en">Username</span>:</label>
-                <input type="text" id="username" name="username" size="25" maxlength="50">
+                <input type="text" id="username" name="username" size="25" maxlength="50" required>
             </li>
             <li>
                 <label for="year">Anno:</label>
-                <input type="number" id="year" name="year" min="2010" max="42">
+                <input type="number" id="year" name="year" min="2010" max="42" required>
             </li>
             <li>
                 <label for="password"><span lang="en">Password</span>:</label>
-                <input type="password" id="password" name="password" size="25" maxlength="50">
+                <input type="password" id="password" name="password" size="25" maxlength="50" required>
             </li>
             <li>
                 <label for="check_password">Conferma <span lang="en">password</span>:</label>
-                <input type="password" id="check_password" name="check_password" size="25" maxlength="50">
+                <input type="password" id="check_password" name="check_password" size="25" maxlength="50" required>
             </li>
             <li>
                 <input class="btn btn-primary" type="button" onclick="registrati()" value="Registrati!">

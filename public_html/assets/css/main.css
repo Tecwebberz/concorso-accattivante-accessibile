@@ -485,6 +485,25 @@ input[type=submit] {
     background-color: #fcbdbd;
 }
 
+/* Corsi */
+
+section.corsi > ol {
+    list-style-type: none;
+}
+
+section.corsi > ol > li > h3 {
+    border-bottom: solid #d6d6d6 0.5px;
+    margin-bottom: 5px;
+
+}
+
+section.corsi > ol > li > ul {
+    list-style-type: none;
+    padding-left: 10px;
+    margin-bottom: 5px;
+}
+
+
 @media screen and (max-width:1200px) {
     section{
         margin-left: 10px;
