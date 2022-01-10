@@ -10,14 +10,13 @@
 
     <component>header</component>
     <div class="flex-container">
-        <form class="small solid" name="login" id="login-form" action="login_engine.php" method="post">
+        <form class="small solid" name="login" id="login-form" action="app/login_engine.php" method="post">
             <h2><span lang="en">Login</span></h2>
             <label for="username" lang="en">Username</label>
-            <input type="text" id="inputEmail" name="username" maxlength="25" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,25}$" placeholder="Inserisci l'username" required>
-            
+            <input type="text" id="inputEmail" name="username" placeholder="Inserisci l'username" required>
             <label for="password" lang="en">Password</label>
-            <input type="password" id="inputPassword" name="password" minlength="8" maxlength="50" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Inserisci la password" required>
-            
+            <input type="password" id="inputPassword" name="password" placeholder="Inserisci la password" required>
+            <component>maybe_error</component> 
             <input class="btn btn-primary" type="submit" onclick="login()" value="Login!">
             <a href="registrati.html">Non hai un <span lang="en">account</span>?</a>
         </form>
