@@ -521,6 +521,10 @@ section.corsi > ol > li > ul {
         width: 90%;
     }
 
+    .cards{
+        width: 90%;
+    }
+
 }
 
 @media screen and (max-height:700px){
