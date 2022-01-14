@@ -9,6 +9,11 @@ abstract class UserServiceError {
     const OK                      = 0;
     const USERNAME_ALREADY_IN_USE = 1;
     const AUTH_FAILED             = 2;
+    const USERNAME_NOT_OK         = 3;
+    const NAME_NOT_OK             = 4;
+    const SURNAME_NOT_OK          = 5;
+    const YEAR_NOT_OK             = 6;
+    const PASSWORD_NOT_OK         = 7;
 }
 
 class UserService {
