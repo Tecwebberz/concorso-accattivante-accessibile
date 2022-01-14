@@ -42,7 +42,7 @@ class StudyRoomService {
         $res = $this->db->query(
             "SELECT *, ST_X(position) as lat, ST_Y(position) as lon
              FROM {$this->table_name}
-                LEFT JOIN image as MM ON mainimage = MM.id"
+                LEFT JOIN Image as MM ON mainimage = MM.id"
         );
         
         $ret = array();
@@ -58,7 +58,7 @@ class StudyRoomService {
         $res = $this->db->query(
             "SELECT *, ST_X(position) as lat, ST_Y(position) as lon
              FROM {$this->table_name}
-                LEFT JOIN image as MM ON mainimage = MM.id
+                LEFT JOIN Image as MM ON mainimage = MM.id
              WHERE id_aula = {$id}"
         );
 
