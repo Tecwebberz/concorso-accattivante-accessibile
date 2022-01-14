@@ -3,33 +3,19 @@
 
 <html lang="it">
 <head>
-    <link rel="stylesheet" href="../public_html/assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="/public_html/assets/script/get_current_year.js" defer></script>
-    <title>Uni-Help - Registrati</title>
+    <title>Registrati - Uni-Help</title>
 </head>
 
 <body>
-    <header class="flex-container">
-        <h1 class="logo">Uni-help <abbr title="at" lang="en">@</abbr>
-            <abbr title="Università degli studi di Padova">UniPD
-            </abbr>
-        </h1>
-        
-        <nav>
-            <ul class="flex-container">
-                <li><a class="active">Home</a></li>
-                <li><a href="recensioni.html">Recensioni corsi</a></li>
-                <li><a href="aule.html">Aule studio</a></li>
-                <li><a href="faq.html"><abbr lang="en" title="Frequently Asked Question">F.A.Q.</abbr></a></li>
-                %_USERLOGIN_ACTION_%
-            </ul>
-        </nav>
-    </header>
+
+<component>header</component>
 
 <section>
     <h2 class="mini_title">Registrati</h2>
-    <form name="registerform" id="registerform" action="" method="post">
+    <form name="registerform" id="registerform" action="app/register_engine.php" method="post">
         <ul>
             <li>
                 <label for="name">Nome:</label>
@@ -57,7 +43,7 @@
                 <input type="password" id="check_password" name="check_password" size="25" maxlength="50" minlength="8" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Ripeti la password inserita" required>
             </li>
             <li>
-                <input class="btn btn-primary" type="button" onclick="registrati()" value="Registrati!">
+                <input class="btn btn-primary" type="button" value="Registrati!">
             </li>
             <li>
                 <a href="login.html"> Hai già un <span lang="en">account</span>? </a>
