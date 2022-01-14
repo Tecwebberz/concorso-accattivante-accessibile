@@ -149,15 +149,15 @@ input[type=button], input[type=submit], input[type=reset] {
 
 .primary-box{
 
-    width: 33%;
+    width: 45%;
+    max-width: 800px;
     height: 25em;
 
-    /* padding: auto; Non valido */
+    padding: 30px;
     margin: 20px;
     border-radius: 20px;
     background-color: white;
     color: black;
-    max-width: 400px;
     text-align: center;
 }
 
@@ -165,12 +165,10 @@ li.primary-box {
     list-style-type: none;
 }
 
-/*Credo sia da togliere*/
 li.primary-box img {
     height: 75%;
-    width: 80%;
+    width: 75%;
 }
-/*-------*/
 
 /*Header*/
 header {
@@ -269,6 +267,11 @@ section{
     border-radius: 4px 4px 0px 0px;
 }
 
+section.centered{
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .status{
     font-size: 0.8em;
     display: flex;
@@ -303,22 +306,9 @@ section{
 }
 
 section > .article_body{
-    display: flex;
-    flex-flow: wrap;
     border-bottom: solid #d6d6d6 0.5px;
     padding-bottom: 1em;
     margin-bottom: 1em;
-}
-
-section > .article_body> p{
-    width: 50%;
-    margin: 10px auto;
-}
-section > .article_body> iframe{
-    width: 50%;
-    height: 20em;
-    border: none;
-    margin: 10px auto;
 }
 
 /*Footer*/
@@ -523,9 +513,6 @@ section.corsi > ol > li > ul {
 }
 
 @media screen and (max-width:1024px) {
-    .primary-box{
-        width: 40%;
-    }
     
     form > ul {
         grid-template-columns: repeat(1, auto);
@@ -534,7 +521,7 @@ section.corsi > ol > li > ul {
 
 @media screen and (max-width:600px) {
     .primary-box{
-        width: 90%;
+        width: 100%;
     }
 
     .logo {
