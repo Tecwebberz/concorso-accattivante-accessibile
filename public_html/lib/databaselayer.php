@@ -40,8 +40,12 @@ class DatabaseLayer {
 
     private function non_persist_close(): void {
         if (!$this->is_persisting) {
-            $this->maybe_connection->close();
+            $this->close();
         }
+    }
+
+    public function close(): void {
+        $this->maybe_connection->close();
     }
 
     public function persist(): void {

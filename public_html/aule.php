@@ -17,7 +17,7 @@ function build_card(StudyRoomDTO $room): string {
     );
     $room_template->insert_all(array(
         "name"        => $room->name,
-        "description" => $room->description,
+        "description" => $room->short_description,
         "lat"         => $room->latitude,
         "lon"         => $room->longitude,
         "seats"       => $room->seats,

@@ -8,10 +8,14 @@ abstract class StudyRoomServiceError {
 class StudyRoomService {
     private DatabaseLayer $db;
     private string $table_name;
+    private string $carousell;
+    private string $image;
 
     public function __construct(DatabaseLayer $db) {
         $this->db = $db;
         $this->table_name = "Study_room";
+        $this->carousel = "Carousel";
+        $this->image = "Image";
     }
 
     public function replace(StudyRoomDTO $room) {
@@ -42,9 +46,9 @@ class StudyRoomService {
         $res = $this->db->query(
             "SELECT *, ST_X(position) as lat, ST_Y(position) as lon
              FROM {$this->table_name}
-                LEFT JOIN Image as MM ON mainimage = MM.id"
+                LEFT JOIN {$this->image} as MM ON mainimage = MM.id"
         );
-        
+
         $ret = array();
         while ($row = $res->fetch_assoc()) {
             $ret[] = parse_studyroom($row);
@@ -71,6 +75,25 @@ class StudyRoomService {
 
         $res->close();
         return $room;
+    }
+
+    public function get_carousel(StudyRoomDTO $room): array {
+        $res = $this->db->query(
+            "SELECT *, ST_X(position) as lat, ST_Y(position) as lon
+             FROM {$this->table_name}
+                JOIN {$this->carousel} as C ON id_aula = C.bound_entity
+                JOIN {$this->image} as I ON I.id = C.image
+             WHERE id_aula = ?",
+            array(
+                array("i", $room->id)
+            )
+        );
+        $ret = array();
+        while ($row = $res->fetch_assoc()) {
+            $ret[] = parse_image($row);
+        }
+        $res->close();
+        return $ret;
     }
 
 }
