@@ -29,7 +29,7 @@ $template_engine = new TemplateEngine($root . "/templates");
 
 $actions = array(
     array("index.php", "Home"),
-    array("recensioni.php", "Recensioni corsi"),
+    array("corsi.php", "corsi"),
     array("aule.php", "Aule studio"),
     array("faq.php", "<abbr lang=\"en\"
             title=\"Frequently Asked Question\">F.A.Q.</abbr>"),
