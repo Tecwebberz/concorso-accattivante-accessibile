@@ -12,44 +12,48 @@
 <body>
 
 <component>header</component>
+<form class="medium articled solid" id="register-form" name="registerform" action="app/registration_engine.php" method="post">
+    <h2 class="">Registrati</h2>
+    <div class="row">
+        <div class="col">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" size="25" maxlength="50" pattern="[A-Za-z]{1,50}" placeholder="Inserisci il tuo nome" required>
+        </div>
+        <div class="col">
+            <label for="surname">Cognome</label>
+            <input type="text" id="surname" name="surname" size="25" maxlength="50" pattern="[A-Za-z]{1,50}" placeholder="Inserisci il tuo cognome" required>
+        </div>
+    </div>
 
-<section>
-    <h2 class="mini_title">Registrati</h2>
-    <form name="registerform" id="registerform" action="app/registration_engine.php" method="post">
-        <ul>
-            <li>
-                <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" size="25" maxlength="50" pattern="[A-Za-z]{1,50}" placeholder="Inserisci il tuo nome" required>
-            </li>
-            <li>
-                <label for="surname">Cognome:</label>
-                <input type="text" id="surname" name="surname" size="25" maxlength="50" pattern="[A-Za-z]{1,50}" placeholder="Inserisci il tuo cognome" required>
-            </li>
-            <li>
-                <label for="username"><span lang="en">Username</span>:</label>
-                <input type="text" id="username" name="username" size="25" maxlength="25" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,25}$" placeholder="Inserisci un nome utente" required>
-            </li>
-            <li>
-                <label for="year">Anno:</label>
-                <input type="number" id="year" name="year" min="2008" max="42" placeholder="42" required>
-            </li>
+    <div class="row">
+        <div class="col">
+            <label for="username"><span lang="en">Username</span></label>
+            <input type="text" id="username" name="username" size="25" maxlength="25" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,25}$" placeholder="Inserisci un nome utente" required>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col">
+
+            <label for="year">Anno</label>
+            <input type="number" id="year" name="year" min="2008" max="42" placeholder="42" required>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col">
             <!-- Uppercase, Lowercase, Number, SpecialChar, min 8 char -->
-            <li>
-                <label for="password"><span lang="en">Password</span>:</label>
-                <input type="password" id="password" name="password" size="25" maxlength="50" minlength="8" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Inserisci una password valida" required>
-            </li>
-            <li>
-                <label for="check_password">Conferma <span lang="en">password</span>:</label>
-                <input type="password" id="check_password" name="check_password" size="25" maxlength="50" minlength="8" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Ripeti la password inserita" required>
-            </li>
-            <li>
-                <input class="btn btn-primary" type="submit" value="Registrati!">
-            </li>
-            <li>
-                <a href="login.html"> Hai già un <span lang="en">account</span>? </a>
-            </li>
-        </ul>
-    </form>
-</section>
+            <label for="password"><span lang="en">Password</span></label>
+            <input type="password" id="password" name="password" size="25" maxlength="50" minlength="8" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Inserisci una password valida" required>
+        </div>
+        <div class="col">
+            <label for="check_password">Conferma <span lang="en">password</span>:</label>
+            <input type="password" id="check_password" name="check_password" size="25" maxlength="50" minlength="8" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Ripeti la password inserita" required>
+        </div>
+    </div>
+
+    <input class="btn btn-primary" type="submit" value="Registrati!">
+    <a href="login.html"> Hai già un <span lang="en">account</span>? </a>
+</form>
 
 </html>

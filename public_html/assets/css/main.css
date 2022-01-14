@@ -429,14 +429,29 @@ form{
 
 form.solid{
     background-color: var(--primary-bg);
+}
+
+form.floating{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     padding: 30px;
 }
 
+form.articled .row{
+    display: flex;
+    justify-content: space-between;
+}
+
+form.articled .col{
+    width: 48%;
+}
+
 form.small{
     max-width: 300px;
+}
+form.medium{
+    max-width: 1200px;
 }
 
 form h2{
@@ -502,10 +517,14 @@ section.corsi > ol > li > ul {
         margin-right: 10px;
     }
 
+    form.medium{
+        width: 90%;
+    }
+
 }
 
 @media screen and (max-height:700px){
-    form.solid{
+    form.floating{
         position: static;
         top: 0;
         transform: translateY(0);
@@ -540,6 +559,15 @@ section.corsi > ol > li > ul {
     }
     nav ul li a{
         text-align: left;
+    }
+
+    form.articled .row{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    form.articled .col{
+        width: 90%;
     }
 
     .article > .article_body> p{
