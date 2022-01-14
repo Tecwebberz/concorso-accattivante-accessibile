@@ -10,11 +10,15 @@ if (!isset($_GET["id"])) {
 require_once($root . "/app/global.php");
 
 $id = $_GET["id"];
+$db->persist();
 $room = $studyroom_service->get_room_by_id($id);
 if ($room === StudyRoomServiceError::FAIL) {
+    $db->close();
     echo "id del casso";
     die;
 }
+$carousel = $studyroom_service->get_carousel($room);
+$db->close();
 
 $room_template = $template_engine->load_template(
     "aula.template.html");
@@ -32,6 +36,13 @@ $room_template->insert_all(array(
     "short_desc"   => $room->short_description,
     "main_image"   => build_image($room->main_image),
 ));
+
+$carousel_content = "";
+foreach ($carousel as $img) {
+    $carousel_content .= build_image($img);
+}
+
+$room_template->insert("carousel", $carousel_content);
 
 $room_template->insert("recensioni", "crizzo");
 
