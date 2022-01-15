@@ -44,8 +44,13 @@ foreach ($carousel as $img) {
 
 $room_template->insert("carousel", $carousel_content);
 
-$room_template->insert("recensioni", "crizzo");
+
+//Alessio da sistemare
+$recensione = $template_engine->load_template(
+    "recensione.template.html");
+
+$room_template->insert("recensioni", $recensione->build().$recensione->build().$recensione->build().$recensione->build());
+
+//-----------
 
 echo $room_template->build();
-
-?>

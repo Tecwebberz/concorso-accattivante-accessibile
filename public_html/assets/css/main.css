@@ -510,6 +510,11 @@ section.corsi > ol > li > ul {
     margin-bottom: 5px;
 }
 
+.review{
+
+    border-bottom: solid #d6d6d6 0.5px;
+
+}
 
 @media screen and (max-width:1200px) {
     section{
