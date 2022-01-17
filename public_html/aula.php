@@ -2,8 +2,7 @@
 $root = ".";
 
 if (!isset($_GET["id"])) {
-    echo "id not set";
-    die;
+    header("Location: 404.php?error=aula");
 }
 
 require_once($root . "/app/global.php");
@@ -13,8 +12,7 @@ $db->persist();
 $room = $studyroom_service->get_room_by_id($id);
 if ($room === StudyRoomServiceError::FAIL) {
     $db->close();
-    echo "id del casso";
-    die;
+    header("Location: 404.php?error=aula");
 }
 $carousel = $studyroom_service->get_carousel($room);
 $db->close();

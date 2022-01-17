@@ -2,8 +2,7 @@
 $root = ".";
 
 if (!isset($_GET["id"])) {
-    echo "id not set";
-    die;
+    header("Location: 404.php?error=corso");
 }
 
 require_once($root . "/app/global.php");
@@ -11,8 +10,7 @@ require_once($root . "/app/global.php");
 $id = $_GET["id"];
 $course = $course_service->get_course_by_id($id);
 if ($course === CourseServiceError::FAIL) {
-    echo "id del casso";
-    die;
+    header("Location: 404.php?error=corso");
 }
 
 function pretty_language(string $lang): string {
