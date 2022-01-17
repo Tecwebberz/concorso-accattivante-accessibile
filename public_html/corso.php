@@ -35,7 +35,11 @@ function pretty_period(int $year, int $semester): string {
         }
     }
     function pretty_semester(int $semester): string {
-        return "{$semester}° semestre";
+        if ($semester >= 1 && $semester <= 2) {
+            return "{$semester}° semestre";
+        } else {
+            return "annuale";
+        }
     }
 
     return pretty_semester($semester) . " " . pretty_year($year);
