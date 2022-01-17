@@ -531,6 +531,26 @@ section.corsi > ol > li > ul {
 
 }
 
+.star-rating {
+    margin:0;padding:0;
+    white-space: nowrap;
+    display: inline-block;
+    overflow: hidden;
+}
+.star-rating input {
+    height: 90%;
+    width: 10%;
+}
+
+.star {
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-image: url(/public_html/assets/img/star_black.png);
+    height: 10px;
+    width: 10px;
+
+}
+
 /* 404 */
 
 .helper {
