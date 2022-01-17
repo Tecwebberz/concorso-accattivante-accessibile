@@ -43,9 +43,9 @@ function build_header(): string {
         $id = "action{$i}";
         $element = "";
         if ($i === $page_index) {
-            $element = "<li> <a class=\"active\">{$action[1]}</a></li>";
+            $element = make_list_item($action[1], "active");
         } else {
-            $element = "<li><a href=\"{$action[0]}\">{$action[1]}</a></li>";
+            $element = make_list_item(make_link($action[1], $action[0]));
         }
         $header_template->insert($id, $element);
     }
@@ -55,23 +55,23 @@ function build_header(): string {
         && $_SESSION["logged_user"] !== null) {
         // Area personale
         if ($actions_len + 0 === $page_index) {
-            $action .= "<li> <a class=\"active\">Esci</a></li>";
+            $action .= make_list_item("Esci", "active");
         } else {
-            $action .= "<li><a href=\"app/logout_engine.php\">Esci</a></li>";
+            $action .= make_list_item(make_link("Esci", "app/logout_engine.php"));
         }
     } else {
         // Accedi action
         if ($actions_len + 0 === $page_index) {
-            $action .= "<li> <a class=\"active\">Accedi</a></li>";
+            $action .= make_list_item("Accedi", "active");
         } else {
-            $action .= "<li><a href=\"accedi.php\">Accedi</a></li>";
+            $action .= make_list_item(make_link("Accedi", "accedi.php"));
         }
 
         // Accedi action
         if ($actions_len + 1 === $page_index) {
-            $action .= "<li> <a class=\"active\">Registrati</a></li>";
+            $action .= make_list_item("Registrati", "active");
         } else {
-            $action .= "<li><a href=\"registrati.php\">Registrati</a></li>";
+            $action .= make_list_item(make_link("Registrati", "registrati.php"));
         }
     }
     
@@ -79,5 +79,16 @@ function build_header(): string {
     return $header_template->build();
 }
 
+function make_list_item(string $content, ?string $class = null): string {
+    $open = "<li>";
+    if ($class !== null) {
+        $open = "<li class={$class}>";
+    }
+    return "{$open}{$content}</li>";
+}
+
+function make_link(string $content, string $ref): string {
+    return "<a href='{$ref}'>{$content}</a>";
+}
 
 ?>

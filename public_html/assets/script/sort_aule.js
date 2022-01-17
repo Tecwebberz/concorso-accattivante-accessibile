@@ -1,7 +1,3 @@
-//
-// POSIZIONE
-//
-
 const deg2rad = (deg) => deg * Math.PI / 180;
 const computeDistance = (pos1, pos2) => {
     const earthRadiusKm = 6371;

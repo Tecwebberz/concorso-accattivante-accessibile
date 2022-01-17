@@ -21,7 +21,7 @@ $db = new DatabaseLayer(
     "aferrari"
 );
 
-$user_service = new UserService($db, function(string $in) {
+$user_service = new UserService($db, function(string $in): string {
     return hash("sha256", $in);
 });
 $course_service = new CourseService($db);
@@ -31,7 +31,7 @@ $template_engine = new TemplateEngine($root . "/templates");
 
 
 function safe_input(string $in): string {
-    return $in;
+    return trim(htmlentities(strip_tags($in)));
 }
 
 

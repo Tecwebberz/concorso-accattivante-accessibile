@@ -42,11 +42,7 @@ function pretty_period(int $year, int $semester): string {
 }
 
 function pretty_prof(string $prof_name, string $prof_mail): string {
-    return "Il corso è tenuto da <a href='mailto:{$prof_mail}'>{$prof_name} (e-mail)</a>";
-}
-
-function pretty_cfu(int $cfu): string {
-    return "{$cfu} CFU";
+    return make_link("$prof_name (e-mail)", "mailto:{$prof_mail}");
 }
 
 $course_template = $template_engine->load_template(
@@ -57,7 +53,7 @@ $course_template->insert_all(array(
     "name_tit" => strip_tags($course->name),
     "name" => $course->name,
     "description" => $course->description,
-    "cfu" => pretty_cfu($course->cfu),
+    "cfu" => $course->cfu,
     "lingua" => pretty_language($course->language),
     "periodo" => pretty_period($course->year, $course->semester),
     "responsabile" => pretty_prof($course->prof, $course->email_resp),
