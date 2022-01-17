@@ -23,15 +23,15 @@ class CourseService {
                  'responsabile', 'email_resp') 
              VALUES (?, ?, ?, ?, ?)",
             array(
-                array("i", $course->id_corso),
+                array("i", $course->id),
                 array("s", $course->name),
                 array("s", $course->description),
                 array("i", $course->cfu),
-                array("s", $course->propedeutici),
-                array("i", $course->anno),
-                array("i", $course->periodo),
-                array("s", $course->lingua),
-                array("s", $course->responsabile),
+                array("s", $course->preparatory),
+                array("i", $course->year),
+                array("i", $course->semester),
+                array("s", $course->language),
+                array("s", $course->prof),
                 array("s", $course->email_resp)
             )
         );
