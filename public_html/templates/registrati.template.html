@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="assets/script/get_current_year.js" defer></script>
+    <script src="assets/script/validator.js"></script>
     <title>Registrati - Uni-Help</title>
 </head>
 
@@ -17,39 +18,38 @@
     <h2 class="">Registrati</h2>
     <div class="row">
         <div class="col">
-            <label for="name">Nome</label>
-            <input type="text" id="name" name="name" size="25" maxlength="50" pattern="[A-Za-z]{1,50}" placeholder="Inserisci il tuo nome" required>
+            <label for="name" id="labelName">Nome:</label>
+            <input type="text" id="name" name="name" size="25" maxlength="50" pattern="[A-Za-z]{1,50}" placeholder="Inserisci il tuo nome" required onblur="validateName()">
         </div>
         <div class="col">
-            <label for="surname">Cognome</label>
-            <input type="text" id="surname" name="surname" size="25" maxlength="50" pattern="[A-Za-z]{1,50}" placeholder="Inserisci il tuo cognome" required>
+            <label for="surname" id="labelSurname">Cognome:</label>
+            <input type="text" id="surname" name="surname" size="25" maxlength="50" pattern="[A-Za-z]{1,50}" placeholder="Inserisci il tuo cognome" required onblur="validateSurname()">
         </div>
     </div>
 
     <div class="row">
         <div class="col">
-            <label for="username"><span lang="en">Username</span></label>
-            <input type="text" id="username" name="username" size="25" maxlength="25" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,25}$" placeholder="Inserisci un nome utente" required>
+            <label for="username" id="labelUser" lang="en">Username:</label>
+            <input type="text" id="username" name="username" size="25" maxlength="25" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,25}$" placeholder="Inserisci un nome utente" required onblur="validateUsername()">
         </div>
     </div>
     
     <div class="row">
         <div class="col">
-
-            <label for="year">Anno</label>
-            <input type="number" id="year" name="year" min="2008" max="42" placeholder="42" required>
+            <label for="year" id="labelYear">Anno:</label>
+            <input type="number" id="year" name="year" min="2008" max="42" placeholder="42" required onblur="validateYear()">
         </div>
     </div>
     
     <div class="row">
         <div class="col">
             <!-- Uppercase, Lowercase, Number, SpecialChar, min 8 char -->
-            <label for="password"><span lang="en">Password</span></label>
-            <input type="password" id="password" name="password" size="25" maxlength="50" minlength="8" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Inserisci una password valida" required>
+            <label for="password" id="labelPass" lang="en">Password</label>
+            <input type="password" id="password" name="password" size="25" maxlength="50" minlength="8" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Inserisci una password valida" required onblur="validatePassword()">
         </div>
         <div class="col">
-            <label for="check_password">Conferma <span lang="en">password</span>:</label>
-            <input type="password" id="check_password" name="check_password" size="25" maxlength="50" minlength="8" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Ripeti la password inserita" required>
+            <label for="check_password" id="labelCPass">Conferma <span lang="en">password</span>:</label>
+            <input type="password" id="check_password" name="check_password" size="25" maxlength="50" minlength="8" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Ripeti la password inserita" required onblur="validateCPass()">
         </div>
     </div>
 
