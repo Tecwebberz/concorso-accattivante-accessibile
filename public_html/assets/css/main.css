@@ -325,11 +325,18 @@ footer .flex-container{
 
 .cards {
     margin: 5% auto ;
-    max-width: 1200px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
     gap: 20px;
     list-style: none;
+}
+
+.card{
+    border-radius: 5px;
+    border: solid black 0.5px;
+    box-shadow: 2px 2px 2px 1px #888888;
+    display: flex;
+    flex-direction: column;
 }
 
 .card img {
@@ -337,17 +344,20 @@ footer .flex-container{
     display: block;
 }
 
-.card h2 {
+.card h3 {
     padding: 15px;
     background-color: var(--primary-accent-bg);
     color: var(--primary-bg);
 }
 
 .card .content {
+    display: flex;
+    flex-direction: column;
     line-height: 1.5;
     font-size: 0.9em;
     padding: 15px;
     background: var(--primary-c);
+    flex-grow: 1;
 }
 
 .card .extra {
@@ -493,6 +503,10 @@ form > .error {
 }
 
 /* Corsi */
+
+section.corsi >h2{
+    margin-bottom: 20px;
+}
 
 section.corsi > ol {
     list-style-type: none;
