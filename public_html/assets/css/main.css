@@ -254,7 +254,7 @@ nav ul li a:hover,a:active {
     color: var(--primary-accent-active);
 }
   
-nav ul li a.active {
+nav ul li.active {
     color: var(--primary-accent-text);
     font-weight: 800;
 }
