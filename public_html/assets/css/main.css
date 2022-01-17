@@ -272,6 +272,10 @@ section.centered{
     margin-left: auto;
 }
 
+section>h2{
+    margin-bottom: 20px;
+}
+
 .status{
     font-size: 0.8em;
     display: flex;
@@ -503,10 +507,6 @@ form > .error {
 }
 
 /* Corsi */
-
-section.corsi >h2{
-    margin-bottom: 20px;
-}
 
 section.corsi > ol {
     list-style-type: none;
