@@ -2,6 +2,7 @@
 
 <html lang="it">
 <head>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="assets/css/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Uni-Help</title>
@@ -12,9 +13,9 @@
     <div class="flex-container">
         <form class="small floating solid" name="login" id="login-form" action="app/login_engine.php" method="post">
             <h2><span lang="en">Login</span></h2>
-            <label for="username" lang="en">Username</label>
-            <input type="text" id="inputEmail" name="username" placeholder="Inserisci l'username" required>
-            <label for="password" lang="en">Password</label>
+            <label for="inputUsername" lang="en">Username</label>
+            <input type="text" id="inputUsername" name="username" placeholder="Inserisci l'username" required>
+            <label for="inputPassword" lang="en">Password</label>
             <input type="password" id="inputPassword" name="password" placeholder="Inserisci la password" required>
             <component>maybe_error</component> 
             <input class="btn btn-primary" type="submit" value="Login!">
