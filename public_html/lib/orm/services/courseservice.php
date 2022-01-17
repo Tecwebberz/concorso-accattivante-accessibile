@@ -1,7 +1,8 @@
 <?php
 
 abstract class CourseServiceError {
-    const OK = 1;
+    const OK   = 1;
+    const FAIL = 2;
 }
 
 class CourseService {
@@ -36,6 +37,26 @@ class CourseService {
             )
         );
         return CourseServiceError::OK;
+    }
+
+    public function get_course_by_id(int $id) {
+        $res = $this->db->query(
+            "SELECT * FROM {$this->table_name}
+             WHERE id_corso = ?",
+            array(
+                array("i", $id)
+            )
+        );
+
+        if (!$res || $res->num_rows !== 1) {
+            return CourseServiceError::FAIL;
+        }
+
+        $data = $res->fetch_assoc();
+        $course = parse_course($data);
+
+        $res->close();
+        return $course;
     }
 
     public function get_user_courses(UserDTO $user): array {

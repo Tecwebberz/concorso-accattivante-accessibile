@@ -1,6 +1,5 @@
 <?php
 $root = ".";
-$page_index = 2;
 
 if (!isset($_GET["id"])) {
     echo "id not set";
@@ -32,7 +31,7 @@ $room_template->insert_all(array(
     "wifi"         => $room->wifi ? "wifi"
                                   : "solo connessione cablata",
     "name"         => $room->name,
-    "name_tit"     => $room->name,
+    "name_tit"     => strip_tags($room->name),
     "short_desc"   => $room->short_description,
     "main_image"   => build_image($room->main_image),
 ));
