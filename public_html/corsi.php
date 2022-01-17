@@ -1,6 +1,8 @@
 <?php
 
 $root = ".";
+$page_index = 1;
+
 require_once($root . "/app/global.php");
 
 $courses = $course_service->get_all_courses();

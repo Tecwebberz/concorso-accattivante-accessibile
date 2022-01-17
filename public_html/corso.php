@@ -1,6 +1,5 @@
 <?php
 $root = ".";
-$page_index = 1;
 
 if (!isset($_GET["id"])) {
     echo "id not set";
