@@ -42,7 +42,7 @@ function pretty_period(int $year, int $semester): string {
 }
 
 function pretty_prof(string $prof_name, string $prof_mail): string {
-    return "<a href='mailto:{$prof_mail}'>{$prof_name} (e-mail)</a>";
+    return make_link("$prof_name (e-mail)", "mailto:{$prof_mail}");
 }
 
 $course_template = $template_engine->load_template(
