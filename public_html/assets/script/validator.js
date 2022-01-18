@@ -71,9 +71,16 @@ function validateUsername() {
         error_list.appendChild(list_item);
     }
     // special char
-    if(!/-_\./.test(field_value)){
+    if(!/^[a-zA-Z0-9-_\.]*$/.test(field_value)){
         let list_item = document.createElement("li");
         let item_text = document.createTextNode("Gli unici caratteri speciali consentiti sono - _ .");
+        list_item.appendChild(item_text);
+        error_list.appendChild(list_item);
+    }
+    // Primo carattere
+    if(field_value != 0 && !/^[a-zA-Z]/.test(field_value[0])){
+        let list_item = document.createElement("li");
+        let item_text = document.createTextNode("Il primo carattere dece essere una lettera.");
         list_item.appendChild(item_text);
         error_list.appendChild(list_item);
     }
