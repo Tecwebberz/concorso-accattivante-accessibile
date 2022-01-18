@@ -505,6 +505,18 @@ form > .error {
     background-color: var(--primary-error-bg);
 }
 
+ul.error {
+    list-style-type: none;
+    border-radius: 5px;
+    border: solid var(--primary-error-bg);
+    background-color: var(--primary-error-bg);
+    padding: 5px;
+}
+
+ul.error > li {
+    color: var(--primary-error-text);
+}
+
 /* Corsi */
 
 section.corsi > ol {
