@@ -74,7 +74,7 @@ function validateSurname() {
 function validateUsername() {
     // ^[a-zA-Z][a-zA-Z0-9-_\.]{1,25}$
     let label = document.getElementById("labelUser");
-    if(label.childElementCount>1) label.removeChild(label.childNodes[1]);
+    if(label.childElementCount>0) label.removeChild(label.childNodes[1]);
     let error_list = document.createElement("ul");
     error_list.classList.add("error");
     let error_flag = false;
@@ -192,7 +192,7 @@ function validatePassword() {
 
 function validateCPass() {
     let label = document.getElementById("labelCPass");
-    if(label.childElementCount>1) label.removeChild(label.childNodes[2]); 
+    if(label.childElementCount>1) label.removeChild(label.childNodes[3]); 
     let error_list = document.createElement("ul");
     error_list.classList.add("error");
     let error_flag = false;
