@@ -6,24 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <title>Uni-Help</title>
+<script>
+    function stampa(ele) {
+        console.log("click da "+ ele.id);
+    }
+</script>
+
 </head>
 <body>
 
 <form class="medium review articled">
-    <div class="star-rating">
+    <div class="row stars">
         <label for="star">Voto</label>
-        <input type="radio" name="star1" value="1">
-        <input type="radio" name="star2" value="2">
-        <input type="radio" name="star3" value="3">
-        <input type="radio" name="star4" value="4">
-        <input type="radio" name="star5" value="5">
+        <input class="star" id="star-1" type="radio" name="star" onclick="stampa(this)">
+        <label class="star" id="star-l1" for="star-1"></label>
+        <input class="star" id="star-2" type="radio" name="star" onclick="stampa(this)">
+        <label class="star" id="star-l2" for="star-2"></label>
+        <input class="star" id="star-3" type="radio" name="star" onclick="stampa(this)">
+        <label class="star" id="star-l3" for="star-3"></label>
+        <input class="star" id="star-4" type="radio" name="star" onclick="stampa(this)">
+        <label class="star" id="star-l4" for="star-4"></label>
+        <input class="star" id="star-5" type="radio" name="star" onclick="stampa(this)">
+        <label class="star" id="star-l5" for="star-5"></label>
     </div>
     <div class="row">
-        <label class="" for="anon"> Recensione anonima? </label>
-        <input class="" id="anon" type="radio" name="Anonimo">
+        <label for="anon"> Anonimo? </label>
+        <input id="anon" name="star" type="radio" name="Anonimo">
     </div>
-    <textarea class="col" rows="4" cols="60" placeholder="Di a tutti cosa ne pensi"></textarea>
-    <input class="btn btn-primary col" type="submit" value="Invia!">
+    <textarea class="row" rows="4" cols="70" placeholder="Di a tutti cosa ne pensi"></textarea>
+    <input class="btn btn-primary row" type="submit" value="Invia!">
     </form>
 </body>
 
