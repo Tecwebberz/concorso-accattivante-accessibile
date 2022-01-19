@@ -2,6 +2,8 @@ html {
     font-family: 'Roboto', serif;
 }
 
+/* Aule */
+
 ol.cards {
     list-style-type: none;
     display: block;
@@ -39,4 +41,10 @@ li.card > div.content {
 
 li.card > div.extra {
     display: none;
+}
+
+/* Corsi */
+
+section.corsi > a, a:link, a:hover, a:visited {
+    color: var(--primary-text);
 }
