@@ -55,6 +55,9 @@ a{
     font-weight: 400;
 }
 
+a.app {
+    display: inline-block;
+}
 a:link {color: var(--primary-link)}
 
 a:active, a:hover{color: var(--primary-active);}
@@ -577,9 +580,9 @@ input.star {
 }
 
 /* attiva stelle */
-input.star + label.star:before{ content: '☆'; }
-input.star:checked + label.star:before { content: none; }
-input.star:checked + label.star:after { content: '★'; }
+input.star + label.star::before{ content: '☆'; }
+input.star:checked + label.star::before { content: none; }
+input.star:checked + label.star::after { content: '★'; }
 
 /* 404 */
 

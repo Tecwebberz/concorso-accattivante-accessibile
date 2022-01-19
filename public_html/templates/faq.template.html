@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/print.css" media="print"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FAQ - Uni-Help</title>
 </head>
@@ -12,7 +13,7 @@
 
     <section class="centered">
         <h2>Le F.A.Q.</h2>
-        <dl>
+        <dl id="faq">
             <dt id="appesiti">Quali siti e app sono i più importanti?</dt>
             <dd>
                 <dl>
@@ -34,7 +35,7 @@
                         <p>e altre cose importanti per il proprio percorso accademico.
                         </p>
 
-                        <a class="btn btn-primary" href ="https://uniweb.unipd.it/">Vai ad <span lang="en">Uniweb</span></a>
+                        <a class="btn btn-primary app" href ="https://uniweb.unipd.it/">Vai ad <span lang="en">Uniweb</span></a>
                     </dd>
 
                     <dt lang="en">MyUniPD</dt>
@@ -43,8 +44,8 @@
                         <p>Dallo scorso anno è disponibile l’app ufficiale dell’Università di Padova, che tramite SSO permette di visualizzare le principali funzioni di Uniweb.</p>
                         <p>Grazie a questa app puoi controllare in qualsiasi momento se sono stati registrati i voti, o quando scadono le rate per la contribuzione.</p>
                         
-                        <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=it.unipd.studenti4.test">Scarica <span lang="en">MyUniPD</span> per <span lang="en">Android</span></a>
-                        <a class="btn btn-primary" href="https://apps.apple.com/it/app/myunipd/id1478733708">Scarica <span lang="en">MyUniPD</span> per <span lang="en">iOS</span></a>
+                        <a class="btn btn-primary app" href="https://play.google.com/store/apps/details?id=it.unipd.studenti4.test">Scarica <span lang="en">MyUniPD</span> per <span lang="en">Android</span></a>
+                        <a class="btn btn-primary app" href="https://apps.apple.com/it/app/myunipd/id1478733708">Scarica <span lang="en">MyUniPD</span> per <span lang="en">iOS</span></a>
                     </dd>
 
                     <dt>OrariUnipd</dt>
@@ -55,8 +56,8 @@
                         
                         <p>L’app mostra anche la disponibilità di posti nelle varie aule studio ed è necessaria per registrarvisi.</p>
 
-                        <a class="btn btn-primary" href ="https://play.google.com/store/apps/details?id=it.easystaff.unipd&hl=it&gl=IT">Scarica OrariUnipd per <span lang="en">Android</span></a>
-                        <a class="btn btn-primary" href ="https://apps.apple.com/it/app/orariunipd/id1436137050">Scarica OrariUnipd per <span lang="en">iOS</span></a>
+                        <a class="btn btn-primary app" href ="https://play.google.com/store/apps/details?id=it.easystaff.unipd&hl=it&gl=IT">Scarica OrariUnipd per <span lang="en">Android</span></a>
+                        <a class="btn btn-primary app" href ="https://apps.apple.com/it/app/orariunipd/id1436137050">Scarica OrariUnipd per <span lang="en">iOS</span></a>
                     </dd>
 
 
@@ -66,8 +67,8 @@
                             
                         <p><span lang="en">Affluences</span> prevede anche un sistema di prenotazione di alcuni posti singoli o di sale per lo studio di gruppo, laddove disponibili.</p>
 
-                        <a class="btn btn-primary" href ="https://play.google.com/store/apps/details?id=fr.affluences&hl=it&gl=IT">Scarica <span lang="en">Affluences</span> per <span lang="en">Android</span></a>
-                        <a class="btn btn-primary" href ="https://apps.apple.com/it/app/affluences/id869919405">Scarica <span lang="en">Affluences</span> per <span lang="en">iOS</span></a>
+                        <a class="btn btn-primary app" href ="https://play.google.com/store/apps/details?id=fr.affluences&hl=it&gl=IT">Scarica <span lang="en">Affluences</span> per <span lang="en">Android</span></a>
+                        <a class="btn btn-primary app" href ="https://apps.apple.com/it/app/affluences/id869919405">Scarica <span lang="en">Affluences</span> per <span lang="en">iOS</span></a>
                         
                     </dd>
                 </dl>
@@ -85,7 +86,7 @@
                 
             <dt id="mense">Come funzionano le mense? </dt>
             <dd>
-                Tutta la popolazione studentesca ha la possibilità di utilizzare il servizio mensa nelle apposite strutture <abbr lang="en" title="Educational Service Unit">ESU</abbr>. Il costo del pasto varia a seconda della tipologia di studente, dell’<abbr title="Indice Situazione Economica Equivalente">ISEE</abbr> dichiarato e del merito. Per verificare l'apertura di una mensa è possibile consultare <a href="https://www.esu.pd.it/it/Documents/Ristorazione/ITESUPD_Calendario_ristorazione_universitaria.pdf">il calendario (PDF)</a> dal sito dell'<abbr lang="en" title="Educational Service Unit">ESU</abbr>. Per accedere al servizio mensa è necessario generare un <span lang="en">QR</span> code sul portale <abbr lang="en" title="Educational Service Unit">ESU</abbr> (per <a href="https://www.esu.pd.it/it/Documents/Ristorazione/ITESUPD_QR_code_nota_20181123.pdf">informazioni (PDF)</a>). Il <span lang="en">QR</span> code è personale e non cedibile! Per accedere fisicamente al servizio di ristorazione dell’<abbr lang="en" title="Educational Service Unit">ESU</abbr> di Padova, è necessario essere muniti di <span lang="en">Green Pass</span>.
+                Tutta la popolazione studentesca ha la possibilità di utilizzare il servizio mensa nelle apposite strutture <abbr lang="en" title="Educational Service Unit">ESU</abbr>. Il costo del pasto varia a seconda della tipologia di studente, dell’<abbr title="Indice Situazione Economica Equivalente">ISEE</abbr> dichiarato e del merito. Per verificare l'apertura di una mensa è possibile consultare <a id="calESU" href="https://www.esu.pd.it/it/Documents/Ristorazione/ITESUPD_Calendario_ristorazione_universitaria.pdf">il calendario (PDF)</a> dal sito dell'<abbr lang="en" title="Educational Service Unit">ESU</abbr>. Per accedere al servizio mensa è necessario generare un <span lang="en">QR</span> code sul portale <abbr lang="en" title="Educational Service Unit">ESU</abbr> (per <a id="qrESU" href="https://www.esu.pd.it/it/Documents/Ristorazione/ITESUPD_QR_code_nota_20181123.pdf">informazioni (PDF)</a>). Il <span lang="en">QR</span> code è personale e non cedibile! Per accedere fisicamente al servizio di ristorazione dell’<abbr lang="en" title="Educational Service Unit">ESU</abbr> di Padova, è necessario essere muniti di <span lang="en">Green Pass</span>.
             </dd>
         </dl>
     </section>  

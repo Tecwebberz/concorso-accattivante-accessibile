@@ -49,12 +49,68 @@ li.card > div.extra {
 
 /* Corsi */
 
-section.corsi > a, a:link, a:hover, a:visited {
-    color: var(--primary-text);
-}
+section.corsi > a { color: var(--primary-text); }
+section.corsi > a:link { color: var(--primary-text); }
+section.corsi > a:hover { color: var(--primary-text); }
+section.corsi > a:visited { color: var(--primary-text); }
 
 /* Corso */
 
 ul.corso {
     border-color: var(--primary-text);
+}
+
+/* FAQ */
+
+a.btn.btn-primary.app {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    color: var(--primary-text);
+}
+
+a.btn.btn-primary.app:link::after {
+    content: " dal sito " attr(href);
+}
+
+#faq a { color: var(--primary-text); }
+#faq a:link { color: var(--primary-text); }
+#faq a:hover { color: var(--primary-text); }
+#faq a:visited { color: var(--primary-text); }
+
+dt {
+    border-bottom: solid 1px;
+}
+
+dd {
+    padding: 0 0 0 5px;    
+}
+
+dd p {
+    margin: 0;
+}
+
+dd dt {
+    border: none;
+    border-bottom: solid 1px;
+    padding: 0;
+}
+
+dd dd {
+    border: none;
+    margin-bottom: 5px;
+}
+
+#mense + dd > abbr::after {
+    content: " (" attr(title) ")";
+}
+
+
+#calESU::after {
+    content: " al sito " attr(href);
+}
+
+#qrESU::after {
+    content: " visitare " attr(href);
 }
