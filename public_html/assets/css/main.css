@@ -535,6 +535,24 @@ section.corsi > ol > li > ul {
     margin-bottom: 5px;
 }
 
+ul.corso {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    border-left: solid;
+    border-color: var(--primary-accent-bg);
+    list-style-type: none;
+}
+
+ul.corso > li {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+section#corso > p {
+    margin-bottom: 10px;
+}
 /* Recensioni */
 
 .review{
