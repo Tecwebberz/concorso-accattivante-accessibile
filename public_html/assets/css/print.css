@@ -1,0 +1,42 @@
+html {
+    font-family: 'Roboto', serif;
+}
+
+ol.cards {
+    list-style-type: none;
+    display: block;
+    margin: 0 0;
+}
+
+li.card {
+    display: block;
+    margin-top: 5px;
+    border: none;
+    box-shadow: none;
+}
+
+li.card > h3 {
+    padding: 0;
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+    border-bottom: solid 1px;
+    font-size: larger;
+}
+
+li.card > img {
+    display: none;
+}
+
+li.card > div.content {
+    display: block;
+    line-height: 1;
+    font-size: medium;
+    padding: 0;
+    background-color: var(--primary-bg);
+    margin-left: 10px;
+
+}
+
+li.card > div.extra {
+    display: none;
+}

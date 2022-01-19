@@ -359,7 +359,7 @@ footer .flex-container{
     line-height: 1.5;
     font-size: 0.9em;
     padding: 15px;
-    background: var(--primary-c);
+    background-color: var(--primary-c);
     flex-grow: 1;
 }
 
