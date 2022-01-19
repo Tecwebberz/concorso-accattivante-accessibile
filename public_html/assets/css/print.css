@@ -25,6 +25,10 @@ li.card > h3 {
     font-size: larger;
 }
 
+li.card > h3 > abbr::after {
+    content: " ("attr(title)")";
+}
+
 li.card > img {
     display: none;
 }
@@ -47,4 +51,10 @@ li.card > div.extra {
 
 section.corsi > a, a:link, a:hover, a:visited {
     color: var(--primary-text);
+}
+
+/* Corso */
+
+ul.corso {
+    border-color: var(--primary-text);
 }
