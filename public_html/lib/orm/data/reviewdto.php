@@ -27,4 +27,17 @@ function parse_review(int $type, array $in): ReviewDTO {
     return $res;
 }
 
+function statistics(array $reviews): array {
+    $sum = array_reduce($reviews,
+                function(int $acc, ReviewDTO $rev): int {
+                    return $acc + $rev->rating;
+                }, 0);
+    $count = count($reviews);
+    $avg = $count >= 1 ? $sum / $count : 0;
+    return array(
+        "count" => count($reviews),
+        "rating" => round($avg, 2)
+    );
+}
+
 ?>

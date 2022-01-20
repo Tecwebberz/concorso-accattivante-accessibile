@@ -42,10 +42,11 @@ foreach ($carousel as $img) {
 
 $room_template->insert("carousel", $carousel_content);
 
-
-//Alessio da sistemare
-$recensione = $template_engine->load_template(
-    "recensione.template.html");
+$stats = statistics($reviews);
+$room_template->insert_all(array(
+    "count" => $stats["count"],
+    "rating" => $stats["rating"],
+));
 
 $room_template->insert("form_recensione", make_review_form(ReviewType::STUDYROOM, $room->id, "aula.php?id={$room->id}"));
 $room_template->insert("recensioni", make_reviews($reviews));
