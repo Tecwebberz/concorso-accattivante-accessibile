@@ -47,7 +47,7 @@ $room_template->insert("carousel", $carousel_content);
 $recensione = $template_engine->load_template(
     "recensione.template.html");
 
-$room_template->insert("form_recensione", make_review_form(ReviewType::STUDYROOM, $room->id));
+$room_template->insert("form_recensione", make_review_form(ReviewType::STUDYROOM, $room->id, "aula.php?id={$room->id}"));
 $room_template->insert("recensioni", make_reviews($reviews));
 
 echo $room_template->build();

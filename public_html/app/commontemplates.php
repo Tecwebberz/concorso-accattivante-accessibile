@@ -126,7 +126,7 @@ function make_reviews(array $reviews): string {
     return $template->build();
 }
 
-function make_review_form(int $type, int $id): string {
+function make_review_form(int $type, int $id, string $redir): string {
     global $template_engine;
 
     if (isset($_SESSION["logged_user"])
@@ -138,8 +138,10 @@ function make_review_form(int $type, int $id): string {
         ));
         return $template->build();
     } else {
-        return $template_engine->load_template(
-            "requestlogin.template.html")->build();
+        $template = $template_engine->load_template(
+            "requestlogin.template.html");
+        $template->insert("redir", urlencode($redir));
+        return $template->build();
     }
 }
 

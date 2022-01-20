@@ -10,8 +10,8 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
         header("Location: ../accedi.php?error={$user}");
     } else {
         $_SESSION["logged_user"] = $user;
-        if (isset($_POST["taget"])) {
-            header("Location: ${$_POST["target"]}");
+        if (isset($_POST["target"]) && $_POST["target"] !== "") {
+            header("Location: ../{$_POST["target"]}");
         } else {
             header("Location: ../index.php");
         }

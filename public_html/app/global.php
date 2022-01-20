@@ -37,5 +37,4 @@ function safe_input(string $in): string {
     return trim(htmlentities(strip_tags($in)));
 }
 
-
 ?>
