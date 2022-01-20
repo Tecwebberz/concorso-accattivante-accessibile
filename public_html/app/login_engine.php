@@ -7,7 +7,12 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
     $password = $_POST["password"];
     $user = $user_service->login($username, $password);
     if ($user === UserServiceError::AUTH_FAILED) {
-        header("Location: ../accedi.php?error={$user}");
+        $snd = "";
+        if (isset($_POST["target"]) && $_POST["target"] !== "") {
+            $encoded = urlencode($_POST["target"]);
+            $snd = "&target={$encoded}";
+        }
+        header("Location: ../accedi.php?error={$user}{$snd}");
     } else {
         $_SESSION["logged_user"] = $user;
         if (isset($_POST["target"]) && $_POST["target"] !== "") {
