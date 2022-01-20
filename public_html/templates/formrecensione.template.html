@@ -6,34 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <title>Uni-Help</title>
-<script>
-    function stampa(ele) {
-        console.log("click da "+ ele.id);
-    }
-</script>
-
 </head>
+
 <body>
 
-<form class="medium review articled">
-    <div class="row stars">
-        <label for="star">Voto</label>
-        <input class="star" id="star-1" type="radio" name="star" onclick="stampa(this)">
-        <label class="star" id="star-l1" for="star-1"></label>
-        <input class="star" id="star-2" type="radio" name="star" onclick="stampa(this)">
-        <label class="star" id="star-l2" for="star-2"></label>
-        <input class="star" id="star-3" type="radio" name="star" onclick="stampa(this)">
-        <label class="star" id="star-l3" for="star-3"></label>
-        <input class="star" id="star-4" type="radio" name="star" onclick="stampa(this)">
-        <label class="star" id="star-l4" for="star-4"></label>
-        <input class="star" id="star-5" type="radio" name="star" onclick="stampa(this)">
-        <label class="star" id="star-l5" for="star-5"></label>
-    </div>
+<form id="review-form" class="medium articled solid">
+    <fieldset class="row rating">
+        <legend>Voto</legend>
+        <span class="stars">
+            <label for="star-1">Una stella</label>
+            <input type="radio" id="star-1" name="rating" value="1"><i></i>
+            <label for="star-2">Due stelle</label>
+            <input type="radio" id="star-2" name="rating" value="2"><i></i>
+            <label for="star-3">Tre stelle</label>
+            <input type="radio" id="star-3" name="rating" value="3"><i></i>
+            <label for="star-4">Quattro stelle</label>
+            <input type="radio" id="star-4" name="rating" value="4"><i></i>
+            <label for="star-5">Cinque stelle</label>
+            <input type="radio" id="star-5" name="rating" value="5"><i></i>
+        </span>
+    </fieldset>
     <div class="row">
-        <label for="anon"> Anonimo? </label>
-        <input id="anon" name="star" type="radio" name="Anonimo">
+        <label for="review">Di a tutti cosa ne pensi</label>
+        <textarea id="review" name="review" rows="5" placeholder="La tua recensione"></textarea>
     </div>
-    <textarea class="row" rows="4" cols="70" placeholder="Di a tutti cosa ne pensi"></textarea>
+    <input type="hidden" id="type" value="<component>type</component>">
+    <input type="hidden" id="id" value="<component>id</component>">
     <input class="btn btn-primary row" type="submit" value="Invia!">
     </form>
 </body>
