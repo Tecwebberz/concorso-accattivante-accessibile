@@ -126,4 +126,22 @@ function make_reviews(array $reviews): string {
     return $template->build();
 }
 
+function make_review_form(int $type, int $id): string {
+    global $template_engine;
+
+    if (isset($_SESSION["logged_user"])
+        && $_SESSION["logged_user"] !== null) {
+        $template = $template_engine->load_template("formrecensione.template.html");
+        $template->insert_all(array(
+            "id" => $id,
+            "type" => $type,
+        ));
+        return $template->build();
+    } else {
+        return $template_engine->load_template(
+            "requestlogin.template.html")->build();
+    }
+}
+
+
 ?>

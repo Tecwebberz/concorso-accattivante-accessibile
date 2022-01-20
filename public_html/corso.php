@@ -63,6 +63,7 @@ $course_template->insert_all(array(
     "email" => make_link($course->email_resp, "mailto:{$course->email_resp}"),
 ));
 
+$course_template->insert("form_recensione", make_review_form(ReviewType::COURSE, $course->id));
 $course_template->insert("recensioni", make_reviews($reviews));
 
 echo $course_template->build();
