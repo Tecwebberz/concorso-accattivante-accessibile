@@ -15,6 +15,7 @@ if ($room === StudyRoomServiceError::FAIL) {
     header("Location: 404.php?error=aula");
 }
 $carousel = $studyroom_service->get_carousel($room);
+$reviews = $review_service->get_studyroom_reviews($room);
 $db->close();
 
 $room_template = $template_engine->load_template(
@@ -46,8 +47,6 @@ $room_template->insert("carousel", $carousel_content);
 $recensione = $template_engine->load_template(
     "recensione.template.html");
 
-$room_template->insert("recensioni", $recensione->build().$recensione->build().$recensione->build().$recensione->build());
-
-//-----------
+$room_template->insert("recensioni", make_reviews($reviews));
 
 echo $room_template->build();

@@ -91,4 +91,39 @@ function make_link(string $content, string $ref): string {
     return "<a href='{$ref}'>{$content}</a>";
 }
 
+function render_stars(int $n): string {
+    $ret = "";
+    for ($i = 0; $i < $n; ++$i) {
+        $ret .= "★";
+    }
+    for ($i = $n; $i < 5; ++$i) {
+        $ret .= "☆";
+    }
+    return $ret;
+}
+
+function make_review(ReviewDTO $review): string {
+    global $template_engine;
+
+    $template = $template_engine->load_template("recensione.template.html");
+    $template->insert_all(array(
+        "utente" => "{$review->user->name} {$review->user->surname}
+                        (@{$review->user->username})",
+        "testo"  => $review->text,
+        "stelle" => render_stars($review->rating),
+    ));
+    return $template->build();
+}
+
+function make_reviews(array $reviews): string {
+    global $template_engine;
+    $template = $template_engine->load_template("recensioni.template.html");
+    $ret = "";
+    foreach ($reviews as $review) {
+        $ret .= make_review($review);
+    }
+    $template->insert("recensioni", $ret);
+    return $template->build();
+}
+
 ?>

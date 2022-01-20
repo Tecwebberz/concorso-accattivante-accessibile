@@ -8,10 +8,15 @@ if (!isset($_GET["id"])) {
 require_once($root . "/app/global.php");
 
 $id = $_GET["id"];
+$db->persist();
 $course = $course_service->get_course_by_id($id);
 if ($course === CourseServiceError::FAIL) {
+    $db->close();
     header("Location: 404.php?error=corso");
 }
+
+$reviews = $review_service->get_course_reviews($course);
+$db->close();
 
 function pretty_language(string $lang): string {
     switch ($lang) {
@@ -61,7 +66,7 @@ $course_template->insert_all(array(
     "responsabile" => pretty_prof($course->prof, $course->email_resp),
 ));
 
-$course_template->insert("recensioni", "crizzo");
+$course_template->insert("recensioni", make_reviews($reviews));
 
 echo $course_template->build();
 
