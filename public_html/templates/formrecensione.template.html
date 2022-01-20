@@ -1,4 +1,4 @@
-<form id="review-form" class="medium articled solid">
+<form id="review-form" class="medium articled solid" action="app/review.php" method="POST">
     <fieldset class="row rating">
         <legend>Voto</legend>
         <span class="stars">
@@ -18,7 +18,7 @@
         <label for="review">Di a tutti cosa ne pensi</label>
         <textarea id="review" name="review" rows="5" placeholder="La tua recensione"></textarea>
     </div>
-    <input type="hidden" id="type" value="<component>type</component>">
-    <input type="hidden" id="id" value="<component>id</component>">
+    <input name="type" type="hidden" id="type" value="<component>type</component>">
+    <input name="id" type="hidden" id="id" value="<component>id</component>">
     <input class="btn btn-primary row" type="submit" value="Invia!">
 </form>

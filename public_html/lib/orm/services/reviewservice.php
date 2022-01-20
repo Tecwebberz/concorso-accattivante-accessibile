@@ -23,12 +23,12 @@ class ReviewService {
                         "course" : "study_room";
         $res = $this->db->query(
             "REPLACE INTO {$table_name}
-                (id_recensione, utente_recensione, testo, voto,
+                (id_recensione, utente_recensore, testo, voto,
                  {$field}) 
              VALUES (?, ?, ?, ?, ?)",
             array(
                 array("i", $review->id),
-                array("i", $review->user->id),
+                array("s", $review->user->username),
                 array("s", $review->text),
                 array("i", $review->rating),
                 array("i", $review->target_id),
@@ -42,7 +42,8 @@ class ReviewService {
         $res = $this->db->query(
             "SELECT * FROM {$this->table_course} as T
                 JOIN User AS U ON U.username = T.utente_recensore
-             WHERE course = ?",
+             WHERE course = ?
+             ORDER BY id_recensione DESC",
             array(
                 array("i", $course->id)
             )
@@ -63,7 +64,8 @@ class ReviewService {
         $res = $this->db->query(
             "SELECT * FROM {$this->table_studyroom} as T
                 JOIN User AS U ON U.username = T.utente_recensore
-             WHERE study_room = ?",
+             WHERE study_room = ?
+             ORDER BY id_recensione DESC",
             array(
                 array("i", $room->id)
             )

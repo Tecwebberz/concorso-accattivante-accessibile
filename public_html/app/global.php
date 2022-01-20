@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 require_once($root . "/lib/databaselayer.php");
 require_once($root . "/lib/orm/services/userservice.php");
 require_once($root . "/lib/orm/services/courseservice.php");
@@ -15,6 +13,8 @@ require_once($root . "/lib/orm/data/reviewdto.php");
 require_once($root . "/lib/template_engine.php");
 
 require_once($root . "/app/commontemplates.php");
+
+session_start();
 
 $db = new DatabaseLayer(
     "127.0.0.1",
