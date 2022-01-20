@@ -558,10 +558,12 @@ section#corso > p {
 }
 /* Recensioni */
 
+ol.recensioni {
+    list-style-type: none;
+}
+
 .review{
-
     border-bottom: solid #d6d6d6 0.5px;
-
 }
 
 div.stars {

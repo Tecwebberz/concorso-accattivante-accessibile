@@ -1,5 +1,11 @@
+/* Base */
+
 html {
     font-family: 'Roboto', serif;
+}
+
+abbr.first-abbr::after {
+    content: " ("attr(title)")";
 }
 
 /* Aule */
@@ -25,10 +31,6 @@ li.card > h3 {
     font-size: larger;
 }
 
-li.card > h3 > abbr::after {
-    content: " ("attr(title)")";
-}
-
 li.card > img {
     display: none;
 }
@@ -45,6 +47,23 @@ li.card > div.content {
 
 li.card > div.extra {
     display: none;
+}
+
+#aula > h2 {
+    border-bottom: solid 1px;
+    font-size: xx-large;
+}
+
+.photo-gallery {
+    display: none;
+}
+
+#aula > .mini-title > h3 {
+    font-size: larger;
+}
+
+#aula > .mini-title > ul {
+    font-size: small;
 }
 
 /* Corsi */
@@ -67,17 +86,16 @@ a.btn.btn-primary.app {
     padding: 0;
     border: none;
     background: none;
-    color: var(--primary-text);
 }
 
 a.btn.btn-primary.app:link::after {
-    content: " dal sito " attr(href);
+    content: " dal sito [" attr(href) "]";
 }
 
-#faq a { color: var(--primary-text); }
+/* #faq a { color: var(--primary-text); }
 #faq a:link { color: var(--primary-text); }
 #faq a:hover { color: var(--primary-text); }
-#faq a:visited { color: var(--primary-text); }
+#faq a:visited { color: var(--primary-text); } */
 
 dt {
     border-bottom: solid 1px;
@@ -102,15 +120,10 @@ dd dd {
     margin-bottom: 5px;
 }
 
-#mense + dd > abbr::after {
-    content: " (" attr(title) ")";
-}
-
-
 #calESU::after {
-    content: " al sito " attr(href);
+    content: " al sito [" attr(href) "]";
 }
 
 #qrESU::after {
-    content: " visitare " attr(href);
+    content: " visitare [" attr(href) "]";
 }
