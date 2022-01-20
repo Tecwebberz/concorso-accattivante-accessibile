@@ -588,7 +588,7 @@ fieldset.rating > legend {
     width: 175px;
     height: 35px;
     position: relative;
-    background: url("/public_html/assets/img/star_black.png");
+    background: url("../img/star_black.png");
     background-size: contain;
 }
 
@@ -600,7 +600,7 @@ fieldset.rating > legend {
     height: 100%;
     width: 20%;
     z-index: 1;
-    background: url("/public_html/assets/img/star_gold.png");
+    background: url("../img/star_gold.png");
     background-size: contain;
 }
 
