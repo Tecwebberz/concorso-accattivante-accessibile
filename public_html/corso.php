@@ -48,10 +48,6 @@ function pretty_period(int $year, int $semester): string {
     return pretty_semester($semester) . " " . pretty_year($year);
 }
 
-function pretty_prof(string $prof_name, string $prof_mail): string {
-    return make_link("$prof_name (e-mail)", "mailto:{$prof_mail}");
-}
-
 $course_template = $template_engine->load_template(
     "corso.template.html");
 
@@ -63,7 +59,8 @@ $course_template->insert_all(array(
     "cfu" => $course->cfu,
     "lingua" => pretty_language($course->language),
     "periodo" => pretty_period($course->year, $course->semester),
-    "responsabile" => pretty_prof($course->prof, $course->email_resp),
+    "responsabile" =>$course->prof,
+    "email" => make_link($course->email_resp, "mailto:{$course->email_resp}"),
 ));
 
 $course_template->insert("recensioni", make_reviews($reviews));
