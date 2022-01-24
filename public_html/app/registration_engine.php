@@ -9,6 +9,7 @@ if (!(isset($_POST["username"]) && isset($_POST["password"])
 
     echo "Stai per essere reindirizzato!";
     header("Location: ../registrati.php");
+    exit();
 }
 
 $user = new UserDTO();
@@ -21,6 +22,7 @@ $password = $_POST["password"];
 $res = check_user_validity($user, $password);
 if ($res !== UserServiceError::OK) {
     header("Location: ../registrati.php?error={$res}");
+    exit();
 }
 
 $res = $user_service->register($user, $password);

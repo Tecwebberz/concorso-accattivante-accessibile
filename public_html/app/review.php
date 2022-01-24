@@ -6,14 +6,26 @@ if (!(isset($_POST["rating"]) && isset($_POST["review"])
     && $_POST["rating"] <= 6 && $_POST["rating"] >= 1
     && isset($_POST["type"]) && isset($_POST["id"])
     && ($_POST["type"] == ReviewType::STUDYROOM || $_POST["type"] == ReviewType::COURSE))) {
+   
+    // Better error diagnostic for non application made request
+    $to = "404.php";
+    if (isset($_POST["type"]) && isset($_POST["id"])) {
+        $to = $_POST["type"] == ReviewType::COURSE ?
+                  "corso.php?id={$_POST["id"]}&error=1"
+                : "aula.php?id={$_POST["id"]}&error=1";
+    }
 
     echo "Stai per essere reindirizzato!";
-    header("Location: ../404.php");
+    header("Location: ../{$to}");
+    exit();
 }
 
 if (!isset($_SESSION["logged_user"])) {
+    echo "Stai per essere reindirizzato!";
     header("Location: ../accedi.php");
+    exit();
 }
+
 $user = $_SESSION["logged_user"];
 $review = new ReviewDTO();
 $review->id = null;
@@ -22,6 +34,12 @@ $review->text = safe_input($_POST["review"]);
 $review->user = $user;
 $review->rating = $_POST["rating"];
 $review->target_id = $_POST["id"];
+
+// Check if is an edit
+if (isset($_POST["id_comm"])) {
+    $review->id = $_POST["id_comm"];
+}
+
 $review_service->replace($review);
 
 $to = $review->type == ReviewType::COURSE ?
