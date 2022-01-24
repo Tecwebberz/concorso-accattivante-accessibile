@@ -5,6 +5,7 @@ require_once($root . "/app/global.php");
 if (!(isset($_POST["username"]) && isset($_POST["password"]))) {
     echo "Stai per essere reindirizzato!";
     header("Location: ../accedi.php");
+    exit();
 }
 
 $username = $_POST["username"];
@@ -18,6 +19,7 @@ if ($user === UserServiceError::AUTH_FAILED) {
         $snd = "&target={$encoded}";
     }
     header("Location: ../accedi.php?error={$user}{$snd}");
+    exit();
 } 
 
 $_SESSION["logged_user"] = $user;
