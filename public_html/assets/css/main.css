@@ -26,7 +26,7 @@
     
     
     /*alternative palette*/
-    --alt-bg: #bdbdbd;
+    --alt-bg: #e4e4e4;
     
     --primary-alt: #60000C;
     --primary-c: #ffffff; 
@@ -111,6 +111,10 @@ dd ul{
     padding: 0em 2em;
 }
 
+em{
+    font-style: italic;
+}
+
 /*Reusables*/
 
     /*Buttons*/
@@ -140,6 +144,14 @@ input[type=button], input[type=submit], input[type=reset] {
     border: none;
     text-decoration: none;
   }
+
+.solid{
+    background-color: var(--primary-bg);
+}
+
+div.flex-close{
+    justify-content: center;
+}
 
 /*Flex components*/
 .flex-container {
@@ -443,10 +455,6 @@ form{
     margin: auto;
 }
 
-form.solid{
-    background-color: var(--primary-bg);
-}
-
 form.floating{
     position: absolute;
     top: 50%;
@@ -626,8 +634,9 @@ span.stars i ~ i ~ i ~ i ~ i{ width: 100%; }
 /* 404 */
 
 .helper {
-    width: 45%;
-    margin: auto;
+    max-width: 400px;
+    padding: 20px;
+    margin: auto 0;
 }
 
 .helper > h2 {
