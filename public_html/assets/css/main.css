@@ -48,7 +48,6 @@
 body {
     background-color: var(--alt-bg);
 }
-
     /*Link*/
 a{
     text-decoration: none;
@@ -408,6 +407,14 @@ footer .flex-container{
 
 .card .extra p {
     color: #fff;
+}
+
+.home-card h1,p{
+    text-align: left;
+}
+
+.home-card p{
+    font-size: 1.2em;    
 }
 
 /*Article*/
