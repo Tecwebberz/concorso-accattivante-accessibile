@@ -37,10 +37,30 @@ $review->target_id = $_POST["id"];
 
 // Check if is an edit
 if (isset($_POST["id_comm"])) {
+    $db->persist();
+    $erev = $review_service->get_review($review->type, $review->id);
+
+    if ($erev === ReviewServiceError::FAIL) {
+        $db->close();
+        header("Location: ../404.php");
+        exit();
+    }
+
+    if ($erev->user->username !== $review->user->username) {
+        $db->close();
+        header("Location: ../404.php");
+        exit();
+    }
+
     $review->id = $_POST["id_comm"];
 }
 
 $review_service->replace($review);
+
+
+if (isset($_POST["id_comm"])) {
+    $db->close();
+}
 
 $to = $review->type == ReviewType::COURSE ?
       "corso.php?id={$review->target_id}&error=0"

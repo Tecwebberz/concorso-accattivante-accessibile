@@ -139,6 +139,12 @@ a.btn-primary{
     color: var(--primary-accent-text);
 }
 
+a.btn-mini {
+    display: inline;
+    padding: 2px 5px;
+    margin: 0
+}
+
 input[type=button], input[type=submit], input[type=reset] {
     border: none;
     text-decoration: none;
@@ -578,10 +584,22 @@ ol.recensioni {
 }
 
 .review{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
     border-bottom: solid #d6d6d6 0.5px;
 }
 
-form  textarea {
+.review div.modifica {
+    margin-top: 10px;
+    margin-left: auto;
+}
+
+form.modify-review {
+    width: 100%;
+}
+
+form textarea {
     width: 100%;
 }
 
