@@ -99,11 +99,25 @@ function render_stars(int $n): string {
     for ($i = $n; $i < 5; ++$i) {
         $ret .= "☆";
     }
-    return $ret;
+    return "<p><abbr title='$n stelle su 5'>$ret</abbr></p>";
 }
 
 function make_review(ReviewDTO $review): string {
     global $template_engine;
+
+    $edit = "";
+    if (isset($_SESSION["logged_user"])) {
+        $user = $_SESSION["logged_user"];
+        if ($user->username === $review->user->username) {
+            $template = $template_engine->load_template("editdelete.template.html");
+            $template->insert("id", $review->id);
+            $edit = $template->build();
+        } else if ($user->role === Role::ADMIN) {
+            $template = $template_engine->load_template("delete.template.html");
+            $template->insert("id", $review->id);
+            $edit = $template->build();
+        }
+    }
 
     $template = $template_engine->load_template("recensione.template.html");
     $template->insert_all(array(
@@ -111,6 +125,7 @@ function make_review(ReviewDTO $review): string {
                         (@{$review->user->username})",
         "testo"  => $review->text,
         "stelle" => render_stars($review->rating),
+        "controls" => $edit
     ));
     return $template->build();
 }

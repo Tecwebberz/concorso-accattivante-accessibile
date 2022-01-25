@@ -1,10 +1,16 @@
 <?php
 
+abstract class Role {
+    const USER  = 0;
+    const ADMIN = 1;
+}
+
 class UserDTO {
     public string $username;
     public string $name;
     public string $surname;
     public string $year_of_registration;
+    public int $role;
 }
 
 function parse_user(array $data): UserDTO {
@@ -13,6 +19,7 @@ function parse_user(array $data): UserDTO {
     $user->name = $data["nome"];
     $user->surname = $data["cognome"];
     $user->year_of_registration = $data["anno_iscrizione"];
+    $user->role = $data["role"];
     return $user;
 }
 

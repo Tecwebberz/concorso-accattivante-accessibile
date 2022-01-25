@@ -17,6 +17,7 @@ $user->username = safe_input($_POST["username"]);
 $user->year_of_registration = safe_input($_POST["year"]);
 $user->surname = safe_input($_POST["surname"]);
 $user->name = safe_input($_POST["name"]);
+$user->role = Role::USER;
 $password = $_POST["password"];
 
 $res = check_user_validity($user, $password);
