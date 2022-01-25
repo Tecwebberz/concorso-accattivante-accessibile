@@ -203,6 +203,7 @@ header {
     width: 100%;
     margin: 20px auto;
     border-radius: 15px;
+    overflow: hidden;
 }
 .photo-gallery>img:first-child{
     grid-column-start: 1;
