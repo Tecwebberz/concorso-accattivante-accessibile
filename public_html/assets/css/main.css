@@ -595,6 +595,10 @@ ol.recensioni {
     margin-left: auto;
 }
 
+form.modify-review {
+    width: 100%;
+}
+
 form textarea {
     width: 100%;
 }

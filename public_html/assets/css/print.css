@@ -8,6 +8,10 @@ abbr.first-abbr::after {
     content: " ("attr(title)")";
 }
 
+form {
+    display: none;
+}
+
 /* Aule */
 
 ol.cards {
@@ -79,10 +83,11 @@ ul.corso {
     border-color: var(--primary-text);
 }
 
+/* Review */
+
 div.modifica {
     display: none;
 }
-
 /* FAQ */
 
 a.btn.btn-primary.app {
