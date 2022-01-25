@@ -589,6 +589,10 @@ ol.recensioni {
     flex-direction: column;
     border-bottom: solid #d6d6d6 0.5px;
 }
+.review > div.vote {
+    color: var(--primary-accent-bg);
+    font-size: large;
+}
 
 .review > form.modify {
     display: flex;
@@ -597,7 +601,7 @@ ol.recensioni {
 
 .review > form.modify > a,
 .review > form.modify > input {
-    font-size: 13;
+    font-size: 0.8em;
     padding: 5px 10px;
     margin: 0 10px;
 }
