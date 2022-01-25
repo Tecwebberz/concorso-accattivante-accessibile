@@ -13,7 +13,7 @@ function appendErrorList(error_flag, label, list) {
 
 function checkLength(field_value, error_list, length) {
     let error_flag=false;
-    let list_item = document.createElement("li");
+    const list_item = document.createElement("li");
     let item_text;
     if(field_value.length<length) {
         error_flag = true;
@@ -26,7 +26,7 @@ function checkLength(field_value, error_list, length) {
 
 function checkNumbers(field_value, error_list, noNum) {
     let error_flag = false;
-    let list_item = document.createElement("li");
+    const list_item = document.createElement("li");
     let item_text;
     if(noNum && /\d/.test(field_value)) {
         error_flag = true;
@@ -42,7 +42,7 @@ function checkNumbers(field_value, error_list, noNum) {
 
 function checkSpecial(field_value, error_list, noSpec) {
     let error_flag = false;
-    let list_item = document.createElement("li");
+    const list_item = document.createElement("li");
     let item_text;
     if(noSpec && /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/.test(field_value)){
         error_flag = true;
@@ -96,15 +96,15 @@ function validateUsername() {
     // special char
     if(!/^[a-zA-Z0-9-_\.]*$/.test(field_value)){
         error_flag = true;
-        let list_item = document.createElement("li");
-        let item_text = document.createTextNode("Gli unici caratteri speciali consentiti sono - _ .");
+        const list_item = document.createElement("li");
+        const item_text = document.createTextNode("Gli unici caratteri speciali consentiti sono - _ .");
         appendError(error_list, list_item, item_text);
     }
     // Primo carattere
     if(field_value != 0 && !/^[a-zA-Z]/.test(field_value[0])){
         error_flag = true;
-        let list_item = document.createElement("li");
-        let item_text = document.createTextNode("Il primo carattere deve essere una lettera.");
+        const list_item = document.createElement("li");
+        const item_text = document.createTextNode("Il primo carattere deve essere una lettera.");
         appendError(error_list, list_item, item_text);
     }
     appendErrorList(error_flag, label, error_list);
@@ -121,8 +121,8 @@ function validateYear() {
     const min = field.getAttribute("min"); const max = field.getAttribute("max");
     if(field.value<min || field.value>max) {
         error_flag = true;
-        let list_item = document.createElement("li");
-        let item_text = document.createTextNode("Inserire un anno compreso tra "+min+" e "+max);
+        const list_item = document.createElement("li");
+        const item_text = document.createTextNode("Inserire un anno compreso tra "+min+" e "+max);
         appendError(error_list, list_item, item_text);
     }
     appendErrorList(error_flag, label, error_list);
@@ -142,15 +142,15 @@ function validatePassword() {
     // Uppercase
     if(!/[A-Z]/.test(field_value)) {
         error_flag = true;
-        let list_item = document.createElement("li");
-        let item_text = document.createTextNode("Deve contenere almeno una lettera maiuscola");
+        const list_item = document.createElement("li");
+        const item_text = document.createTextNode("Deve contenere almeno una lettera maiuscola");
         appendError(error_list, list_item, item_text);
     }
     // lowercase
     if(!/[a-z]/.test(field_value)) {
         error_flag = true;
-        let list_item = document.createElement("li");
-        let item_text = document.createTextNode("Deve contenere almeno una lettera minuscola");
+        const list_item = document.createElement("li");
+        const item_text = document.createTextNode("Deve contenere almeno una lettera minuscola");
         appendError(error_list, list_item, item_text);
     }
     appendErrorList(error_flag, label, error_list);
@@ -167,8 +167,8 @@ function validateCPass() {
     const control = document.getElementById("check_password").value.trim();
     if(field_value!=control) {
         error_flag = true;
-        let list_item = document.createElement("li");
-        let item_text = document.createTextNode("Le password non corrispondono!");
+        const list_item = document.createElement("li");
+        const item_text = document.createTextNode("Le password non corrispondono!");
         appendError(error_list, list_item, item_text);      
     }
     appendErrorList(error_flag, label, error_list);
