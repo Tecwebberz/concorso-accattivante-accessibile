@@ -79,6 +79,10 @@ ul.corso {
     border-color: var(--primary-text);
 }
 
+div.modifica {
+    display: none;
+}
+
 /* FAQ */
 
 a.btn.btn-primary.app {
