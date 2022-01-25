@@ -126,6 +126,12 @@ em{
     cursor: pointer;
 }
 
+.btn-mini {
+    display: inline;
+    padding: 2px 5px;
+    margin: 0
+}
+
 .btn-primary{
     background-color: var(--primary-link);
     color: var(--primary-accent-text);
@@ -137,12 +143,6 @@ em{
 a.btn-primary{
     background-color: var(--primary-accent-bg);
     color: var(--primary-accent-text);
-}
-
-a.btn-mini {
-    display: inline;
-    padding: 2px 5px;
-    margin: 0
 }
 
 input[type=button], input[type=submit], input[type=reset] {
@@ -587,13 +587,19 @@ ol.recensioni {
 .review{
     display: flex;
     flex-direction: column;
-    padding-bottom: 10px;
     border-bottom: solid #d6d6d6 0.5px;
 }
 
-.review div.modifica {
-    margin-top: 10px;
-    margin-left: auto;
+.review > form.modify {
+    display: flex;
+    margin-right: 0;
+}
+
+.review > form.modify > a,
+.review > form.modify > input {
+    font-size: 13;
+    padding: 5px 10px;
+    margin: 0 10px;
 }
 
 form.modify-review {
