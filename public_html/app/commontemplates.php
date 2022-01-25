@@ -99,7 +99,7 @@ function render_stars(int $n): string {
     for ($i = $n; $i < 5; ++$i) {
         $ret .= "☆";
     }
-    return "<p><abbr title='$n stelle su 5'>$ret</abbr></p>";
+    return "<abbr title='$n stelle su 5'>$ret</abbr>";
 }
 
 function make_review(ReviewDTO $review): string {
