@@ -129,6 +129,7 @@ em{
 
 .btn-mini {
     display: inline;
+    height: fit-content;
     padding: 2px 5px;
     margin: 0
 }
@@ -623,7 +624,8 @@ ol.recensioni {
 }
 
 form.modify-review {
-    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 form textarea {
