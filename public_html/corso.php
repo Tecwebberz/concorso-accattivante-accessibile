@@ -69,6 +69,20 @@ $course_template->insert_all(array(
     "rating" => $stats["rating"],
 ));
 
+$msg = "";
+if (isset($_GET["error"])) {
+    $error = $_GET["error"];
+    switch ($error) {
+        case 0:
+            $msg = make_success("Operazione avvenuta con successo");
+            break;
+        default:
+            $msg = make_error("Operazione fallita per favore riprova più tardi");
+            break;
+    }
+}
+$course_template->insert("msg", $msg);
+
 $course_template->insert("form_recensione", make_review_form(ReviewType::COURSE, $course->id, "corso.php?id={$course->id}"));
 $course_template->insert("recensioni", make_reviews($reviews));
 

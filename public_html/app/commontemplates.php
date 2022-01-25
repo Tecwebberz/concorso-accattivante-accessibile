@@ -22,6 +22,14 @@ function make_error(string $message): string {
     return $error_template->build();
 }
 
+function make_success(string $message): string {
+    global $template_engine;
+    $error_template =
+        $template_engine->load_template("success.template.html");
+    $error_template->insert("success", $message);
+    return $error_template->build();
+}
+
 $actions = array(
     array("index.php", "Home"),
     array("corsi.php", "Corsi"),

@@ -15,6 +15,7 @@
     --primary-visited: #e67946;
     --primary-error-bg: #F8D7DA;
     --primary-error-text: #8E4349;
+    --primary-success-bg: #9ff09f;
 
         /*accent*/
     --primary-accent-bg: #9b0014;
@@ -535,6 +536,20 @@ ul.error {
     border-radius: 5px;
     border: solid var(--primary-error-bg);
     background-color: var(--primary-error-bg);
+    padding: 5px;
+}
+
+p.error {
+    border-radius: 5px;
+    border: solid var(--primary-error-bg);
+    background-color: var(--primary-error-bg);
+    padding: 5px;
+}
+
+p.success {
+    border-radius: 5px;
+    border: solid var(--primary-success-bg);
+    background-color: var(--primary-success-bg);
     padding: 5px;
 }
 
