@@ -589,7 +589,8 @@ ol.recensioni {
     flex-direction: column;
     border-bottom: solid #d6d6d6 0.5px;
 }
-.review > div.vote {
+.review > p.vote {
+    display: block;
     color: var(--primary-accent-bg);
     font-size: large;
 }
