@@ -38,6 +38,19 @@ class ReviewService {
         return ReviewServiceError::OK;
     }
 
+    public function delete(ReviewDTO $review) {
+        $table_name = $review->type === ReviewType::COURSE ?
+                        $this->table_course : $this->table_studyroom;
+        $this->db->query(
+            "DELETE FROM {$table_name}
+             WHERE id_recensione = ?",
+            array(
+                array("i", $review->id),
+            )
+        );
+        return ReviewServiceError::OK;
+    }
+
     public function get_course_reviews(CourseDTO $course): array {
         $res = $this->db->query(
             "SELECT * FROM {$this->table_course} as T

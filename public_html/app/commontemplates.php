@@ -111,10 +111,12 @@ function make_review(ReviewDTO $review): string {
         if ($user->username === $review->user->username) {
             $template = $template_engine->load_template("editdelete.template.html");
             $template->insert("id", $review->id);
+            $template->insert("type", $review->type);
             $edit = $template->build();
         } else if ($user->role === Role::ADMIN) {
             $template = $template_engine->load_template("delete.template.html");
             $template->insert("id", $review->id);
+            $template->insert("type", $review->type);
             $edit = $template->build();
         }
     }

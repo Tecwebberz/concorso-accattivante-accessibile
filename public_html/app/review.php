@@ -35,7 +35,7 @@ $review->user = $user;
 $review->rating = $_POST["rating"];
 $review->target_id = $_POST["id"];
 
-// Check if is an edit
+// Check if is an edit and if the 
 if (isset($_POST["id_comm"])) {
     $db->persist();
     $erev = $review_service->get_review($review->type, $review->id);
