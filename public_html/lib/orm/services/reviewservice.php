@@ -81,6 +81,29 @@ class ReviewService {
         return $ret;
     }
 
+    public function get_review(int $review_type, int $id) {
+        $table_name = $review_type === ReviewType::COURSE ?
+                        $this->table_course : $this->table_studyroom;
+        $res = $this->db->query(
+            "SELECT * FROM {$table_name} as T
+                JOIN User AS U ON U.username = T.utente_recensore
+             WHERE id_recensione = ?
+             ORDER BY id_recensione DESC",
+            array(
+                array("i", $id)
+            )
+        );
+
+        if (!$res || $res->num_rows !== 1) {
+            return ReviewServiceError::FAIL;
+        }
+
+        $data = $res->fetch_assoc();
+        $review = parse_review($review_type, $data);
+        $res->close();
+        return $review;
+    }
+
 }
 
 ?>
