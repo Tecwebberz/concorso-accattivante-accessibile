@@ -129,6 +129,16 @@ em{
     font-weight: 500;
 }
 
+form .btn{
+    width: 100%;
+    padding: 14px 20px;
+    margin: 4px 0;
+    /* font-size: 17px; */
+    /* border: none; */
+    border-radius: 4px;
+    /* cursor: pointer; */
+}
+
 .btn-mini {
     padding: 3px 7px;
     font-size: 0.9em;
@@ -151,7 +161,6 @@ button.btn, input[type=button], input[type=submit], input[type=reset] {
     border: none;
     text-decoration: none;
 }
-
 .solid{
     background-color: var(--primary-bg);
 }
@@ -498,7 +507,7 @@ form h2{
     text-align: left;
 }
 
-input,select{
+input{
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -508,15 +517,7 @@ input,select{
     box-sizing: border-box;
 }
 
-input[type=submit] {
-    width: 100%;
-    padding: 14px 20px;
-    margin: 8px 0;
-    font-size: 17px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
+
 
 form > .error {
     margin-top: 15px;
@@ -615,13 +616,12 @@ ol.recensioni {
     justify-content: flex-end;
 }
 
-/* form.modify-review {
-    margin-left: 0;
-    margin-right: 0;
-} */
-
 form textarea {
     width: 100%;
+    resize: vertical;
+    margin: 0 auto;
+    display: block;
+    box-sizing: border-box;
 }
 
  /* Stelline voto */
@@ -670,13 +670,12 @@ fieldset.rating > legend {
     position: relative;
 }
 
-span.stars input:hover + i { opacity:1; } 
-span.stars input:checked + i { opacity: 1; }
-
-span.stars i ~ i { width: 40%; }
-span.stars i ~ i ~ i { width: 60%; }
-span.stars i ~ i ~ i ~ i { width: 80%; }
-span.stars i ~ i ~ i ~ i ~ i{ width: 100%; }
+.stars input:hover + i { opacity:1; } 
+.stars input:checked + i { opacity: 1; }
+.stars i ~ i { width: 40%; }
+.stars i ~ i ~ i { width: 60%; }
+.stars i ~ i ~ i ~ i { width: 80%; }
+.stars i ~ i ~ i ~ i ~ i{ width: 100%; }
 
 /* 404 */
 
