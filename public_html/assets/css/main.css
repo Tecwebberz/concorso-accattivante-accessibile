@@ -715,7 +715,7 @@ fieldset.rating > legend {
 
 }
 
-@media screen and (max-height:700px){
+@media screen and (max-height:1024px){
     form.floating{
         position: static;
         top: 0;
