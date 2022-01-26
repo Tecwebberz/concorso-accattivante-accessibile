@@ -135,6 +135,8 @@ function make_review(ReviewDTO $review): string {
                         (@{$review->user->username})",
         "testo"  => $review->text,
         "nstars" => $review->rating,
+        "id"     => $review->id,
+        "type"   => $review->type,
         "stelle" => render_stars($review->rating),
         "controls" => $edit
     ));

@@ -38,6 +38,7 @@ $review->target_id = $_POST["id"];
 // Check if is an edit and if the 
 if (isset($_POST["id_comm"])) {
     $db->persist();
+    $review->id = $_POST["id_comm"];
     $erev = $review_service->get_review($review->type, $review->id);
 
     if ($erev === ReviewServiceError::FAIL) {
@@ -51,8 +52,6 @@ if (isset($_POST["id_comm"])) {
         header("Location: ../404.php");
         exit();
     }
-
-    $review->id = $_POST["id_comm"];
 }
 
 $review_service->replace($review);

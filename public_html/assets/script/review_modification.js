@@ -69,20 +69,43 @@ function enable_modify(review) {
     form.classList.add("articled");
     form.classList.add("solid");
     form.classList.add("modify-review");
+    form.action = "app/review.php";
+    form.method = "POST";
     // Stars
     const stars = modifyStars(parseInt(review.dataset.stars));
     form.appendChild(stars);
     // Textarea
     const textareaLabel = document.createElement("label");
-    textareaLabel.setAttribute("for", "modify");
+    textareaLabel.setAttribute("for", "review");
     textareaLabel.innerText= "Modifica la recensione";
     const textarea = document.createElement("textarea");
-    textarea.setAttribute("name", "modify");
-    textarea.setAttribute("id", "modify");
+    textarea.setAttribute("name", "review");
+    textarea.setAttribute("id", "review");
     textarea.setAttribute("rows", 4);
     textarea.textContent = review.children[2].innerText;
     form.appendChild(textareaLabel);
     form.appendChild(textarea);
+
+    // Hidden data
+    const id_comm = document.createElement("input")
+    id_comm.type = "hidden";
+    id_comm.name = "id_comm";
+    id_comm.value = review.dataset.id;
+    form.appendChild(id_comm);
+
+    const id = document.createElement("input")
+    id.type = "hidden";
+    id.name = "id";
+    const urlParams = new URLSearchParams(window.location.search);
+    id.value = urlParams.get("id");
+    form.appendChild(id);
+
+    const type = document.createElement("input")
+    type.type = "hidden";
+    type.name = "type";
+    type.value = review.dataset.type;
+    form.appendChild(type);
+
     // Buttons
     form.appendChild(addButtons(review));
     // Hide review
