@@ -632,18 +632,19 @@ fieldset.rating {
 fieldset.rating > legend {
     float: left;
     margin-top: 10px;
+    margin-right: auto;
     margin-bottom: 10px;
-    margin-right: 100px;
+    margin-left: 0;
 }
 
 .stars {
     font-size: 0;
     white-space: nowrap;
     display: inline-block;
-    width: 175px;
+    width: 182px;
     height: 35px;
     position: relative;
-    background: url("../img/star_black.png");
+    background: url("../img/star-regular.png");
     background-size: contain;
 }
 
@@ -655,7 +656,7 @@ fieldset.rating > legend {
     height: 100%;
     width: 20%;
     z-index: 1;
-    background: url("../img/star_gold.png");
+    background: url("../img/star-solid.png");
     background-size: contain;
 }
 
