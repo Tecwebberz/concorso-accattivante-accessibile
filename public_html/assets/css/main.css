@@ -125,13 +125,13 @@ em{
     border-radius: 3px;
     margin: 4px 2px;
     cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
 }
 
 .btn-mini {
-    display: inline;
-    height: fit-content;
-    padding: 2px 5px;
-    margin: 0
+    padding: 3px 7px;
+    font-size: 0.9em;
 }
 
 .btn-primary{
@@ -143,14 +143,14 @@ em{
 }
 
 a.btn-primary{
-    background-color: var(--primary-accent-bg);
+    /* background-color: var(--primary-accent-bg); */
     color: var(--primary-accent-text);
 }
 
-input[type=button], input[type=submit], input[type=reset] {
+button.btn, input[type=button], input[type=submit], input[type=reset] {
     border: none;
     text-decoration: none;
-  }
+}
 
 .solid{
     background-color: var(--primary-bg);
@@ -200,7 +200,6 @@ header {
 .photo-gallery{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    /*grid-template-rows: repeat(1);*/
     grid-gap: 1px; 
     width: 100%;
     margin: 20px auto;
@@ -248,7 +247,6 @@ header {
 header .logo, header .logo * {
     color: var(--primary-accent-text);
     font-size: 25px;
-    /* font-weight: black; Non valido*/
     font-family: 'Sarpanch', sans-serif;
     padding: 10px;
 }
@@ -389,7 +387,6 @@ footer .flex-container{
 .card .extra {
     padding: 15px;
     display: flex;
-    /* flex: 2 1 1; Non valido */
     justify-content: space-between;
     background-color: var(--primary-accent-bg);
     font-size: 0.8em;
@@ -611,27 +608,23 @@ ol.recensioni {
     font-size: large;
 }
 
-.review > form.modify {
+.review > div {
     display: flex;
-    margin-right: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
-.review > form.modify > a,
-.review > form.modify > input {
-    font-size: 0.8em;
-    padding: 5px 10px;
-    margin: 0 10px;
-}
-
-form.modify-review {
+/* form.modify-review {
     margin-left: 0;
     margin-right: 0;
-}
+} */
 
 form textarea {
     width: 100%;
 }
 
+ /* Stelline voto */
 fieldset.rating {
     border: none;
 }
