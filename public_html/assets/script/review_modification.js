@@ -4,34 +4,45 @@ function cancelModify(review) {
     review.children[2].hidden = false;
     review.children[3].classList.add("modify");
     review.children[3].hidden = false;
+    const btnClass = ["btn", "btn-primary", "btn-mini", "btn-modify"];
+    review.children[3].children[0].classList.add(btnClass[0],btnClass[1],btnClass[2],btnClass[3]);
+    review.children[3].children[1].classList.add(btnClass[0],btnClass[1],btnClass[2]);
     review.removeChild(review.children[4]);
 }
 
-function addStarLabel(star) {
+function addStarLabel(star, num) {
     const label = document.createElement("label");
-    label.setAttribute("for", "star"+star);
+    label.htmlFor = "star"+star;
+    label.appendChild(document.createTextNode(num+(star==1 ? " stella" : " stelle")));
     return label;
 }
 
 function addStarInput(star,actual_stars) {
     const input = document.createElement("input");
-    input.setAttribute("type", "radio");
-    input.setAttribute("id", "star-"+star);
-    input.setAttribute("name", "rating");
-    input.setAttribute("value", star);
+    input.type = "radio";
+    input.id = "star-"+star;
+    input.name = "rating";
+    input.value = star;
     if(star==actual_stars) input.checked = true; 
     return input;
 }
 
 function modifyStars(actual_stars) {
     const fieldset = document.createElement("fieldset");
-    fieldset.classList.add("rating");
+    fieldset.classList.add("rating", "row");
     const legend = document.createElement("legend");
     legend.innerText = "Voto";
     const span = document.createElement("span");
     span.classList.add("stars");
+    const Numeri = {
+        1: 'Una',
+        2: 'Due',
+        3: 'Tre',
+        4: 'Quattro',
+        5: 'Cinque'
+    }; 
     for(let i=1; i<=5; i++) {
-        span.appendChild(addStarLabel(i));
+        span.appendChild(addStarLabel(i, Numeri[i]));
         span.appendChild(addStarInput(i, actual_stars));
         span.appendChild(document.createElement("i"));
     }
@@ -40,35 +51,43 @@ function modifyStars(actual_stars) {
     return fieldset;
 }
 
+function createButton(tag) {
+    const button = document.createElement(tag)
+    button.classList.add("btn", "btn-primary", "col");
+    return button;
+}
+
 function addButtons(review) {
     const row = document.createElement("div");
     row.classList.add("row");
     // Input button
-    const input = document.createElement("input");
-    input.classList.add("btn");
-    input.classList.add("btn-primary");
-    input.classList.add("col");
-    input.setAttribute("type", "submit");
-    input.setAttribute("value", "Modifica");
+    const input = createButton("input");
+    input.type = "submit";
+    input.value = "Modifica";
     row.appendChild(input);
     // Cancel button
-    const cancel = document.createElement("input");
-    cancel.classList.add("btn");
-    cancel.classList.add("btn-primary");
-    cancel.classList.add("col");
-    cancel.setAttribute("type", "button");
-    cancel.setAttribute("value", "Annulla");
+    const cancel = createButton("button");
+    const cancelText = document.createTextNode("Cancella");
+    cancel.appendChild(cancelText);
     cancel.addEventListener('click', () => cancelModify(review));
     row.appendChild(cancel);
     return row;
 }
 
+function hideReview(review) {
+    review.children[3].children[1].removeAttribute("class");
+    review.children[3].children[0].removeAttribute("class");
+    review.children[3].children[1].hidden = true;
+    review.children[3].children[0].hidden = true;
+    review.children[3].hidden = true;
+    review.children[2].hidden = true;
+    review.children[1].removeAttribute("class");
+    review.children[1].hidden = true;
+}
+
 function enable_modify(review) {
     const form = document.createElement("form");
-    form.classList.add("medium");
-    form.classList.add("articled");
-    form.classList.add("solid");
-    form.classList.add("modify-review");
+    form.classList.add("medium", "articled", "solid", "modify");
     form.action = "app/review.php";
     form.method = "POST";
     // Stars
@@ -76,12 +95,12 @@ function enable_modify(review) {
     form.appendChild(stars);
     // Textarea
     const textareaLabel = document.createElement("label");
-    textareaLabel.setAttribute("for", "review");
+    textareaLabel.htmlFor = "review";
     textareaLabel.innerText= "Modifica la recensione";
     const textarea = document.createElement("textarea");
-    textarea.setAttribute("name", "review");
-    textarea.setAttribute("id", "review");
-    textarea.setAttribute("rows", 4);
+    textarea.name = "review";
+    textarea.id = "review";
+    textarea.rows =  4;
     textarea.textContent = review.children[2].innerText;
     form.appendChild(textareaLabel);
     form.appendChild(textarea);
@@ -109,11 +128,7 @@ function enable_modify(review) {
     // Buttons
     form.appendChild(addButtons(review));
     // Hide review
-    review.children[3].removeAttribute("class");
-    review.children[3].hidden = true;
-    review.children[2].hidden = true;
-    review.children[1].removeAttribute("class");
-    review.children[1].hidden = true;
+    hideReview(review);
     // Append form
     review.appendChild(form);
 }

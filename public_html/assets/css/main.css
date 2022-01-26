@@ -616,6 +616,10 @@ ol.recensioni {
     justify-content: flex-end;
 }
 
+form.modify {
+    margin: 0;
+}
+
 form textarea {
     width: 100%;
     resize: vertical;
