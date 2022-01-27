@@ -30,16 +30,30 @@ function pretty_language(string $lang): string {
 }
 
 function pretty_period(int $year, int $semester): string {
+
+    function abbr_numeric(int $year) {
+        switch ($year) {
+            case 1:
+                return "primo";
+            case 2:
+                return "secondo";
+            case 3:
+                return "terzo";
+        }
+    }
+
     function pretty_year(int $year): string{
         if ($year >= 1 && $year <= 3) {
-            return "del {$year}° anno";
+            $abbr = abbr_numeric($year);
+            return "del <abbr title='{$abbr}'>{$year}°</abbr> anno";
         } else {
             return "opzionale";
         }
     }
     function pretty_semester(int $semester): string {
         if ($semester >= 1 && $semester <= 2) {
-            return "{$semester}° semestre";
+            $abbr = abbr_numeric($semester);
+            return "<abbr title='{$abbr}'>{$semester}°</abbr> semestre";
         } else {
             return "annuale";
         }
