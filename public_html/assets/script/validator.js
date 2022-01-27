@@ -1,3 +1,14 @@
+function createErrorList() {
+    let error_list = document.createElement("ul");
+    error_list.setAttribute("role", "alert");
+    error_list.classList.add("error");
+    return error_list;
+}
+
+function appendErrorList(error_flag, label, list) {
+    if(error_flag) label.appendChild(list);
+}
+
 function removeErrorList(element, stdChild) {
     if(element.childElementCount>stdChild) element.removeChild(element.lastChild);
 }
@@ -5,10 +16,6 @@ function removeErrorList(element, stdChild) {
 function appendError(error_list, list_item, item_text) {
     list_item.appendChild(item_text);
     error_list.appendChild(list_item);
-}
-
-function appendErrorList(error_flag, label, list) {
-    if(error_flag) label.appendChild(list);
 }
 
 function checkLength(field_value, error_list, length) {
@@ -60,8 +67,7 @@ function validateName() {
     // [A-Za-z]{1,50}
     const label = document.getElementById("labelName");
     removeErrorList(label, 0);
-    const error_list = document.createElement("ul");
-    error_list.classList.add("error");
+    const error_list = createErrorList()
     let error_flag = false;
     const field_value = document.getElementById("name").value.trim();
     error_flag = checkLength(field_value, error_list, 1) |
@@ -74,8 +80,7 @@ function validateSurname() {
     // [A-Za-z]{1,50}
     const label = document.getElementById("labelSurname");
     removeErrorList(label, 0);
-    const error_list = document.createElement("ul");
-    error_list.classList.add("error");
+    const error_list = createErrorList()
     let error_flag = false;
     const field_value = document.getElementById("surname").value.trim();
     error_flag = checkLength(field_value, error_list, 1) | 
@@ -88,8 +93,7 @@ function validateUsername() {
     // ^[a-zA-Z][a-zA-Z0-9-_\.]{1,25}$
     const label = document.getElementById("labelUser");
     removeErrorList(label, 0);
-    const error_list = document.createElement("ul");
-    error_list.classList.add("error");
+    const error_list = createErrorList()
     let error_flag = false;
     const field_value = document.getElementById("username").value.trim();
     error_flag = checkLength(field_value, error_list, 8);
@@ -114,8 +118,7 @@ function validateYear() {
     // min 2008 max currentYear
     const label = document.getElementById("labelYear");
     removeErrorList(label, 0);
-    const error_list = document.createElement("ul");
-    error_list.classList.add("error");
+    const error_list = createErrorList()
     let error_flag = false;
     const field= document.getElementById("year");
     const min = field.getAttribute("min"); const max = field.getAttribute("max");
@@ -132,8 +135,7 @@ function validatePassword() {
     // (?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$
     const label = document.getElementById("labelPass");
     removeErrorList(label, 0);
-    const error_list = document.createElement("ul");
-    error_list.classList.add("error");
+    const error_list = createErrorList()
     let error_flag = false;
     const field_value = document.getElementById("password").value.trim();
     error_flag = checkLength(field_value, error_list, 8) | 
@@ -160,8 +162,7 @@ function validatePassword() {
 function validateCPass() {
     const label = document.getElementById("labelCPass");
     removeErrorList(label, 1);
-    const error_list = document.createElement("ul");
-    error_list.classList.add("error");
+    const error_list = createErrorList()
     let error_flag = false;
     const field_value = document.getElementById("password").value.trim();
     const control = document.getElementById("check_password").value.trim();

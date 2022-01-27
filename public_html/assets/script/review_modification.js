@@ -2,7 +2,6 @@ function cancelModify(review) {
     review.children[1].classList.add("vote");
     review.children[1].hidden = false;
     review.children[2].hidden = false;
-    review.children[3].classList.add("modify");
     review.children[3].hidden = false;
     const btnClass = ["btn", "btn-primary", "btn-mini", "btn-modify"];
     review.children[3].children[0].classList.add(btnClass[0],btnClass[1],btnClass[2],btnClass[3]);
@@ -10,24 +9,24 @@ function cancelModify(review) {
     review.removeChild(review.children[4]);
 }
 
-function addStarLabel(star, num) {
+function addStarLabel(star, num, actual_mod) {
     const label = document.createElement("label");
-    label.htmlFor = "star"+star;
+    label.htmlFor = "starM-"+star+"-"+actual_mod;
     label.appendChild(document.createTextNode(num+(star==1 ? " stella" : " stelle")));
     return label;
 }
 
-function addStarInput(star,actual_stars) {
+function addStarInput(star, actual_stars, actual_mod) {
     const input = document.createElement("input");
     input.type = "radio";
-    input.id = "star-"+star;
+    input.id = "starM-"+star+"-"+actual_mod;
     input.name = "rating";
     input.value = star;
     if(star==actual_stars) input.checked = true; 
     return input;
 }
 
-function modifyStars(actual_stars) {
+function modifyStars(actual_stars, actual_mod) {
     const fieldset = document.createElement("fieldset");
     fieldset.classList.add("rating", "row");
     const legend = document.createElement("legend");
@@ -42,8 +41,8 @@ function modifyStars(actual_stars) {
         5: 'Cinque'
     }; 
     for(let i=1; i<=5; i++) {
-        span.appendChild(addStarLabel(i, Numeri[i]));
-        span.appendChild(addStarInput(i, actual_stars));
+        span.appendChild(addStarLabel(i, Numeri[i], actual_mod));
+        span.appendChild(addStarInput(i, actual_stars, actual_mod));
         span.appendChild(document.createElement("i"));
     }
     fieldset.appendChild(legend);
@@ -67,7 +66,7 @@ function addButtons(review) {
     row.appendChild(input);
     // Cancel button
     const cancel = createButton("button");
-    const cancelText = document.createTextNode("Cancella");
+    const cancelText = document.createTextNode("Annulla");
     cancel.appendChild(cancelText);
     cancel.addEventListener('click', () => cancelModify(review));
     row.appendChild(cancel);
@@ -86,24 +85,23 @@ function hideReview(review) {
 }
 
 function enable_modify(review) {
+    const activeMod = document.getElementsByClassName("modify").length;
     const form = document.createElement("form");
     form.classList.add("medium", "articled", "solid", "modify");
     form.action = "app/review.php";
     form.method = "POST";
     // Stars
-    const stars = modifyStars(parseInt(review.dataset.stars));
+    const stars = modifyStars(parseInt(review.dataset.stars), activeMod);
     form.appendChild(stars);
     // Textarea
     const textareaLabel = document.createElement("label");
-    textareaLabel.htmlFor = "review";
     textareaLabel.innerText= "Modifica la recensione";
     const textarea = document.createElement("textarea");
     textarea.name = "review";
-    textarea.id = "review";
     textarea.rows =  4;
     textarea.textContent = review.children[2].innerText;
+    textareaLabel.appendChild(textarea);
     form.appendChild(textareaLabel);
-    form.appendChild(textarea);
 
     // Hidden data
     const id_comm = document.createElement("input")
