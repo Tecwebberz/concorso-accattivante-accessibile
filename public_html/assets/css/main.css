@@ -191,13 +191,22 @@ div.flex-close{
     text-align: center;
 }
 
-li.primary-box {
-    list-style-type: none;
+.beauty-img {
+    background-size: 80% 75%;
+    background-position: bottom;
+    background-repeat: no-repeat;
 }
 
-li.primary-box img {
-    height: 75%;
-    width: 75%;
+#collab.beauty-img { background-image: url("../img/collab.svg"); }
+#search.beauty-img { background-image: url("../img/search_girl.svg"); }
+#study.beauty-img{ background-image: url("../img/study.svg"); }
+#error404.beauty-img{ 
+    background-image: url("../img/lost_trees.svg");
+    background-position: -100%;
+}
+
+li.primary-box {
+    list-style-type: none;
 }
 
 /*Header*/
@@ -685,21 +694,25 @@ fieldset.rating > legend {
 /* 404 */
 
 .helper {
-    max-width: 400px;
-    padding: 20px;
-    margin: auto 0;
+    flex-direction: column;
+    align-content: end;
+    height: 400px;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.helper * {
+    color: var(--primary-text);
+    text-align: left;
+    max-width: 50%;
 }
 
 .helper > h2 {
-    color: var(--primary-text);
-    text-align: left;
     margin-bottom: 10px;
     font-size: 28px;
 }
 
 .helper > p {
-    color: var(--primary-text);
-    text-align: left;
     font-size: 18px;
 }
 
@@ -775,5 +788,37 @@ fieldset.rating > legend {
 
     .photo-gallery{
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .helper {
+        /* max-width: 400px;
+        padding: 20px;
+        margin: auto 0; */
+        flex-direction: column;
+        align-content: center;
+        height: 400px;
+        margin: 0 auto;
+        width: 80%;
+    }
+    
+    .helper * {
+        color: var(--primary-text);
+        text-align: left;
+        max-width: 90%;
+    }
+    
+    .helper > h2 {
+        margin-bottom: 10px;
+        font-size: 28px;
+    }
+
+    .helper > p {
+        font-size: 18px;
+        padding-bottom: 50%;
+    }
+
+    #error404.beauty-img{ 
+        background-position: bottom; 
+        background-size: 90% 45%;
     }
 }
