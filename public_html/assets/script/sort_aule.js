@@ -1,3 +1,12 @@
+if ("geolocation" in navigator) {
+    const section = document.getElementsByClassName("centered")[0];
+    const button = document.createElement("button");
+    button.classList.add("btn", "btn-primary");
+    button.onclick = "sort()";
+    button.innerText = "Ordina in base alla distanza";
+    section.insertBefore(button, section.children[1]);
+}
+
 const deg2rad = (deg) => deg * Math.PI / 180;
 const computeDistance = (pos1, pos2) => {
     const earthRadiusKm = 6371;
