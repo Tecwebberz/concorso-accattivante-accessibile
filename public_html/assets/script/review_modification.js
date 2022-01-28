@@ -9,24 +9,24 @@ function cancelModify(review) {
     review.removeChild(review.children[4]);
 }
 
-function addStarLabel(star, num, actual_mod) {
+function addStarLabel(star, num, activeMod) {
     const label = document.createElement("label");
-    label.htmlFor = "starM-"+star+"-"+actual_mod;
+    label.htmlFor = "starM-"+star+"-"+activeMod;
     label.appendChild(document.createTextNode(num+(star==1 ? " stella" : " stelle")));
     return label;
 }
 
-function addStarInput(star, actual_stars, actual_mod) {
+function addStarInput(star, actualStars, activeMod) {
     const input = document.createElement("input");
     input.type = "radio";
-    input.id = "starM-"+star+"-"+actual_mod;
+    input.id = "starM-"+star+"-"+activeMod;
     input.name = "rating";
     input.value = star;
-    if(star==actual_stars) input.checked = true; 
+    if(star==actualStars) input.checked = true; 
     return input;
 }
 
-function modifyStars(actual_stars, actual_mod) {
+function modifyStars(actualStars, activeMod) {
     const fieldset = document.createElement("fieldset");
     fieldset.classList.add("rating", "row");
     const legend = document.createElement("legend");
@@ -41,8 +41,8 @@ function modifyStars(actual_stars, actual_mod) {
         5: 'Cinque'
     }; 
     for(let i=1; i<=5; i++) {
-        span.appendChild(addStarLabel(i, Numeri[i], actual_mod));
-        span.appendChild(addStarInput(i, actual_stars, actual_mod));
+        span.appendChild(addStarLabel(i, Numeri[i], activeMod));
+        span.appendChild(addStarInput(i, actualStars, activeMod));
         span.appendChild(document.createElement("i"));
     }
     fieldset.appendChild(legend);
@@ -73,6 +73,23 @@ function addButtons(review) {
     return row;
 }
 
+function createTextareaLabel(activeMod) {
+    const textareaLabel = document.createElement("label");
+    textareaLabel.innerText= "Modifica la recensione";
+    textareaLabel.htmlFor = "reviewM-"+activeMod;
+    return textareaLabel;
+}
+
+function createTextarea(review, activeMod) {
+    const textarea = document.createElement("textarea");
+    textarea.id = "reviewM-"+activeMod;
+    textarea.name = "reviewM-"+activeMod;
+    textarea.rows = 4;
+    textarea.cols = 80;
+    textarea.textContent = review.children[2].innerText;
+    return textarea;
+}
+
 function hideReview(review) {
     review.children[3].children[1].removeAttribute("class");
     review.children[3].children[0].removeAttribute("class");
@@ -94,16 +111,8 @@ function enable_modify(review) {
     const stars = modifyStars(parseInt(review.dataset.stars), activeMod);
     form.appendChild(stars);
     // Textarea
-    const textareaLabel = document.createElement("label");
-    textareaLabel.innerText= "Modifica la recensione";
-    const textarea = document.createElement("textarea");
-    textarea.name = "review";
-    textarea.rows =  4;
-    textarea.cols = 80;
-    textarea.textContent = review.children[2].innerText;
-    textareaLabel.appendChild(textarea);
-    form.appendChild(textareaLabel);
-
+    form.appendChild(createTextareaLabel(activeMod));
+    form.appendChild(createTextarea(review, activeMod));
     // Hidden data
     const id_comm = document.createElement("input")
     id_comm.type = "hidden";
