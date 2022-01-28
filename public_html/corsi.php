@@ -22,7 +22,7 @@ function build_course_component(string $name, array $courses): string {
 
     $list = "";
     foreach ($courses as $course) {
-        $list .= make_list_item(make_link($course->name, "corso.php?id={$course->id}"));
+        $list .= make_list_item(make_link($course->name, "corso.php?id={$course->id}", "btn btn-primary"));
     }
     
     $section_template->insert("courses", $list);

@@ -573,21 +573,35 @@ ul.error > li {
 
 /* Corsi */
 
-section.corsi > ol {
+section.corsi ol {
     list-style-type: none;
 }
 
-section.corsi > ol > li > h3 {
+section.corsi h3 {
     border-bottom: solid #d6d6d6 0.5px;
     margin-bottom: 5px;
 
 }
 
+section.corsi ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+section.corsi ul a {
+    padding: 20px;
+    margin: 10px;
+    width: fit-content;
+}
+
+/*
 section.corsi > ol > li > ul {
     list-style-type: none;
     padding-left: 10px;
     margin-bottom: 5px;
-}
+} */
 
 ul.corso {
     width: 75%;
@@ -750,6 +764,16 @@ fieldset.rating > legend {
     
     form > ul {
         grid-template-columns: repeat(1, auto);
+    }
+
+    section.corsi ul {
+        flex-direction: column;
+    }
+
+    section.corsi ul a {
+        margin: 10px 0;
+        width: 100%;
+        box-sizing: border-box;
     }
 }
 

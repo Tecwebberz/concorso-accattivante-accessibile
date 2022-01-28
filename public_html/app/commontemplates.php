@@ -90,13 +90,17 @@ function build_header(): string {
 function make_list_item(string $content, ?string $class = null): string {
     $open = "<li>";
     if ($class !== null) {
-        $open = "<li class={$class}>";
+        $open = "<li class=\"{$class}\">";
     }
     return "{$open}{$content}</li>";
 }
 
-function make_link(string $content, string $ref): string {
-    return "<a href='{$ref}'>{$content}</a>";
+function make_link(string $content, string $ref, ?string $class = null): string {
+    $open = "<a";
+    if ($class !== null) {
+        $open .= " class=\"{$class}\"";
+    }
+    return "{$open} href='{$ref}'>{$content}</a>";
 }
 
 function render_stars(int $n): string {
