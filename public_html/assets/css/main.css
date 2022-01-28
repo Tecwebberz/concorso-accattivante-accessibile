@@ -63,6 +63,8 @@ a:active, a:hover{color: var(--primary-active);}
 
 a:visited {color: var(--primary-visited);}
 
+span[lang] { color: inherit; }
+
 abbr{
     text-decoration: none;
     font-weight: inherit;
@@ -195,10 +197,13 @@ button.btn, input[type=button], input[type=submit], input[type=reset] {
 
 #collab.beauty-img { background-image: url("../img/collab.svg"); }
 #search.beauty-img { background-image: url("../img/search_girl.svg"); }
-#study.beauty-img{ background-image: url("../img/study.svg"); }
+#study.beauty-img { background-image: url("../img/study.svg"); }
 #error404.beauty-img{ 
     background-image: url("../img/lost_trees.svg");
     background-position: -100%;
+}
+#success.beauty-img { 
+    background-image: url("../img/success.svg");
 }
 
 li.primary-box {
@@ -859,5 +864,12 @@ fieldset.rating > legend {
     #error404.beauty-img{ 
         background-position: bottom; 
         background-size: 90% 45%;
+    }
+
+    section#success { 
+        flex-direction: row; 
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 15px;
     }
 }
