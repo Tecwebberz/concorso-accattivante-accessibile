@@ -131,11 +131,8 @@ em{
 form .btn{
     width: 100%;
     padding: 14px 20px;
-    margin: 4px 0;
-    /* font-size: 17px; */
-    /* border: none; */
+    margin: 10px 0;
     border-radius: 4px;
-    /* cursor: pointer; */
 }
 
 .btn-mini {
@@ -312,6 +309,7 @@ section{
     background-color: var(--primary-bg);
     padding: 15px;
     border-radius: 4px 4px 0px 0px;
+    margin: 0 auto;
 }
 
 section.centered{
@@ -808,6 +806,12 @@ fieldset.rating > legend {
         text-align: left;
     }
 
+    button#order {
+        width: 100%;
+        float: none;
+        margin-bottom: 10px;
+    }
+
     form.articled .row{
         justify-content: center;
         flex-wrap: wrap;
@@ -829,9 +833,6 @@ fieldset.rating > legend {
     }
 
     .helper {
-        /* max-width: 400px;
-        padding: 20px;
-        margin: auto 0; */
         flex-direction: column;
         align-content: center;
         height: 400px;
