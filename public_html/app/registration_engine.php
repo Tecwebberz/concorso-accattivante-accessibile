@@ -28,7 +28,7 @@ if ($res !== UserServiceError::OK) {
 
 $res = $user_service->register($user, $password);
 if ($res === UserServiceError::OK) {
-    header("Location: ../index.php");
+    header("Location: ../registrationsuccess.php?user={$user->name}");
 } else {
     header("Location: ../registrati.php?error={$res}");
 }

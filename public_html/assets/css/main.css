@@ -51,7 +51,6 @@ body {
 }
     /*Link*/
 a{
-    text-decoration: none;
     font-weight: 400;
 }
 
@@ -165,7 +164,7 @@ button.btn, input[type=button], input[type=submit], input[type=reset] {
     background-color: var(--primary-bg);
 }
 
-div.flex-close{
+.flex-close{
     justify-content: center;
 }
 
@@ -312,6 +311,13 @@ section.centered{
 
 section>h2{
     margin-bottom: 20px;
+}
+
+section#aule > h2 {
+    float: left;
+}
+section#aule > button {
+    float: right;
 }
 
 .status{
