@@ -23,6 +23,7 @@ $room_template = $template_engine->load_template(
 $room_template->insert("header", build_header());
 
 $room_template->insert_all(array(
+    "bc_aula" => $room->name,
     "description"  => $room->description,
     "registration" => $room->reservation_required ? "registrazione richiesta"
                                                   : "accesso libero",
@@ -66,3 +67,5 @@ $room_template->insert("form_recensione", make_review_form(ReviewType::STUDYROOM
 $room_template->insert("recensioni", make_reviews($reviews));
 
 echo $room_template->build();
+
+?>

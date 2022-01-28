@@ -211,8 +211,9 @@ li.primary-box {
 /*Header*/
 header {
     overflow: hidden;
-    height: auto;
+    height: auto;   
 }
+
     /*Photo gallery*/
 .photo-gallery{
     display: grid;
@@ -258,7 +259,7 @@ header {
 header {
     background-color: var(--primary-accent-bg);
     min-height: 5em;
-    margin: 0 auto 15px auto;
+    margin: 0 auto;
 }
 
 header .logo, header .logo * {
@@ -294,6 +295,15 @@ nav ul li a:hover,a:active {
 nav ul li.active {
     color: var(--primary-accent-text);
     font-weight: 800;
+}
+
+/* Breadcrumb */
+
+nav.breadcrumb {
+    margin-bottom: 15px;
+    padding: 10px 0;
+    padding-left: 30px;
+    background-color: white;
 }
 
 /*Section*/
@@ -532,8 +542,6 @@ input{
     box-sizing: border-box;
 }
 
-
-
 form > .error {
     margin-top: 15px;
     padding-top: 5px;
@@ -677,7 +685,7 @@ fieldset.rating > legend {
     width: 182px;
     height: 35px;
     position: relative;
-    background: url("../img/star-regular.png");
+    background: url("../img/star-regular.webp");
     background-size: contain;
 }
 
@@ -689,7 +697,7 @@ fieldset.rating > legend {
     height: 100%;
     width: 20%;
     z-index: 1;
-    background: url("../img/star-solid.png");
+    background: url("../img/star-solid.webp");
     background-size: contain;
 }
 
