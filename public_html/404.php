@@ -30,6 +30,7 @@ if (isset($_GET["error"]) && $_GET["error"] === "corso") {
 } else if (isset($_GET["error"]) && $_GET["error"] === "aula") {
     $page_template->insert_all(array(
         "from" => "stavi cercando un' aula?",
+        "base" => build_base(),
         "to"   => "Vedi tutte le " . make_link("aule", "aule.php") .
                   " oppure torna alla " . make_link("pagina principale", "index.php") . ".",
     ));

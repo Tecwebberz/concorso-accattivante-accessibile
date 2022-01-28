@@ -67,6 +67,8 @@ $course_template = $template_engine->load_template(
 
 $course_template->insert_all(array(
     "header" => build_header(),
+    "meta_corso" => $course->name,
+    "meta_keyword" => $course->name,
     "name_tit" => strip_tags($course->name),
     "bc_corso" => $course->name,
     "name" => $course->name,

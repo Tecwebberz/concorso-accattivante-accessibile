@@ -198,13 +198,8 @@ button.btn, input[type=button], input[type=submit], input[type=reset] {
 #collab.beauty-img { background-image: url("../img/collab.svg"); }
 #search.beauty-img { background-image: url("../img/search_girl.svg"); }
 #study.beauty-img { background-image: url("../img/study.svg"); }
-#error404.beauty-img{ 
-    background-image: url("../img/lost_trees.svg");
-    background-position: -100%;
-}
-#success.beauty-img { 
-    background-image: url("../img/success.svg");
-}
+#error404.beauty-img{ background-image: url("../img/lost_trees.svg"); }
+#success.beauty-img { background-image: url("../img/success.svg"); }
 
 li.primary-box {
     list-style-type: none;
@@ -306,6 +301,10 @@ nav.breadcrumb {
     padding: 10px 0;
     padding-left: 30px;
     background-color: white;
+}
+
+section#success {
+    margin-top: 15px;
 }
 
 /*Section*/
@@ -607,13 +606,6 @@ section.corsi ul a {
     width: fit-content;
 }
 
-/*
-section.corsi > ol > li > ul {
-    list-style-type: none;
-    padding-left: 10px;
-    margin-bottom: 5px;
-} */
-
 ul.corso {
     width: 75%;
     margin-left: auto;
@@ -726,10 +718,12 @@ fieldset.rating > legend {
 
 .helper {
     flex-direction: column;
+    justify-content: center;
     align-content: end;
     height: 400px;
     margin: 0 auto;
     width: 80%;
+    background-position: -80%;
 }
 
 .helper * {
@@ -836,40 +830,13 @@ fieldset.rating > legend {
     .photo-gallery{
         grid-template-columns: repeat(2, 1fr);
     }
-
-    .helper {
-        flex-direction: column;
-        align-content: center;
-        height: 400px;
-        margin: 0 auto;
-        width: 80%;
-    }
     
-    .helper * {
-        color: var(--primary-text);
-        text-align: left;
-        max-width: 90%;
-    }
+    .helper * { max-width: 90%; }
     
-    .helper > h2 {
-        margin-bottom: 10px;
-        font-size: 28px;
-    }
+    .helper > p { padding-bottom: 50%; }
 
-    .helper > p {
-        font-size: 18px;
-        padding-bottom: 50%;
-    }
-
-    #error404.beauty-img{ 
+    .helper { 
         background-position: bottom; 
         background-size: 90% 45%;
-    }
-
-    section#success { 
-        flex-direction: row; 
-        width: 80%;
-        margin: 0 auto;
-        margin-top: 15px;
     }
 }

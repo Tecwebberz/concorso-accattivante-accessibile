@@ -23,6 +23,8 @@ $room_template = $template_engine->load_template(
 $room_template->insert("header", build_header());
 
 $room_template->insert_all(array(
+    "meta_aula" => $room->name,
+    "meta_keyword" => $room->name,
     "bc_aula" => $room->name,
     "description"  => $room->description,
     "registration" => $room->reservation_required ? "registrazione richiesta"
