@@ -99,6 +99,7 @@ function enable_modify(review) {
     const textarea = document.createElement("textarea");
     textarea.name = "review";
     textarea.rows =  4;
+    textarea.cols = 80;
     textarea.textContent = review.children[2].innerText;
     textareaLabel.appendChild(textarea);
     form.appendChild(textareaLabel);
