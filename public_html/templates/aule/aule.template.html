@@ -17,17 +17,21 @@
 <body>
     
     <component>header</component>
-    <nav aria-label="breadcrumb" class="breadcrumb">
-        Ti trovi in: <a href="./index.php">Home</a> &gt; Aule
-    </nav>
+    <div class="main">
+        <nav aria-label="breadcrumb" class="breadcrumb">Ti trovi in:
+            <ol>
+                <li><a href="./index.php" lang="en">Home</a>   </li>
+                <li aria-current="page">Aule</li>
+            </ol>
+        </nav>
 
-    <section id="aule" class="centered solid">
-        <h2 >Le aule studio più vicine a te</h2>
-        <ol class="cards">
-            <component>cards</component>
-        </ol>
-    </section>
-
+        <section id="aule" class="centered solid">
+            <h2 >Le aule studio più vicine a te</h2>
+            <ol class="cards">
+                <component>cards</component>
+            </ol>
+        </section>
+    </div>
     <component>footer</component>
 
 </body>

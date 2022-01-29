@@ -13,15 +13,21 @@
 <body>
 
     <component>header</component>
-    
-    <nav aria-label="breadcrumb" class="breadcrumb">
-        Ti trovi in: <a href="./index.php">Home</a> &gt; 404
-    </nav>
 
-    <section id="error404" class="flex-container flex-close solid helper beauty-img">
-        <h2>Come sei arrivato qui? Sbagliato scala in Torre Archimede?</h2>
-        <p>Allora, <component>from</component> <component>to</component></p>
-    </section>
+    <div class="main">
+    
+        <nav aria-label="breadcrumb" class="breadcrumb">Ti trovi in:
+            <ol>
+                <li><a href="./index.php" lang="en">Home</a>   </li>
+                <li aria-current="page">404</li>
+            </ol>
+        </nav>
+
+        <section id="error404" class="flex-container flex-close solid helper beauty-img">
+            <h2>Come sei arrivato qui? Sbagliato scala in Torre Archimede?</h2>
+            <p>Allora, <component>from</component> <component>to</component></p>
+        </section>
+    </div>
 
     <component>footer</component>
 

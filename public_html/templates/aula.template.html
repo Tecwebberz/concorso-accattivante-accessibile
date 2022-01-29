@@ -15,44 +15,48 @@
 <body>
 
     <component>header</component>
-
-    <nav aria-label="breadcrumb" class="breadcrumb">
-        Ti trovi in: <a href="./index.php">Home</a> &gt;
-         <a href="./aule.php">Aule</a> &gt; <component>bc_aula</component>
-    </nav>
-    
-    <section id="aula" class="centered solid">
-        <h2><component>name</component></h2>
-
-        <div class="status">
-            <p>Valutazione <component>rating</component> su 5 - <component>count</component> Recensioni</p>
-        </div>
+    <div class="main">
+        <nav aria-label="breadcrumb" class="breadcrumb">Ti trovi in:
+            <ol>
+                <li><a href="./index.php" lang="en">Home</a>   </li>
+                <li><a href="./corsi.php">Aula</a>  </li>
+                <li aria-current="page"><component>bc_aula</component></li>
+            </ol>
+        </nav>
         
-        <div class="photo-gallery">
-            <component>main_image</component>
-            <component>carousel</component>
-        </div>
+        <section id="aula" class="centered solid">
+            <h2><component>name</component></h2>
 
-        <div class="mini_title">
-            <h3><component>short_desc</component></h3>
-            <ul>
-                <li><component>seats</component> posti disponibili</li>
-                <li><component>wifi</component></li>
-                <li><component>registration</component></li>
-            </ul>
-        </div>
+            <div class="status">
+                <p>Valutazione <component>rating</component> su 5 - <component>count</component> Recensioni</p>
+            </div>
+            
+            <div class="photo-gallery">
+                <component>main_image</component>
+                <component>carousel</component>
+            </div>
 
-        <p class="article_body">
-            <component>description</component>
-        </p>
+            <div class="mini_title">
+                <h3><component>short_desc</component></h3>
+                <ul>
+                    <li><component>seats</component> posti disponibili</li>
+                    <li><component>wifi</component></li>
+                    <li><component>registration</component></li>
+                </ul>
+            </div>
 
-        <div>
-            <h2>Recensioni</h2>
-            <component>msg</component>
-            <component>form_recensione</component>
-            <component>recensioni</component>
-        </div>
-    </section>
+            <p class="article_body">
+                <component>description</component>
+            </p>
+
+            <div>
+                <h2>Recensioni</h2>
+                <component>msg</component>
+                <component>form_recensione</component>
+                <component>recensioni</component>
+            </div>
+        </section>
+    </div>
 
     <component>footer</component>
 

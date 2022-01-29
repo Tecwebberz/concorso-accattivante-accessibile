@@ -1,4 +1,4 @@
-ErrorDocument 404 /aferrari/404.php
+ErrorDocument 404 /*/404.php
 
 # Caching images
 <IfModule mod_expires.c>  

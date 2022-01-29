@@ -53,10 +53,16 @@ html {
 
 body {
     background-color: var(--alt-bg);
-
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
 }
 
-
+.main{
+    flex: 1;
+}
     /*Link*/
 a{
     font-weight: 400;
@@ -314,6 +320,15 @@ nav.breadcrumb {
     padding-left: 30px;
     background-color: white;
 }
+
+nav.breadcrumb ol { display: inline; }
+
+nav.breadcrumb li {
+    display: inline;
+    list-style-type: none;
+}
+    
+nav.breadcrumb li:not(:first-child)::before { content: "→"; }
 
 section#success {
     margin-top: 15px;

@@ -15,19 +15,24 @@
 <body>
     
     <component>header</component>
-    <nav aria-label="breadcrumb" class="breadcrumb">
-        Ti trovi in: <a href="./index.php">Home</a> &gt; Corsi
-    </nav>
-    <section class="corsi centered solid">
+    <div class="main">
+        <nav aria-label="breadcrumb" class="breadcrumb">Ti trovi in:
+            <ol>
+                <li><a href="./index.php" lang="en">Home</a>   </li>
+                <li aria-current="page">Corsi</li>
+            </ol>
+        </nav>
+        <section class="corsi centered solid">
 
-        <h2>I corsi della laurea triennale</h2>
-        <ol>
-            <component>fstyr</component>
-            <component>sndyr</component>
-            <component>optional</component>
-            <component>trdyr</component>
-        </ol>
-    </section>
+            <h2>I corsi della laurea triennale</h2>
+            <ol>
+                <component>fstyr</component>
+                <component>sndyr</component>
+                <component>optional</component>
+                <component>trdyr</component>
+            </ol>
+        </section>
+    </div>
 
     <component>footer</component>
 

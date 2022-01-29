@@ -16,10 +16,13 @@
 <body>
 
     <component>header</component>
-    
-    <nav aria-label="breadcrumb" class="breadcrumb">
-        Ti trovi in: <a href="./index.php">Home</a> &gt;
-         <a href="./corsi.php">Corsi</a> &gt; <component>bc_corso</component>
+    <div class="main">
+    <nav aria-label="breadcrumb" class="breadcrumb">Ti trovi in:
+        <ol>
+            <li><a href="./index.php" lang="en">Home</a>   </li>
+            <li><a href="./corsi.php">Corsi</a>  </li>
+            <li aria-current="page"><component>bc_corso</component></li>
+        </ol>
     </nav>
 
     <section id="corso" class="centered solid">
@@ -45,6 +48,7 @@
             <component>recensioni</component>
         </div>
     </section>
+    </div>
 
     <component>footer</component>
 
