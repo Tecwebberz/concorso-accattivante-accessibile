@@ -12,6 +12,8 @@ $page_template = $template_engine->load_template("registrationsuccess.template.h
 $page_template->insert("header", build_header());
 $page_template->insert("user", safe_input($_GET["user"]));
 
+$page_template->insert("footer", build_footer());
+
 echo $page_template->build();
 
 ?>
