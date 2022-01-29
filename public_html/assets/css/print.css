@@ -4,8 +4,16 @@ html {
     font-family: 'Roboto', serif;
 }
 
+.no-print {
+    display: none;
+}
+
 abbr.first-abbr::after {
     content: " ("attr(title)")";
+}
+
+footer { 
+    display: none;
 }
 
 form {
