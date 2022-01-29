@@ -9,6 +9,7 @@ $rooms = $studyroom_service->get_all_studyrooms();
 $rooms_template = $template_engine->load_template(
     "aule/aule.template.html");
 $rooms_template ->insert("header", build_header());
+$rooms_template->insert("footer", build_footer());
 
 function build_card(StudyRoomDTO $room): string {
     global $template_engine;

@@ -5,6 +5,7 @@ require_once($root . "/app/global.php");
 
 $page_template = $template_engine->load_template("registrati.template.html");
 $page_template->insert("header", build_header());
+$page_template->insert("footer", build_footer());
 
 $error = "";
 if (isset($_GET["error"]) && $_GET["error"] == UserServiceError::USERNAME_ALREADY_IN_USE) {

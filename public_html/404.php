@@ -5,6 +5,8 @@ require_once($root . "/app/global.php");
 
 $page_template = $template_engine->load_template("404.template.html");
 $page_template->insert("header", build_header());
+$page_template->insert("footer", build_footer());
+
 
 function build_base(): string {
     $srv = "http://{$_SERVER['SERVER_NAME']}:{$_SERVER['SERVER_PORT']}";

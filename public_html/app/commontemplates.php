@@ -87,6 +87,13 @@ function build_header(): string {
     return $header_template->build();
 }
 
+function build_footer(): string {
+    global $template_engine;
+
+    $header_template = $template_engine->load_template("footer.template.html");
+    return $header_template->build();
+}
+
 function make_list_item(string $content, ?string $class = null): string {
     $open = "<li>";
     if ($class !== null) {

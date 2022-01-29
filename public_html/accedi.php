@@ -5,6 +5,7 @@ require_once($root . "/app/global.php");
 
 $login_template = $template_engine->load_template("accedi.template.html");
 $login_template->insert("header", build_header());
+$login_template->insert("footer", build_footer());
 
 $error = "";
 if (isset($_GET["error"]) && $_GET["error"] == UserServiceError::AUTH_FAILED) {

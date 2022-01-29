@@ -12,6 +12,8 @@ $courses_template = $template_engine->load_template(
 );
 
 $courses_template ->insert("header", build_header());
+$courses_template ->insert("footer", build_footer());
+
 
 function build_course_component(string $name, array $courses): string {
     global $template_engine;

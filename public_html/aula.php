@@ -21,6 +21,7 @@ $db->close();
 $room_template = $template_engine->load_template(
     "aula.template.html");
 $room_template->insert("header", build_header());
+$room_template->insert("footer", build_footer());
 
 $room_template->insert_all(array(
     "meta_aula" => $room->name,

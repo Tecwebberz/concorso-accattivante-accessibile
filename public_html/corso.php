@@ -78,6 +78,7 @@ $course_template->insert_all(array(
     "periodo" => pretty_period($course->year, $course->semester),
     "responsabile" =>$course->prof,
     "email" => make_link($course->email_resp, "mailto:{$course->email_resp}"),
+    "footer" => build_footer(),
 ));
 
 $stats = statistics($reviews);
