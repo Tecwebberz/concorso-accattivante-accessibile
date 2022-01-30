@@ -58,7 +58,7 @@ const sort = () => {
 }
 
 if ("geolocation" in navigator) {
-    const section = document.getElementsByClassName("centered")[0];
+    const section = document.getElementById("aule");
     const button = document.createElement("button");
     button.id = "order";
     button.classList.add("btn", "btn-primary");
