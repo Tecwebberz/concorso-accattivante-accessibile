@@ -38,7 +38,8 @@ body {
 }
 
 .main {
-    flex: 1    
+    flex: 1;
+    margin-bottom: 20px;
 }
 
 a.app {
@@ -311,6 +312,7 @@ section#success {
 }
 
 section {
+    width: 90%;
     max-width: 1200px;
     padding: 15px;
     border-radius: 4px 4px 0 0;
@@ -514,6 +516,7 @@ form.small {
 }
 
 form.medium {
+    width: 90%;
     max-width: 1200px
 }
 
@@ -668,25 +671,6 @@ fieldset.rating>legend {
 
 .helper>p {
     font-size: 18px
-}
-
-@media screen and (max-width:1200px) {
-    section {
-        margin-left: 10px;
-        margin-right: 10px
-    }
-
-    .cards,form.medium {
-        width: 90%
-    }
-}
-
-@media screen and (max-height:1024px) {
-    form.floating {
-        position: static;
-        top: 0;
-        transform: translateY(0)
-    }
 }
 
 @media screen and (max-width:1024px) {
