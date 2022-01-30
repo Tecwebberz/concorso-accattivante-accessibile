@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,30 +19,28 @@
     <link rel="stylesheet" href="assets/css/main.min.css">
     <link rel="stylesheet" href="assets/css/print.min.css" media="print">
 </head>
+
 <body class="no-print">
 
     <component>header</component>
     <div class="main">
         <nav aria-label="breadcrumb" class="breadcrumb">Ti trovi in:
             <ol>
-                <li><a href="./index.php" lang="en">Home</a>   </li>
+                <li><a href="./index.php" lang="en">Home</a> </li>
                 <li aria-current="page">Accedi</li>
             </ol>
         </nav>
-
-    <section class="flex-container">
-        <form class="small floating solid" name="login" id="login-form" action="app/login_engine.php" method="post">
+        <form class="small solid" name="login" id="login-form" action="app/login_engine.php" method="post">
             <h2><span lang="en">Login</span></h2>
             <label for="inputUsername" lang="en">Username</label>
             <input type="text" id="inputUsername" name="username" placeholder="Inserisci l'username" required>
             <label for="inputPassword" lang="en">Password</label>
             <input type="password" id="inputPassword" name="password" placeholder="Inserisci la password" required>
-            <component>maybe_error</component> 
+            <component>maybe_error</component>
             <input type="hidden" id="target" name="target" value="<component>target</component>">
             <input class="btn btn-primary" type="submit" value="Login!">
             <a href="registrati.html">Non hai un <span lang="en">account</span>?</a>
         </form>
-    </section>
     </div>
     <component>footer</component>
 
