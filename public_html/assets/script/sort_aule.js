@@ -65,5 +65,5 @@ if ("geolocation" in navigator) {
     button.classList.add("btn", "btn-primary");
     button.addEventListener('click', sort);
     button.innerText = "Ordina in base alla distanza";
-    section.insertBefore(button, section.children[1]);
+    section.children[1].appendChild(button);
 }
