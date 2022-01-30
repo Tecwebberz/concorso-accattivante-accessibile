@@ -23,6 +23,7 @@ function build_card(StudyRoomDTO $room): string {
         "lon"         => $room->longitude,
         "seats"       => $room->seats,
         "address"     => $room->address,
+        "aula_lbl"    => strip_tags($room->name),
         "url_info"    => "./aula.php?id={$room->id}",
         "image"       => build_image($room->main_image),
     ));
