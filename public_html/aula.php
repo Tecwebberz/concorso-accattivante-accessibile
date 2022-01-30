@@ -1,7 +1,7 @@
 <?php
 $root = ".";
 
-if (!isset($_GET["id"])) {
+if (!isset($_GET["id"]) || !is_numeric($_GET["id"])) {
     header("Location: 404.php?error=aula");
 }
 
