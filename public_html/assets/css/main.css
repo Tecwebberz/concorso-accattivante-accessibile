@@ -25,19 +25,11 @@
     --primary-accent-active: white;
     --primary-accent-visited: #d1d1d1;
     
-    
     /*alternative palette*/
     --alt-bg: #e4e4e4;
-    
     --primary-alt: #60000C;
     --primary-c: #ffffff; 
     
-
-    /*
-    --link-one: black;
-    --hover-one: #c0c0c0;
-    --visited-one: #f0f0f0;
-    */
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
@@ -53,7 +45,6 @@ html {
 
 body {
     background-color: var(--alt-bg);
-    width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -71,6 +62,7 @@ a{
 a.app {
     display: inline-block;
 }
+
 a:link {color: var(--primary-link)}
 
 a:active, a:hover{color: var(--primary-active);}
@@ -141,7 +133,6 @@ em{
     margin: 4px 2px;
     cursor: pointer;
     font-size: 1em;
-    font-weight: 500;
 }
 
 form .btn{
@@ -304,7 +295,7 @@ nav ul li a:hover,a:active {
   
 nav ul li.active {
     color: var(--primary-accent-text);
-    font-weight: 800;
+    font-weight: bolder;
 }
 
 /* Breadcrumb */
@@ -736,47 +727,6 @@ fieldset.rating > legend {
     margin-bottom: 10px;
     margin-left: 0;
 }
-
-.stars {
-    font-size: 0;
-    white-space: nowrap;
-    display: inline-block;
-    width: 182px;
-    height: 35px;
-    position: relative;
-    background: url("../img/star-regular.webp");
-    background-size: contain;
-}
-
-.stars i {
-    opacity: 0;
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 20%;
-    z-index: 1;
-    background: url("../img/star-solid.webp");
-    background-size: contain;
-}
-
-.stars input {
-    opacity: 0;
-    display: inline-block;
-    width: 20%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    z-index: 2;
-    position: relative;
-}
-
-.stars input:hover + i { opacity:1; } 
-.stars input:checked + i { opacity: 1; }
-.stars i ~ i { width: 40%; }
-.stars i ~ i ~ i { width: 60%; }
-.stars i ~ i ~ i ~ i { width: 80%; }
-.stars i ~ i ~ i ~ i ~ i{ width: 100%; }
 
 /* 404 */
 
