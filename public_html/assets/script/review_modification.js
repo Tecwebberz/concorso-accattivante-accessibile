@@ -44,7 +44,7 @@ function modifyStars(actualStars, activeMod) {
         span.appendChild(addStarLabel(i, Numeri[i], activeMod));
         span.appendChild(addStarInput(i, actualStars, activeMod));
         let starIcon = document.createElement("i");
-        starIcon.setAttribute("aria-disable", true);
+        starIcon.setAttribute("aria-disabled", "true");
         span.appendChild(starIcon);
     }
     fieldset.appendChild(legend);
