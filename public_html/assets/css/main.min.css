@@ -142,7 +142,14 @@ form .btn {
 }
 
 .btn-primary,a.btn-primary {
-    color: var(--primary-accent-text)
+    color: var(--primary-accent-text);
+    border: solid var(--primary-accent-bg) 0.5px
+}
+
+a.btn-primary:visited {
+    color: var(--primary-accent-bg);
+    background-color: white;
+    border-color: var(--primary-accent-bg);
 }
 
 button.btn,input[type=button],input[type=reset],input[type=submit] {
