@@ -16,6 +16,7 @@ const computeDistance = (pos1, pos2) => {
 const sort = () => {
     const btn = document.getElementById("order");
     btn.disabled = true;
+    btn.setAttribute("aria-disabled", "true");
 
     // Triggerato iff da il permesso ed è supportato
     navigator.geolocation.getCurrentPosition(pos => {
