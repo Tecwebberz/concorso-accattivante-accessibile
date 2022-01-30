@@ -84,10 +84,15 @@ li.card > div.extra {
 
 /* Corsi */
 
-section.corsi > a { color: var(--primary-text); }
-section.corsi > a:link { color: var(--primary-text); }
-section.corsi > a:hover { color: var(--primary-text); }
-section.corsi > a:visited { color: var(--primary-text); }
+section.corsi ul {
+    flex-direction: column;
+    padding: 10px;
+}
+
+section.corsi ul a {
+    padding: 0;
+    margin: 0;
+}
 
 /* Corso */
 

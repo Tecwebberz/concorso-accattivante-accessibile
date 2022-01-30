@@ -840,15 +840,6 @@ fieldset.rating > legend {
         grid-template-columns: repeat(1, auto);
     }
 
-    section.corsi ul {
-        flex-direction: column;
-    }
-
-    section.corsi ul a {
-        margin: 10px 0;
-        width: 100%;
-        box-sizing: border-box;
-    }
 }
 
 @media screen and (max-width:600px) {
@@ -889,6 +880,16 @@ fieldset.rating > legend {
     }
     nav ul li a{
         text-align: left;
+    }
+
+    section.corsi ul {
+        flex-direction: column;
+    }
+
+    section.corsi ul a {
+        margin: 10px 0;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     button#order {
