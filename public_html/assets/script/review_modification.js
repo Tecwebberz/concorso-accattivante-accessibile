@@ -83,7 +83,7 @@ function createTextareaLabel(activeMod) {
 function createTextarea(review, activeMod) {
     const textarea = document.createElement("textarea");
     textarea.id = "reviewM-"+activeMod;
-    textarea.name = "reviewM-"+activeMod;
+    textarea.name = "review";
     textarea.rows = 4;
     textarea.cols = 80;
     textarea.textContent = review.children[2].innerText;
