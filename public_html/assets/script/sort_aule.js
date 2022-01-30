@@ -14,6 +14,9 @@ const computeDistance = (pos1, pos2) => {
 };
 
 const sort = () => {
+    const btn = document.getElementById("order");
+    btn.disabled = true;
+
     // Triggerato iff da il permesso ed è supportato
     navigator.geolocation.getCurrentPosition(pos => {
         const aule = document.querySelectorAll(".cards .card");
