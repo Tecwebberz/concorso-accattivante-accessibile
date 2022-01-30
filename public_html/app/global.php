@@ -12,7 +12,7 @@ require_once($root . "/lib/orm/data/imagedto.php");
 require_once($root . "/lib/orm/data/reviewdto.php");
 require_once($root . "/lib/template_engine.php");
 
-require_once($root . "/app/commontemplates.php");
+require_once($root . "/lib/commontemplates.php");
 
 session_start();
 
