@@ -323,12 +323,11 @@ section>h2 {
     margin-bottom: 20px
 }
 
-section#aule>h2 {
-    float: left
-}
-
-section#aule>button {
-    float: right
+#aule > div{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .status>div {
@@ -401,16 +400,14 @@ footer .copy p:first-child {
 
 .cards {
     margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
     gap: 20px;
-    list-style: none
+    list-style: none;
 }
 
 .card{
     border-radius: 5px;
-    width: 40%;
 }
 
 form {
