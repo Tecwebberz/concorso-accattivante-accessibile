@@ -223,12 +223,6 @@ li.primary-box {
     list-style-type: none;
 }
 
-/*Header*/
-header {
-    overflow: hidden;
-    height: auto;   
-}
-
     /*Photo gallery*/
 .photo-gallery{
     display: grid;
@@ -273,8 +267,8 @@ header {
 /*Header*/
 header {
     background-color: var(--primary-accent-bg);
-    min-height: 5em;
     margin: 0 auto;
+    min-height: 6em;
 }
 
 header .logo, header .logo * {
@@ -866,6 +860,10 @@ fieldset.rating > legend {
 
     .logo {
         text-align: center;
+    }
+
+    header{
+        min-height: initial;
     }
 
     header a {
