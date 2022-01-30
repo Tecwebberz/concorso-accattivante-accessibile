@@ -114,14 +114,9 @@ a.btn.btn-primary.app {
     background: none;
 }
 
-a.btn.btn-primary.app:link::after {
+a.btn.btn-primary.app::after {
     content: " dal sito [" attr(href) "]";
 }
-
-/* #faq a { color: var(--primary-text); }
-#faq a:link { color: var(--primary-text); }
-#faq a:hover { color: var(--primary-text); }
-#faq a:visited { color: var(--primary-text); } */
 
 dt {
     border-bottom: solid 1px;
@@ -149,7 +144,9 @@ dd dd {
 #calESU::after {
     content: " al sito [" attr(href) "]";
 }
-
 #qrESU::after {
     content: " visitare [" attr(href) "]";
+}
+#eduroam ~ dd a:after {
+    content: " [" attr(href) "]";
 }
