@@ -174,3 +174,8 @@ function validateCPass() {
     }
     appendErrorList(error_flag, label, error_list);
 }
+
+const yearField = document.getElementById("year");
+const currentYear = new Date().getFullYear();
+yearField.setAttribute("max", currentYear);
+yearField.setAttribute("placeholder", currentYear);
