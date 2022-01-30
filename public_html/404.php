@@ -10,20 +10,6 @@ $page_template->insert("header", build_header());
 $page_template->insert("footer", build_footer());
 
 
-function build_base(): string {
-    $srv = "http://{$_SERVER['SERVER_NAME']}:{$_SERVER['SERVER_PORT']}";
-
-    $ruri = $_SERVER['REQUEST_URI'];
-    $exp = explode("/", $ruri, 3);
-
-    $uri = "";
-    if (count($exp) === 3) {
-        $uri = "/{$exp[1]}";
-    }
-
-    return "{$srv}{$uri}/";
-}
-
 if (isset($_GET["error"]) && $_GET["error"] === "corso") {
     $page_template->insert_all(array(
         "from" => "stavi cercando un corso?",

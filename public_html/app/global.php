@@ -1,5 +1,4 @@
 <?php
-
 require_once($root . "/lib/databaselayer.php");
 require_once($root . "/lib/orm/services/userservice.php");
 require_once($root . "/lib/orm/services/courseservice.php");
@@ -37,9 +36,24 @@ function safe_input(string $in): string {
     return trim(htmlentities(strip_tags($in)));
 }
 
-function to500() {
+function build_base(): string {
+    $srv = "http://{$_SERVER['SERVER_NAME']}:{$_SERVER['SERVER_PORT']}";
+
+    $ruri = $_SERVER['REQUEST_URI'];
+    $exp = explode("/", $ruri, 3);
+
+    $uri = "";
+    if (count($exp) === 3) {
+        $uri = "/{$exp[1]}";
+    }
+
+    return "{$srv}{$uri}/";
+}
+
+function to500($errno, $errstr) {
     http_response_code(500);
-    header("Location: ./500.php");
+    $base = build_base();
+    header("Location: {$base}500.php");
     exit();
 }
 
