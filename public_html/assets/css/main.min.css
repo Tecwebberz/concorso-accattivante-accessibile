@@ -315,13 +315,8 @@ section {
     width: 90%;
     max-width: 1200px;
     padding: 15px;
-    border-radius: 4px 4px 0 0;
+    border-radius: 4px;
     margin: 0 auto
-}
-
-section.centered {
-    margin-right: auto;
-    margin-left: auto
 }
 
 section>h2 {
@@ -405,14 +400,20 @@ footer .copy p:first-child {
 }
 
 .cards {
-    margin: 5%auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(225px,1fr));
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
     gap: 20px;
     list-style: none
 }
 
-.card,form {
+.card{
+    border-radius: 5px;
+    width: 40%;
+}
+
+form {
     border-radius: 5px
 }
 
