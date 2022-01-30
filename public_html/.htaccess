@@ -1,4 +1,11 @@
-ErrorDocument 404 /*/404.php
+ErrorDocument 404 /elpasqua/404.php
+ErrorDocument 500 /elpasqua/500.php
+ErrorDocument 501 /elpasqua/500.php
+ErrorDocument 502 /elpasqua/500.php
+ErrorDocument 503 /elpasqua/500.php
+ErrorDocument 504 /elpasqua/500.php
+ErrorDocument 505 /elpasqua/500.php
+ErrorDocument 507 /elpasqua/500.php 
 
 # Caching images
 <IfModule mod_expires.c>  

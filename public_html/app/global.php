@@ -37,4 +37,13 @@ function safe_input(string $in): string {
     return trim(htmlentities(strip_tags($in)));
 }
 
+function to500() {
+    http_response_code(500);
+    header("Location: ./500.php");
+    exit();
+}
+
+set_error_handler('to500');
+set_exception_handler('to500');
+
 ?>

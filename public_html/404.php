@@ -1,5 +1,7 @@
 <?php
 
+http_response_code(404);
+
 $root = ".";
 require_once($root . "/app/global.php");
 

@@ -217,6 +217,7 @@ button.btn, input[type=button], input[type=submit], input[type=reset] {
 #search.beauty-img { background-image: url("../img/search_girl.svg"); }
 #study.beauty-img { background-image: url("../img/study.svg"); }
 #error404.beauty-img{ background-image: url("../img/lost_trees.svg"); }
+#error500.beauty-img{ background-image: url("../img/server_down.svg"); }
 #success.beauty-img { background-image: url("../img/success.svg"); }
 
 li.primary-box {
@@ -322,7 +323,7 @@ nav.breadcrumb li {
     list-style-type: none;
 }
     
-nav.breadcrumb li:not(:first-child)::before { content: "→"; }
+nav.breadcrumb li:not(:first-child)::before { content: "→ "; }
 
 section#success {
     margin-top: 15px;
