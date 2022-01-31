@@ -17,9 +17,9 @@ session_start();
 
 $db = new DatabaseLayer(
     "127.0.0.1",
-    "aferrari",
-    "ukied8uSh6ohr5ei",
-    "aferrari"
+    "elpasqua",
+    "ooxoza7aGhe1ieho",
+    "elpasqua"
 );
 
 $user_service = new UserService($db, function(string $in): string {
