@@ -3,19 +3,22 @@
 * {
     --primary-bg: white;
     --primary-text: black;
-    --primary-link: #B80018;
+    --primary-link: #9f1022;
     --primary-hover: #F3654D;
     --primary-active: #F3654D;
-    --primary-visited: #e67946;
+    --primary-visited: #9f1078;
     --primary-error-bg: #F8D7DA;
     --primary-error-text: #8E4349;
     --primary-success-bg: #9ff09f;
+
     --primary-accent-bg: #9b0014;
     --primary-accent-text: white;
     --primary-accent-link: #d1d1d1;
     --primary-accent-hover: white;
     --primary-accent-active: white;
-    --primary-accent-visited: #d1d1d1;
+    --primary-accent-visited: #E5ECA0;
+
+
     --alt-bg: #e4e4e4;
     --primary-alt: #60000C;
     --primary-c: #ffffff;
@@ -40,6 +43,8 @@ body {
 .main {
     flex: 1;
     margin-bottom: 20px;
+    flex-direction: column;
+    display: flex;
 }
 
 a.app {
@@ -141,15 +146,18 @@ form .btn {
     background-color: var(--primary-hover)
 }
 
-.btn-primary,a.btn-primary {
+.btn-primary{
     color: var(--primary-accent-text);
-    border: solid var(--primary-accent-bg) 0.5px
+    background-color: var(--primary-accent-bg);
+}
+
+a.btn-primary {
+    color: var(--primary-accent-text);
+    background-color: var(--primary-accent-bg);
 }
 
 a.btn-primary:visited {
-    color: var(--primary-accent-bg);
-    background-color: white;
-    border-color: var(--primary-accent-bg);
+    color: var(--primary-accent-visited);
 }
 
 button.btn,input[type=button],input[type=reset],input[type=submit] {
@@ -330,7 +338,7 @@ section>h2 {
     margin-bottom: 20px
 }
 
-#aule > div{
+#aule > div , .card > div.extra{
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -428,12 +436,14 @@ form {
     border-radius: 5px
 }
 
-.card,.card .content {
-    display: flex;
-    flex-direction: column
+.card .main{
+    padding: 15px;
+    line-height: 1.2em;
 }
 
 .card {
+    display: flex;
+    flex-direction: column;
     border: solid #000 .5px;
     box-shadow: 2px 2px 2px 1px #888
 }
@@ -444,15 +454,7 @@ form {
 }
 
 .card h3 {
-    color: var(--primary-bg)
-}
-
-.card .content {
-    line-height: 1.5;
-    font-size: .9em;
-    padding: 15px;
-    background-color: var(--primary-c);
-    flex-grow: 1
+    color: var(--primary-accent-text);
 }
 
 .card .extra,.card h3 {
@@ -460,33 +462,31 @@ form {
     background-color: var(--primary-accent-bg)
 }
 
-.card .extra {
-    display: flex;
-    justify-content: space-between;
-    font-size: .8em;
-    align-items: center
+.card .extra{
+    background-color: var(--primary-accent-bg);
+    padding: 15px;
 }
 
-.card .extra a {
-    background-color: var(--bg);
-    padding: 5px;
-    color: #fff;
-    border-radius: 4px
+.card .extra p{
+    color: var(--primary-accent-text);
 }
 
-.card .extra a:hover {
-    color: var(--hover-one)
+.card a {
+    color: var(--primary-accent-link);
 }
 
-.card .extra a.active {
+.card a:hover {
+    color: var(--primary-accent-hover)
+}
+.card a:visited {
+    color: var(--primary-accent-visited)
+}
+
+.carda.active {
     border-radius: 4px;
     padding: 5px 7px;
     background-color: var(--primary-c);
     color: #000
-}
-
-.card .extra p {
-    color: #fff
 }
 
 .home-card {
