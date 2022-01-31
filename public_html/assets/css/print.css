@@ -32,8 +32,8 @@ a.btn, a.btn-primary {
 /* link visitato standard 800080 viola
     link classico blu 0000FF */
 
-a:link { color: #0000FF; }
-a:visited { color: #800080; }
+a:link, a.btn:link, a.btn-primary:link { color: #0000FF; }
+a:visited, a.btn:visited, a.btn-primary:visited { color: #800080; }
 #order { display: none;}
 
 /* Aule */
