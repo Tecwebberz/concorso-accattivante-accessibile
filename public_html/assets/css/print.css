@@ -1,7 +1,10 @@
+/* Font serif */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
 /* Base */
 
 html {
-    font-family: 'Roboto', serif;
+    font-family: 'Roboto Slab', serif;
 }
 
 .no-print {
