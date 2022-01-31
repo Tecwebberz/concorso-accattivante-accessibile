@@ -1,10 +1,5 @@
 /*Fonts*/
-@font-face {
-    font-family: 'EntezareZohoor2';
-    src: url('fonts/EntezareZohoor2.eot'), url('fonts/EntezareZohoor2.ttf') format('truetype'), url('fonts/EntezareZohoor2.svg') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,900;1,400&family=Sarpanch:wght@900&display=swap');
 
 /*Reset rules*/
 *{

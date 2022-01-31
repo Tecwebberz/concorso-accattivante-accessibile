@@ -32,8 +32,8 @@ a.btn, a.btn-primary {
 /* link visitato standard 800080 viola
     link classico blu 0000FF */
 
-a:link, a.btn:link, a.btn-primary:link { color: #0000FF; }
-a:visited, a.btn:visited, a.btn-primary:visited { color: #800080; }
+/* a:link, a.btn:link, a.btn-primary:link { color: #0000FF; }
+a:visited, a.btn:visited, a.btn-primary:visited { color: #800080; } */
 #order { display: none;}
 
 /* Aule */
@@ -63,35 +63,12 @@ li.card > img {
     display: none;
 }
 
-li.card > div.content {
-    display: block;
-    line-height: 1;
-    font-size: medium;
-    padding: 0;
-    background-color: var(--primary-bg);
-    margin-left: 10px;
-
-}
-
 li.card > div.extra {
     display: none;
 }
 
-#aula > h2 {
-    border-bottom: solid 1px;
-    font-size: xx-large;
-}
-
 .photo-gallery {
     display: none;
-}
-
-#aula > .mini-title > h3 {
-    font-size: larger;
-}
-
-#aula > .mini-title > ul {
-    font-size: small;
 }
 
 /* Corsi */
@@ -113,10 +90,10 @@ ul.corso {
 }
 
 /* Review */
-
-div.modifica {
+div.mod-rece {
     display: none;
 }
+
 /* FAQ */
 
 a.btn.btn-primary.app {
