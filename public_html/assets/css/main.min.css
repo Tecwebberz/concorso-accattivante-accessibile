@@ -143,6 +143,10 @@ form .btn {
 .btn-primary:hover {
     background-color: var(--primary-hover)
 }
+a.btn-primary:hover{
+    background-color: #e4e3e3;
+    transition: 0.5s;
+}
 
 .btn-primary{
     color: var(--primary-accent-text);
@@ -150,13 +154,17 @@ form .btn {
 }
 
 a.btn-primary {
-    color: var(--primary-accent-text);
-    background-color: var(--primary-accent-bg);
+    color: var(--primary-link);
+    background-color: var(--primary-bg);
+    border: solid var(--primary-link) 3px;
 }
 
 a.btn-primary:visited {
-    color: var(--primary-accent-visited);
+    color: var(--primary-visited);
+    border-color: var(--primary-visited);
 }
+
+
 
 button.btn,input[type=button],input[type=reset],input[type=submit] {
     border: 0;
