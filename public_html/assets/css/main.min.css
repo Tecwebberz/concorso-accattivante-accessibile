@@ -43,8 +43,6 @@ body {
 .main {
     flex: 1;
     margin-bottom: 20px;
-    flex-direction: column;
-    display: flex;
 }
 
 a.app {
@@ -311,7 +309,7 @@ nav.breadcrumb li {
 }
 
 nav.breadcrumb li:not(:first-child)::before {
-    content: "→ "
+    content: "> "
 }
 
 section#success {
