@@ -24,6 +24,18 @@ form {
     display: none;
 }
 
+a.btn, a.btn-primary {
+    background-color: white;
+    border: none;
+}
+
+/* link visitato standard 800080 viola
+    link classico blu 0000FF */
+
+a:link { color: #0000FF; }
+a:visited { color: #800080; }
+#order { display: none;}
+
 /* Aule */
 
 ol.cards {
