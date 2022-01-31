@@ -24,8 +24,8 @@ $room_template->insert("header", build_header());
 $room_template->insert("footer", build_footer());
 
 $room_template->insert_all(array(
-    "meta_aula" => $room->name,
-    "meta_keyword" => $room->name,
+    "meta_aula" => strip_tags($room->name),
+    "meta_keyword" => strip_tags($room->name),
     "bc_aula" => $room->name,
     "description"  => $room->description,
     "registration" => $room->reservation_required ? "registrazione richiesta"
