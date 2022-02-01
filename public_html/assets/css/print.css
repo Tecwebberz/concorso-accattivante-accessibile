@@ -15,10 +15,6 @@ abbr.first-abbr::after {
     content: " ("attr(title)")";
 }
 
-footer { 
-    display: none;
-}
-
 form {
     display: none;
 }
@@ -71,10 +67,6 @@ li.card > img {
 }
 
 li.card > div.extra {
-    display: none;
-}
-
-.photo-gallery {
     display: none;
 }
 
