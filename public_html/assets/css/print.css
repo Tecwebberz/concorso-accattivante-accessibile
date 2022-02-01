@@ -32,11 +32,15 @@ a.btn, a.btn-primary {
     border: none;
 }
 
-/* link visitato standard 800080 viola
-    link classico blu 0000FF */
+nav ul li a {
+    color: var(--primary-link);
 
-/* a:link, a.btn:link, a.btn-primary:link { color: #0000FF; }
-a:visited, a.btn:visited, a.btn-primary:visited { color: #800080; } */
+}
+
+nav ul li a:visited {
+    color: var(--primary-visited);
+}
+
 #order { display: none;}
 
 /* Aule */
