@@ -45,7 +45,7 @@ function pretty_period(int $year, int $semester): string {
     function pretty_year(int $year): string{
         if ($year >= 1 && $year <= 3) {
             $abbr = abbr_numeric($year);
-            return "del <abbr aria-label='{$abbr}' title='{$abbr}'>{$year}°</abbr> anno";
+            return "del <abbr title='{$abbr}'>{$year}°</abbr> anno";
         } else {
             return "opzionale";
         }
@@ -53,7 +53,7 @@ function pretty_period(int $year, int $semester): string {
     function pretty_semester(int $semester): string {
         if ($semester >= 1 && $semester <= 2) {
             $abbr = abbr_numeric($semester);
-            return "<abbr aria-label='{$abbr}' title='{$abbr}'>{$semester}°</abbr> semestre";
+            return "<abbr title='{$abbr}'>{$semester}°</abbr> semestre";
         } else {
             return "annuale";
         }

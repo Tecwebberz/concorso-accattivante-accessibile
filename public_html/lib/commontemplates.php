@@ -34,7 +34,7 @@ $actions = array(
     array("index.php", "Home"),
     array("corsi.php", "Corsi"),
     array("aule.php", "Aule studio"),
-    array("faq.php", "<abbr lang=\"en\" aria-label=\"Frequently Asked Question\"
+    array("faq.php", "<abbr lang=\"en\"
             title=\"Frequently Asked Question\">F.A.Q.</abbr>"),
 );
 
@@ -118,7 +118,7 @@ function render_stars(int $n): string {
     for ($i = $n; $i < 5; ++$i) {
         $ret .= "☆";
     }
-    return "<span aria-label='$n stelle su 5'>$ret</span>";
+    return "<abbr title='$n stelle su 5'>$ret</abbr>";
 }
 
 function make_review(ReviewDTO $review): string {
