@@ -71,9 +71,14 @@ a:visited {
     color: var(--primary-visited)
 }
 
-span[lang], abbr, span {
+abbr, span {
     color: inherit;
     font-weight: inherit
+}
+
+a:visited span, a:visited > abbr {
+    color: inherit;
+    font-weight: inherit;
 }
 
 abbr {
