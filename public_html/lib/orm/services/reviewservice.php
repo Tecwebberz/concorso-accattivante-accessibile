@@ -117,6 +117,40 @@ class ReviewService {
         return $review;
     }
 
+    public function get_reviews_made_by_user(User $user) {
+        $res = $this->db->query(
+            "SELECT * FROM {$this->table_studyroom} as T
+                JOIN User AS U ON U.username = T.utente_recensore
+             WHERE U.id = ?
+             ORDER BY id_recensione DESC",
+            array(
+                array("i", $user->id)
+            )
+        );
+
+        $ret = array();
+        while ($row = $res->fetch_assoc()) {
+            $ret[] = parse_review(ReviewType::STUDYROOM, $row);
+        }
+        $res->close();
+
+        $res = $this->db->query(
+            "SELECT * FROM {$this->table_course} as T
+                JOIN User AS U ON U.username = T.utente_recensore
+             WHERE U.id = ?
+             ORDER BY id_recensione DESC",
+            array(
+                array("i", $user->id)
+            )
+        );
+
+        while ($row = $res->fetch_assoc()) {
+            $ret[] = parse_review(ReviewType::COURSE, $row);
+        }
+        $res->close();
+
+        return $ret;
+    }
 }
 
 ?>

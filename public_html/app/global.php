@@ -18,7 +18,7 @@ session_start();
 $db = new DatabaseLayer(
     "127.0.0.1",
     "elpasqua",
-    "ooxoza7aGhe1ieho",
+    "ohsi3ERahh3Eirie",
     "elpasqua"
 );
 
@@ -50,14 +50,25 @@ function build_base(): string {
     return "{$srv}{$uri}/";
 }
 
-function to500($errno, $errstr) {
+function to500_exception($exc) {
+    echo($exc);
+    die();
     http_response_code(500);
     $base = build_base();
     header("Location: {$base}500.php");
     exit();
 }
 
-set_error_handler('to500');
-set_exception_handler('to500');
+function to500_error($errno, $errstr) {
+    echo($errstr);
+    die();
+    http_response_code(500);
+    $base = build_base();
+    header("Location: {$base}500.php");
+    exit();
+}
+
+set_error_handler('to500_error');
+set_exception_handler('to500_exception');
 
 ?>
