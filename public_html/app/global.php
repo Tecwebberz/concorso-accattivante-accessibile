@@ -51,24 +51,28 @@ function build_base(): string {
 }
 
 function to500_exception($exc) {
-    echo($exc);
-    die();
-    http_response_code(500);
-    $base = build_base();
-    header("Location: {$base}500.php");
-    exit();
+    if (array_key_exists("debug", $_GET)){
+        echo($exc);
+        die();
+    } else {
+        http_response_code(500);
+        $base = build_base();
+        header("Location: {$base}500.php");
+        exit();
+    }
 }
 
 function to500_error($errno, $errstr) {
-    echo($errstr);
-    die();
-    http_response_code(500);
-    $base = build_base();
-    header("Location: {$base}500.php");
-    exit();
+    if (array_key_exists("debug", $_GET)){
+        echo($errno . " " . $errstr);
+        die();
+    } else {
+        http_response_code(500);
+        $base = build_base();
+        header("Location: {$base}500.php");
+        exit();
+    }
 }
 
 set_error_handler('to500_error');
 set_exception_handler('to500_exception');
-
-?>
