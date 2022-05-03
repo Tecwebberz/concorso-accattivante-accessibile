@@ -34,6 +34,7 @@ $actions = array(
     array("index.php", "Home"),
     array("corsi.php", "Corsi"),
     array("aule.php", "Aule studio"),
+    array("servizi.php", "Servizi"),
     array("faq.php", "<abbr lang=\"en\"
             title=\"Frequently Asked Question\">F.A.Q.</abbr>"),
 );
@@ -63,6 +64,12 @@ function build_header(): string {
         && $_SESSION["logged_user"] !== null) {
         // Area personale
         if ($actions_len + 0 === $page_index) {
+            $action .= make_list_item("Profilo", "active");
+        } else {
+            $action .= make_list_item(make_link("Profilo", "profilo.php"));
+        }
+        // Esci
+        if ($actions_len + 1 === $page_index) {
             $action .= make_list_item("Esci", "active");
         } else {
             $action .= make_list_item(make_link("Esci", "app/logout_engine.php"));

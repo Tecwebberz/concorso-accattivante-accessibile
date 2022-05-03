@@ -1,6 +1,6 @@
 <?php
 $root = ".";
-$page_index = 5;
+$page_index = 6;
 require_once($root . "/app/global.php");
 
 $page_template = $template_engine->load_template("registrati.template.html");

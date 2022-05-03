@@ -1,7 +1,7 @@
 <?php
 
 $root = ".";
-$page_index = 2;
+$page_index = 3;
 require_once($root . "/app/global.php");
 
 $servizi_template = $template_engine->load_template("servizi.template.html");

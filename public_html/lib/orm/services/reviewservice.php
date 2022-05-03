@@ -117,14 +117,14 @@ class ReviewService {
         return $review;
     }
 
-    public function get_reviews_made_by_user(User $user) {
+    public function get_reviews_made_by_user(UserDTO $user) {
         $res = $this->db->query(
             "SELECT * FROM {$this->table_studyroom} as T
                 JOIN User AS U ON U.username = T.utente_recensore
-             WHERE U.id = ?
+             WHERE U.username = ?
              ORDER BY id_recensione DESC",
             array(
-                array("i", $user->id)
+                array("s", $user->username)
             )
         );
 
@@ -137,10 +137,10 @@ class ReviewService {
         $res = $this->db->query(
             "SELECT * FROM {$this->table_course} as T
                 JOIN User AS U ON U.username = T.utente_recensore
-             WHERE U.id = ?
+             WHERE U.username = ?
              ORDER BY id_recensione DESC",
             array(
-                array("i", $user->id)
+                array("s", $user->username)
             )
         );
 
