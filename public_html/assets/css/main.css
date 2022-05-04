@@ -543,6 +543,11 @@ footer .copy p:first-child{
     margin-left: auto;
 }
 
+/*Profilo*/
+ul.profile-reviews {
+    margin-top: 20px;
+}
+
 /*Article*/
 
 .article{
