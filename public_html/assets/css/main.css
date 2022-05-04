@@ -354,6 +354,11 @@ section {
 section > h2{
     margin-bottom: 20px;
 }
+section > h3{
+    margin-top: 20px;
+    margin-bottom: 7px;
+    border-bottom: solid black 1px;
+}
 
 .status{
     display: flex;
