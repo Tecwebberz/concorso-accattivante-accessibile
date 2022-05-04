@@ -15,7 +15,7 @@ if (isset($_GET["error"]) && $_GET["error"] == UserServiceError::AUTH_FAILED) {
 $login_template->insert("maybe_error", $error);
 
 $login_template->insert("target", isset($_GET["target"]) ? 
-    $_GET["target"] : "");
+    $_GET["target"] : "profilo.php");
 
 echo $login_template->build();
 
