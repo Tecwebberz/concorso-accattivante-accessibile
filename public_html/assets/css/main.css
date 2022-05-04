@@ -524,6 +524,12 @@ footer .copy p:first-child{
     text-align: left;
     font-size: 1.2em;    
 }
+
+.services-card .btn {
+    margin-right: 0;
+    margin-left: auto;
+}
+
 /*Article*/
 
 .article{
