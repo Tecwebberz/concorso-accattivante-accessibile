@@ -228,6 +228,7 @@ button.btn, input[type=button], input[type=submit], input[type=reset] {
 #success.beauty-img { background-image: url("../img/success.svg"); }
 #transport.beauty-img { background-image: url("../img/scooter.svg"); }
 #printed.beauty-img { background-image: url("../img/printed.svg"); }
+#software.beauty-img { background-image: url("../img/software.svg"); }
 
 li.primary-box {
     list-style-type: none;
@@ -511,6 +512,18 @@ footer .copy p:first-child{
     font-size: 1.2em;    
 }
 
+.services-card {
+    width: 30em;
+}
+
+.services-card h1{
+    text-align: left;
+}
+
+.services-card p{
+    text-align: left;
+    font-size: 1.2em;    
+}
 /*Article*/
 
 .article{
