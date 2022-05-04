@@ -88,6 +88,10 @@ dt{
     font-size: 20px; 
 }
 
+dl {
+    margin-top: 10px;
+}
+
 dl li{
     list-style: circle;
 }
