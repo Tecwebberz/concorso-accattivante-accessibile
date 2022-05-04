@@ -234,7 +234,7 @@ button.btn, input[type=button], input[type=submit], input[type=reset] {
 #error404.beauty-img { background-image: url("../img/lost_trees.svg"); }
 #error500.beauty-img { background-image: url("../img/server_down.svg"); }
 #success.beauty-img { background-image: url("../img/success.svg"); }
-#transport.beauty-img { background-image: url("../img/scooter.svg"); }
+#mobility.beauty-img { background-image: url("../img/scooter.svg"); }
 #printed.beauty-img { background-image: url("../img/printed.svg"); }
 #software.beauty-img { background-image: url("../img/software.svg"); }
 
