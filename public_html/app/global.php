@@ -76,3 +76,5 @@ function to500_error($errno, $errstr) {
 
 set_error_handler('to500_error');
 set_exception_handler('to500_exception');
+
+?>
