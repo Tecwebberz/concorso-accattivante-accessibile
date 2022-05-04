@@ -7,12 +7,24 @@
     font-family: 'Roboto Slab', serif;
 }
 
-.no-print {
+.no-print * {
     display: none;
 }
 
+.no-print {
+    background: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.no-print::after {
+    display: flex;
+    content: "Per evitare sprechi non stampare questa pagina";
+    font-size: 2.5em;
+}
+
 abbr.first-abbr::after {
-    content: " ("attr(title)")";
+    content: " (" attr(title) ")";
 }
 
 form {
