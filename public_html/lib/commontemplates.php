@@ -161,12 +161,42 @@ function make_review(ReviewDTO $review): string {
     return $template->build();
 }
 
+function make_user_review(ReviewDTO $review): string {
+    global $template_engine;
+
+    $template = $template_engine->load_template("recensioniprofilo.template.html");
+    $template->insert_all(array(
+        //"elemento" => $review->type === 0 ? "study room" : "course",
+        //"elemento" => $review->type === 0 ? get_room_by_id($review->target_id): get_course_by_id($review->target_id), 
+        //var_dump(), 
+        "elemento" => "abc",
+        "testo"  => $review->text,
+        "nstars" => $review->rating,
+        "id"     => $review->id,
+        "type"   => $review->type,
+        "stelle" => render_stars($review->rating)
+    ));
+    return $template->build();
+}
+
+
 function make_reviews(array $reviews): string {
     global $template_engine;
     $template = $template_engine->load_template("recensioni.template.html");
     $ret = "";
     foreach ($reviews as $review) {
-        $ret .= make_review($review);
+        $ret .= make_user_review($review);
+    }
+    $template->insert("recensioni", $ret);
+    return $template->build();
+}
+
+function make_user_reviews(array $reviews): string {
+    global $template_engine;
+    $template = $template_engine->load_template("recensioni.template.html");
+    $ret = "";
+    foreach ($reviews as $review) {
+        $ret .= make_user_review($review);
     }
     $template->insert("recensioni", $ret);
     return $template->build();
