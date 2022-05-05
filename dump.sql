@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Feb 01, 2022 at 07:32 PM
--- Server version: 10.3.32-MariaDB-0ubuntu0.20.04.1
+-- Generation Time: May 05, 2022 at 04:14 PM
+-- Server version: 10.3.34-MariaDB-0ubuntu0.20.04.1
 -- PHP Version: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -21,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `elpasqua`
 --
-CREATE DATABASE IF NOT EXISTS `elpasqua` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `elpasqua`;
 
 -- --------------------------------------------------------
 
@@ -191,7 +189,6 @@ CREATE TABLE `Review_course` (
 --
 
 INSERT INTO `Review_course` (`id_recensione`, `utente_recensore`, `testo`, `voto`, `course`) VALUES
-(37, 'user', 'Bel Corso!', 5, 19),
 (38, 'alecsferra', 'Ho conosciuto Alessandro Massarenti proprio grazie a questo corso, ho detto tutto... Per&ograve; il prof &egrave; bravo dai!!', 4, 12),
 (39, 'alecsferra', 'alert(&quot;XSS&quot;);', 5, 8),
 (40, 'alecsferra', '&quot;; DROP DATABASE; --', 5, 8),
@@ -202,7 +199,9 @@ INSERT INTO `Review_course` (`id_recensione`, `utente_recensore`, `testo`, `voto
 (45, 'elpasqua', 'Dopo questo corso &egrave; tutta in discesa... rotolando', 1, 2),
 (46, 'elpasqua', 'Va seguito con i giusti occhiali', 3, 11),
 (48, 'elpasqua', 'Bellissimo matlab, credo sia il mio nuovo linguaggio preferito', 5, 14),
-(49, 'elpasqua', 'Il corso &egrave; tenuto in tedesco', 5, 9);
+(49, 'elpasqua', 'Il corso &egrave; tenuto in tedesco', 5, 9),
+(51, 'user', 'Fantastico', 5, 1),
+(52, 'user', 'Di nuovo fantastico', 3, 1);
 
 -- --------------------------------------------------------
 
@@ -371,7 +370,7 @@ ALTER TABLE `Openings`
 -- AUTO_INCREMENT for table `Review_course`
 --
 ALTER TABLE `Review_course`
-  MODIFY `id_recensione` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id_recensione` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `Review_studyroom`
