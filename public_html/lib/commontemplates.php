@@ -161,12 +161,40 @@ function make_review(ReviewDTO $review): string {
     return $template->build();
 }
 
+function make_user_review(ReviewDTO $review, string $location): string {
+    global $template_engine;
+
+    $template = $template_engine->load_template("recensioniprofilo.template.html");
+    $template->insert_all(array(
+        "elemento" => $location,
+        "testo"  => $review->text,
+        "nstars" => $review->rating,
+        "id"     => $review->id,
+        "type"   => $review->type,
+        "stelle" => render_stars($review->rating)
+    ));
+    return $template->build();
+}
+
 function make_reviews(array $reviews): string {
     global $template_engine;
     $template = $template_engine->load_template("recensioni.template.html");
     $ret = "";
     foreach ($reviews as $review) {
         $ret .= make_review($review);
+    }
+    $template->insert("recensioni", $ret);
+    return $template->build();
+}
+
+function make_user_reviews(array $reviews, array $locations): string {
+    global $template_engine;
+    $template = $template_engine->load_template("recensioni.template.html");
+    $ret = "";
+    $index = 0;
+    foreach ($reviews as $review) {
+        $ret .= make_user_review($review, $locations[$index]);
+        $index++;
     }
     $template->insert("recensioni", $ret);
     return $template->build();
