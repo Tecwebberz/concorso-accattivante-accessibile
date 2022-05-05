@@ -543,11 +543,6 @@ footer .copy p:first-child{
     margin-left: auto;
 }
 
-/*Profilo*/
-ul.profile-reviews {
-    margin-top: 20px;
-}
-
 /*Article*/
 
 .article{
@@ -690,12 +685,14 @@ section#corso > p {
 
 ol.recensioni {
     list-style-type: none;
+    margin-top: 20px;
 }
 
 .review{
     display: flex;
     flex-direction: column;
     border-bottom: solid #d6d6d6 0.5px;
+    margin-bottom: 10px;
 }
 
 .review > p.vote {

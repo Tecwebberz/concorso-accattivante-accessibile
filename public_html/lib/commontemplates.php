@@ -164,7 +164,7 @@ function make_review(ReviewDTO $review): string {
 function make_user_review(ReviewDTO $review, string $location): string {
     global $template_engine;
 
-    $template = $template_engine->load_template("recensioniprofilo.template.html");
+    $template = $template_engine->load_template("recensioneprofilo.template.html");
     $template->insert_all(array(
         "elemento" => $location,
         "testo"  => $review->text,
